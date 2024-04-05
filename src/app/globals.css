@@ -33,3 +33,8 @@ body {
   /* height: 250px; */
   width: 600px;
 }
+
+.badge-container img {
+  display: inline;
+  margin-right: 8px;
+}

@@ -53,7 +53,42 @@ export default function Home() {
       <section className="absolute right-12 top-[100vh] flex flex-col gap-6">
         <h3 className="text-4xl mb-4 text-slate-900">Projects</h3>
         <div className="wrapper p-6 h-60 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-3xl text-slate-900">SpendSync</h3>
+          <h3 className="text-3xl text-slate-900">SpendSync 💸✨</h3>
+          <div>
+            <img src="" alt="" />
+            <div>
+              <p className="text-lg">
+                An all in one financial planning and money tracking tool with a
+                sleek and intuitive user interface.
+              </p>
+              <div className="badge-container">
+                <img
+                  src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&amp;logo=typescript&amp;logoColor=white"
+                  alt="TypeScript"
+                />
+                <img
+                  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&amp;logo=react&amp;logoColor=%2361DAFB"
+                  alt="React"
+                />
+                <img
+                  src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&amp;logo=tailwind-css&amp;logoColor=white"
+                  alt="TailwindCSS"
+                />
+                <img
+                  src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&amp;logo=mongodb&amp;logoColor=white"
+                  alt="MongoDB"
+                />
+                <img
+                  src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white"
+                  alt="NodeJS"
+                />
+                <img
+                  src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&amp;logo=express&amp;logoColor=%2361DAFB"
+                  alt="Express.js"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="wrapper p-6 h-60 border-slate-900 border-[3px] rounded-[30px]">
           <h3 className="text-3xl text-slate-900">CodeStash</h3>

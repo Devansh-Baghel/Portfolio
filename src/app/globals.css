@@ -5,11 +5,10 @@
 @font-face {
   font-family: "Chromate";
   src: url("/font/Chromate-Regular.ttf") format("truetype");
-  /* Add additional font formats if necessary */
-  /* Specify the correct path to the font files */
 }
 
-h1 {
+h1,
+h3 {
   font-family: "Chromate", sans-serif;
 }
 
@@ -19,7 +18,10 @@ body {
 }
 
 .images {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
 }

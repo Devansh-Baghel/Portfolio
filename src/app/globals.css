@@ -8,7 +8,8 @@
 }
 
 h1,
-h3 {
+h3,
+.font-chromate {
   font-family: "Chromate", sans-serif;
 }
 
@@ -24,4 +25,11 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.wrapper {
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+  /* height: 250px; */
+  width: 600px;
 }

@@ -49,6 +49,23 @@ export default function Home() {
         <img src="/Grad_10.png" alt="" />
         <img src="/Grad_05.png" alt="" />
       </div>
+
+      <section className="absolute right-12 top-[100vh] flex flex-col gap-6">
+        <h3 className="text-4xl mb-4 text-slate-900">Projects</h3>
+        <div className="wrapper p-6 h-60 border-slate-900 border-[3px] rounded-[30px]">
+          <h3 className="text-3xl text-slate-900">SpendSync</h3>
+        </div>
+        <div className="wrapper p-6 h-60 border-slate-900 border-[3px] rounded-[30px]">
+          <h3 className="text-3xl text-slate-900">CodeStash</h3>
+        </div>
+        <a
+          href="https://github.com/devansh-baghel"
+          target="_blank"
+          className="wrapper text-center pt-3 h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px]"
+        >
+          More on github
+        </a>
+      </section>
     </main>
   );
 }

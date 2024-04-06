@@ -1,0 +1,1 @@
+- [ ] Add external link icons in all links that open in a new tab

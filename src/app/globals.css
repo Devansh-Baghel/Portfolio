@@ -7,6 +7,10 @@
   src: url("/font/Chromate-Regular.ttf") format("truetype");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h3,
 .font-chromate {
@@ -15,7 +19,6 @@ h3,
 
 body {
   overflow-x: hidden;
-  /* scroll-behavior: smooth; */
 }
 
 .images {

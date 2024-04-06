@@ -52,8 +52,8 @@ export default function Home() {
       <div className="w-[700px] h-[500px] absolute right-0 z-0 images">
         <img src="/Grad_07.png" alt="" />
         <img src="/Grad_02.png" alt="" />
-        <img src="/Grad_10.png" alt="" />
-        <img src="/Grad_05.png" alt="" />
+        <img src="/Grad_10.png" alt="" className="mt-[10vh]" />
+        <img src="/Grad_05.png" alt="" className="mt-[10vh]" />
       </div>
 
       <section
@@ -64,8 +64,26 @@ export default function Home() {
 
         <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
           <h3 className="text-3xl text-slate-900">SpendSync 💸✨</h3>
+          <div className="text-lg flex gap-4">
+            <a
+              target="_blank"
+              href="https://spendsync.baghel.dev"
+              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white flex items-center gap-2"
+            >
+              Deployed site
+              <LinkIcon className="w-[20px] h-[20px] inline text-white" />
+            </a>
+            <a
+              target="_blank"
+              href="https://github.com/devansh-baghel/spendsync"
+              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] flex items-center gap-2"
+            >
+              Source code
+              <CodeIcon className="w-[17px] h-[17px] inline" />
+            </a>
+          </div>
           <div>
-            <p className="text-lg">
+            <p className="text-xl">
               An all in one financial planning and money tracking tool with a
               sleek and intuitive user interface.
             </p>
@@ -104,25 +122,6 @@ export default function Home() {
               />
             </div>
           </div>
-
-          <div className="text-lg flex gap-4">
-            <a
-              target="_blank"
-              href="https://spendsync.baghel.dev"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white flex items-center gap-2"
-            >
-              Deployed site
-              <LinkIcon className="w-[20px] h-[20px] inline text-white" />
-            </a>
-            <a
-              target="_blank"
-              href="https://github.com/devansh-baghel/spendsync"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] flex items-center gap-2"
-            >
-              Source code
-              <CodeIcon className="w-[17px] h-[17px] inline" />
-            </a>
-          </div>
         </div>
         <div className="wrapper p-6 h-24 border-slate-900 border-[3px] rounded-[30px]">
           <h3 className="text-3xl text-slate-900 flex items-center gap-3">
@@ -147,8 +146,8 @@ export default function Home() {
       >
         <h3 className="text-4xl mb-4 text-slate-900">Tech Stack / Tools</h3>
 
-        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
-          <h3 className="text-3xl text-slate-900">Frontend</h3>
+        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
+          <h3 className="text-3xl text-slate-900 mb-4">Frontend</h3>
 
           <div className="badge-container">
             <img
@@ -190,7 +189,7 @@ export default function Home() {
           </div>
         </div>
         <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-3xl text-slate-900">Backend</h3>
+          <h3 className="text-3xl text-slate-900 mb-4">Backend</h3>
 
           <div className="badge-container">
             <img
@@ -214,12 +213,8 @@ export default function Home() {
               alt="JWT"
             />
             <img
-              src="https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&amp;logo=bun&amp;logoColor=white"
-              alt="Bun"
-            />
-            <img
-              src="https://img.shields.io/badge/deno%20js-000000?style=for-the-badge&amp;logo=deno&amp;logoColor=white"
-              alt="Deno JS"
+              src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&amp;logo=postman&amp;logoColor=white"
+              alt="Postman"
             />
             <img
               src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&amp;logo=docker&amp;logoColor=white"
@@ -227,13 +222,60 @@ export default function Home() {
             />
 
             <img
-              src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&amp;logo=postman&amp;logoColor=white"
-              alt="Postman"
+              src="https://img.shields.io/badge/deno%20js-000000?style=for-the-badge&amp;logo=deno&amp;logoColor=white"
+              alt="Deno JS"
+            />
+            <img
+              src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&amp;logo=Cloudflare&amp;logoColor=white"
+              alt="Cloudflare"
+            />
+            <img
+              src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&amp;logo=vercel&amp;logoColor=white"
+              alt="Vercel"
+            />
+            <img
+              src="https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&amp;logo=bun&amp;logoColor=white"
+              alt="Bun"
             />
           </div>
         </div>
-        <div className="wrapper p-6 h-24 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-3xl text-slate-900">Miscellaneous</h3>
+        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
+          <h3 className="text-3xl text-slate-900 mb-4">Miscellaneous</h3>
+
+          <div className="badge-container">
+            <img
+              src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black"
+              alt="Linux"
+            />
+            <img
+              src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&amp;logo=git&amp;logoColor=white"
+              alt="Git"
+            />
+            <img
+              src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white"
+              alt="GitHub"
+            />
+            <img
+              src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&amp;style=for-the-badge&amp;logo=neovim&amp;logoColor=white"
+              alt="Neovim"
+            />
+            <img
+              src="https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&amp;logo=vim&amp;logoColor=white"
+              alt="Vim"
+            />
+            <img
+              src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&amp;logo=graphql&amp;logoColor=white"
+              alt="GraphQL"
+            />
+            <img
+              src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&amp;logo=gnu-bash&amp;logoColor=white"
+              alt="Shell Script"
+            />
+            <img
+              src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&amp;logo=python&amp;logoColor=ffdd54"
+              alt="Python"
+            />
+          </div>
         </div>
       </section>
     </main>

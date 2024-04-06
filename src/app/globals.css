@@ -40,4 +40,5 @@ body {
 .badge-container img {
   display: inline;
   margin-right: 8px;
+  border-radius: 15px;
 }

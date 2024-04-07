@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
-    const { name, message } = reqBody;
+    const { name, message, email } = reqBody;
 
     if (!name) {
       return NextResponse.json({ error: "Name is required" }, { status: 400 });
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: ["devanshbaghel85@gmail.com"],
       subject: "Someone Contacted You",
-      react: EmailTemplate({ name, message }),
+      react: EmailTemplate({ name, email, message }),
       text: "",
     });
 

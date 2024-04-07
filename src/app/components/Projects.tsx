@@ -10,7 +10,9 @@ export default function Projects() {
       <h3 className="text-4xl mb-4 text-slate-900">Projects</h3>
 
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
-        <h3 className="text-[.9em] text-slate-900">SpendSync 💸✨</h3>
+        <h3 className="text-[.9em] md:text-3xl text-slate-900">
+          SpendSync 💸✨
+        </h3>
         <div className="text-lg flex flex-col md:flex-row gap-2 md:gap-4">
           <a
             target="_blank"
@@ -70,8 +72,8 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      <div className="wrapper p-6 h-24 border-slate-900 border-[3px] rounded-[30px]">
-        <h3 className="text-3xl text-slate-900 flex items-center gap-3">
+      <div className="wrapper p-6 md:h-24 border-slate-900 border-[3px] rounded-[30px]">
+        <h3 className="text-[.9em] md:text-3xl text-slate-900 flex flex-col md:flex-row items-center gap-3">
           CodeStash
           <span className="italic text-2xl font-sans">&minus; coming soon</span>
         </h3>

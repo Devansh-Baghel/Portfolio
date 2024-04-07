@@ -1,10 +1,12 @@
 export default function TechStack() {
   return (
     <section
-      className="absolute right-12 top-[200vh] flex flex-col gap-6 pt-10"
+      className="md:absolute md:right-12 top-[200vh] flex flex-col gap-6 mt-24 ml-6 sm:ml-10 md:ml-0"
       id="tech-stack"
     >
-      <h3 className="text-4xl mb-4 text-slate-900">Tech Stack / Tools</h3>
+      <h3 className="text-4xl mb-4 text-slate-900">
+        Tech Stack <span className="hidden md:inline">/ Tools</span>
+      </h3>
 
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl text-slate-900 mb-4">Frontend</h3>

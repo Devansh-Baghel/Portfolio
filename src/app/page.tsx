@@ -53,7 +53,7 @@ export default function Home() {
         <img src="/Grad_07.png" alt="" className="hidden md:block" />
         <img src="/Grad_02.png" alt="" />
         <img src="/Grad_02.png" alt="" className="md:hidden" />
-        <img src="/Grad_10.png" alt="" className="mt-[10vh]" />
+        <img src="/Grad_10.png" alt="" className="mt-[250px] md:mt-[10vh]" />
         <img src="/Grad_05.png" alt="" className="mt-[10vh]" />
       </div>
 

@@ -80,22 +80,9 @@ export default function TechStack() {
             src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&amp;logo=docker&amp;logoColor=white"
             alt="Docker"
           />
-
-          <img
-            src="https://img.shields.io/badge/deno%20js-000000?style=for-the-badge&amp;logo=deno&amp;logoColor=white"
-            alt="Deno JS"
-          />
-          <img
-            src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&amp;logo=Cloudflare&amp;logoColor=white"
-            alt="Cloudflare"
-          />
           <img
             src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&amp;logo=vercel&amp;logoColor=white"
             alt="Vercel"
-          />
-          <img
-            src="https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&amp;logo=bun&amp;logoColor=white"
-            alt="Bun"
           />
         </div>
       </div>
@@ -115,14 +102,7 @@ export default function TechStack() {
             src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white"
             alt="GitHub"
           />
-          <img
-            src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&amp;style=for-the-badge&amp;logo=neovim&amp;logoColor=white"
-            alt="Neovim"
-          />
-          <img
-            src="https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&amp;logo=vim&amp;logoColor=white"
-            alt="Vim"
-          />
+
           <img
             src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&amp;logo=graphql&amp;logoColor=white"
             alt="GraphQL"
@@ -134,6 +114,10 @@ export default function TechStack() {
           <img
             src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&amp;logo=python&amp;logoColor=ffdd54"
             alt="Python"
+          />
+          <img
+            src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&amp;style=for-the-badge&amp;logo=neovim&amp;logoColor=white"
+            alt="Neovim"
           />
         </div>
       </div>

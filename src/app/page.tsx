@@ -49,9 +49,10 @@ export default function Home() {
           </a>
         </div>
       </aside>
-      <div className="w-[700px] h-[500px] absolute right-0 z-0 images top-[100vh] md:top-0">
+      <div className="md:w-[700px] md:h-[500px] absolute z-0 images top-[120vh] md:top-[100vh] w-[60vh] md:right-0">
         <img src="/Grad_07.png" alt="" className="hidden md:block" />
         <img src="/Grad_02.png" alt="" />
+        <img src="/Grad_02.png" alt="" className="md:hidden" />
         <img src="/Grad_10.png" alt="" className="mt-[10vh]" />
         <img src="/Grad_05.png" alt="" className="mt-[10vh]" />
       </div>

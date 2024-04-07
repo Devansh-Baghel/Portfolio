@@ -34,11 +34,30 @@ body {
   background: rgba(255, 255, 255, 0.192);
   backdrop-filter: blur(10px);
   /* height: 250px; */
-  /* width: 600px; */
+  max-width: 600px;
 }
 
 .badge-container img {
   display: inline;
   margin-right: 8px;
   border-radius: 15px;
+}
+
+#projects-container {
+  background-image: url("/Grad_02.png");
+  background-size: contain;
+  background-position: top;
+}
+
+#tech-stack {
+  background-image: url("/Grad_10.png");
+  background-size: contain;
+  background-position: top;
+}
+
+#contact {
+  background-image: url("/Grad_05.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat-y;
 }

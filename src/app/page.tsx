@@ -6,7 +6,7 @@ import TechStack from "./components/Stack";
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen bg-white text-3xl hero max-w-[1400px] relative m-auto">
+    <main className="w-screen h-screen bg-white text-3xl hero max-w-[1400px] relative m-auto mb-[320vh]">
       <aside className="md:fixed text-slate-900 max-w-[600px]">
         <img
           src="/shape-76.svg"
@@ -30,10 +30,10 @@ export default function Home() {
           </a>
           .
         </p>
-        <button className="text-sm md:text-xl px-6 py-2 border-[2px] font-medium border-slate-900 rounded-[30px] mt-6 md:ml-[50px] ml-6 sm:ml-10 bg-slate-900 text-white">
+        <button className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-6 md:ml-[50px] ml-6 sm:ml-10 bg-slate-900 text-white">
           Résumé
         </button>
-        <button className="text-sm md:text-xl px-6 py-2 border-[2px] font-medium border-slate-900 rounded-[30px] mt-4 ml-[20px] ">
+        <button className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-4 ml-[20px] ">
           Contact me
         </button>
 
@@ -49,17 +49,45 @@ export default function Home() {
           </a>
         </div>
       </aside>
-      <div className="md:w-[700px] md:h-[500px] absolute z-0 images top-[120vh] md:top-[100vh] w-[60vh] md:right-0">
-        <img src="/Grad_07.png" alt="" className="hidden md:block" />
-        <img src="/Grad_02.png" alt="" />
-        <img src="/Grad_02.png" alt="" className="md:hidden" />
-        <img src="/Grad_10.png" alt="" className="mt-[250px] md:mt-[10vh]" />
-        <img src="/Grad_05.png" alt="" className="mt-[10vh]" />
+      <div className="md:w-[700px] md:h-[500px] absolute z-0 images top-[120vh] md:top-0 w-[60vh] md:right-0">
+        <img src="/Grad_07.png" alt="" className="hidden xl:block" />
       </div>
 
       <Projects />
 
       <TechStack />
+
+      <section
+        className="md:absolute md:right-12 top-[320vh] flex flex-col gap-6 mt-24 ml-6 sm:ml-10 md:ml-0 mb-80"
+        id="contact"
+      >
+        <h3 className="text-4xl mb-4 text-slate-900">Contact me</h3>
+        <form className="flex flex-col gap-6 text-xl placeholder:text-xl">
+          <input
+            className="wrapper p-6 md:h-20 border-slate-900 border-[3px] rounded-[30px] md:w-[600px] placeholder:text-xl placeholder:text-slate-800"
+            required
+            placeholder="Your name"
+            id="name"
+          />
+          <input
+            className="wrapper p-6 md:h-20 border-slate-900 border-[3px] rounded-[30px] md:w-[600px] placeholder:text-xl placeholder:text-slate-800"
+            required
+            placeholder="Your email"
+            id="email"
+            type="email"
+          />
+          <textarea
+            className="wrapper p-6 md:h-32 border-slate-900 border-[3px] rounded-[30px] md:w-[600px] placeholder:text-xl placeholder:text-slate-800"
+            required
+            placeholder="Your message"
+            id="message"
+          />
+
+          <button className="text-sm md:text-xl px-6 py-4 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white">
+            Send
+          </button>
+        </form>
+      </section>
     </main>
   );
 }

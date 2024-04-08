@@ -11,7 +11,7 @@ export default function Contact() {
   async function sendEmail(formdata: FormData) {
     if (!name || !message || !email) return;
 
-    axios.post("http://localhost:3000/api/email", { name, email, message });
+    axios.post(`/api/email`, { name, email, message });
   }
 
   return (

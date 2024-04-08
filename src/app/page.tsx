@@ -34,9 +34,12 @@ export default function Home() {
         <button className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-6 md:ml-[50px] ml-6 sm:ml-10 bg-slate-900 text-white">
           Résumé
         </button>
-        <button className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-4 ml-[20px] ">
+        <a
+          href="#contact"
+          className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-4 ml-[20px] "
+        >
           Contact me
-        </button>
+        </a>
 
         <div className="mt-6 md:ml-[50px] ml-6 sm:ml-10 flex gap-4 items-center">
           <a href="https://github.com/devansh-baghel" target="_blank">

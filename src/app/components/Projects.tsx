@@ -84,9 +84,10 @@ export default function Projects() {
         <a
           href="https://github.com/devansh-baghel"
           target="_blank"
-          className="wrapper text-center pt-3 h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px]"
+          className="wrapper text-center h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px] flex justify-center items-center gap-2"
         >
           More on github
+          <LinkIcon />
         </a>
       </div>
     </section>

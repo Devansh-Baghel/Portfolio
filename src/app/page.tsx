@@ -21,8 +21,8 @@ export default function Home() {
           Fullstack Developer
         </h3>
         <p className="md:ml-[50px] relative z-10 ml-6 sm:ml-10 text-xl mt-4">
-          Hello there 👋, I'm Devansh Baghel, and I build full-stack web apps
-          with{" "}
+          Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
+          apps with{" "}
           <a
             href="#tech-stack"
             className="underline cursor-pointer underline-offset-2"

@@ -4,12 +4,15 @@ import { FaCodeBranch as CodeIcon } from "react-icons/fa6";
 export default function Projects() {
   return (
     <section
-      className="md:absolute md:right-12 top-[100vh] mt-24 ml-6 sm:ml-10 md:ml-0"
+      className="md:absolute md:right-12 top-[100vh] mt-24"
       id="projects"
     >
       <h3 className="text-4xl mb-6 text-slate-900">Projects</h3>
 
-      <div id="projects-container" className="flex flex-col gap-6">
+      <div
+        id="projects-container"
+        className="flex flex-col gap-6 max-w-[83vw] mx-auto"
+      >
         <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
           <h3 className="text-[.9em] md:text-3xl text-slate-900">
             SpendSync 💸✨

@@ -7,14 +7,14 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen bg-white text-3xl hero max-w-[1400px] relative m-auto mb-[320vh]">
+    <main className="w-screen h-screen bg-white text-3xl hero md:max-w-[1400px] relative m-auto mb-[320vh]">
       <aside className="md:fixed text-slate-900 max-w-[600px]">
         <img
           src="/shape-76.svg"
           alt=""
           className="images absolute animate-spin animate-infinite animate-duration-[40000ms] animate-ease-in-out w-[400px] h-[400px] top-[-120px] left-[-80px]"
         />
-        <h1 className="text-[2em] relative z-10 md:text-[3.5em] md:absolute left-6 md:top-10 top-10 leading-tight">
+        <h1 className="text-[2em] relative z-10 md:text-[3.5em] md:absolute left-6 md:top-10 top-10 leading-tight max-w-[80vw]">
           Devansh Baghel
         </h1>
         <h3 className="md:mt-[350px] relative z-10 mt-28 ml-6 sm:ml-10 md:ml-[50px] text-[0.9em] md:text-[38px] text-slate-800">

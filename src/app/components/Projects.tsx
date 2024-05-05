@@ -3,40 +3,27 @@ import { FaCodeBranch as CodeIcon } from "react-icons/fa6";
 
 export default function Projects() {
   return (
-    <section
-      className="md:absolute md:right-12 top-[100vh] mt-24"
-      id="projects"
-    >
-      <h3 className="text-4xl mb-6 text-slate-900">Projects</h3>
+    <section id="projects">
+      <h3>Projects</h3>
 
-      <div
-        id="projects-container"
-        className="flex flex-col gap-6 max-w-[83vw] mx-auto"
-      >
-        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
-          <h3 className="text-[.9em] md:text-3xl text-slate-900">
-            SpendSync 💸✨
-          </h3>
-          <div className="text-lg flex flex-col md:flex-row gap-2 md:gap-4">
-            <a
-              target="_blank"
-              href="https://spendsync.baghel.dev"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white flex items-center gap-2"
-            >
+      <div id="projects-container">
+        <div>
+          <h3>SpendSync 💸✨</h3>
+          <div>
+            <a target="_blank" href="https://spendsync.baghel.dev">
               Deployed site
               <LinkIcon className="w-[20px] h-[20px] inline text-white" />
             </a>
             <a
               target="_blank"
               href="https://github.com/devansh-baghel/spendsync"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] flex items-center gap-2"
             >
               Source code
               <CodeIcon className="w-[17px] h-[17px] inline" />
             </a>
           </div>
           <div>
-            <p className="text-xl">
+            <p>
               An all in one financial planning and money tracking tool with a
               sleek and intuitive user interface.
             </p>
@@ -76,19 +63,13 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="wrapper p-6 md:h-24 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-[.9em] md:text-3xl text-slate-900 flex flex-col md:flex-row items-center gap-3">
+        <div>
+          <h3>
             CodeStash
-            <span className="italic text-2xl font-sans">
-              &minus; coming soon
-            </span>
+            <span>&minus; coming soon</span>
           </h3>
         </div>
-        <a
-          href="https://github.com/devansh-baghel"
-          target="_blank"
-          className="wrapper text-center h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px] flex justify-center items-center gap-2"
-        >
+        <a href="https://github.com/devansh-baghel" target="_blank">
           More on github
           <LinkIcon />
         </a>

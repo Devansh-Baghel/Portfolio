@@ -3,27 +3,32 @@ import { FaCodeBranch as CodeIcon } from "react-icons/fa6";
 
 export default function Projects() {
   return (
-    <section id="projects">
-      <h3>Projects</h3>
+    <section id="projects" className="text-slate-900 p-4 mt-20">
+      <h3 className="text-4xl mb-6">Projects</h3>
 
-      <div id="projects-container">
-        <div>
-          <h3>SpendSync 💸✨</h3>
-          <div>
-            <a target="_blank" href="https://spendsync.baghel.dev">
+      <div id="projects-container" className="flex flex-col gap-6">
+        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
+          <h3 className="text-[26px]">SpendSync 💸✨</h3>
+          <div className="text-lg flex flex-col md:flex-row gap-2 md:gap-4">
+            <a
+              target="_blank"
+              href="https://spendsync.baghel.dev"
+              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white flex items-center gap-2"
+            >
               Deployed site
               <LinkIcon className="w-[20px] h-[20px] inline text-white" />
             </a>
             <a
               target="_blank"
               href="https://github.com/devansh-baghel/spendsync"
+              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] flex items-center gap-2"
             >
               Source code
               <CodeIcon className="w-[17px] h-[17px] inline" />
             </a>
           </div>
           <div>
-            <p>
+            <p className="text-xl mb-2">
               An all in one financial planning and money tracking tool with a
               sleek and intuitive user interface.
             </p>
@@ -63,13 +68,17 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <h3>
             CodeStash
             <span>&minus; coming soon</span>
           </h3>
-        </div>
-        <a href="https://github.com/devansh-baghel" target="_blank">
+        </div> */}
+        <a 
+        href="https://github.com/devansh-baghel"
+        target="_blank"
+        className="wrapper text-center h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px] flex justify-center items-center gap-2"
+        >
           More on github
           <LinkIcon />
         </a>

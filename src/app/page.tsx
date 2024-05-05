@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 export default function Home() {
   return (
     <main className="">
-      <aside className="text-slate-900 pt-6 pl-6">
+      <aside className="text-slate-900 pt-6 pl-6 sm:p-6">
         <img 
         src="/shape-76.svg" 
         alt="" 
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </aside>
       <div>
-        <img src="/Grad_07.png" alt="" />
+        <img src="/Grad_07.png" alt="" className="hidden xl:block"/>
       </div>
 
       <Projects />

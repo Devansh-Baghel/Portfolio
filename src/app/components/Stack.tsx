@@ -1,6 +1,6 @@
 export default function TechStack() {
   return (
-    <section id="tech-stack">
+    <section id="tech-stack" className="text-slate-900 p-6">
       <h3>
         Tech Stack <span className="hidden md:inline">/ Tools</span>
       </h3>

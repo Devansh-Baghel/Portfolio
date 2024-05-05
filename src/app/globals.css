@@ -37,9 +37,14 @@ body {
   max-width: 600px;
 }
 
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .badge-container img {
   display: inline;
-  margin-right: 8px;
   border-radius: 15px;
 }
 

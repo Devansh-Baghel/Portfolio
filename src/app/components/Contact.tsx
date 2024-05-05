@@ -15,7 +15,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact">
+    <section id="contact" className="text-slate-900 p-6">
       <h3>Contact me</h3>
       <form action={sendEmail}>
         <input

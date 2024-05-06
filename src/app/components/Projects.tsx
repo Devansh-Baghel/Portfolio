@@ -4,11 +4,11 @@ import { FaCodeBranch as CodeIcon } from "react-icons/fa6";
 export default function Projects() {
   return (
     <section id="projects" className="text-slate-900 p-6 mt-32">
-      <h3 className="text-4xl mb-6">Projects</h3>
+      <h3 className="text-4xl mb-6">Selected Work</h3>
 
       <div id="projects-container" className="flex flex-col gap-6">
         <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
-          <h3 className="text-[26px]">SpendSync 💸✨</h3>
+          <h3 className="text-3xl">SpendSync 💸✨</h3>
           <div className="text-lg flex flex-col md:flex-row gap-2 md:gap-4">
             <a
               target="_blank"
@@ -74,10 +74,10 @@ export default function Projects() {
             <span>&minus; coming soon</span>
           </h3>
         </div> */}
-        <a 
-        href="https://github.com/devansh-baghel"
-        target="_blank"
-        className="wrapper text-center h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px] flex justify-center items-center gap-2"
+        <a
+          href="https://github.com/devansh-baghel"
+          target="_blank"
+          className="wrapper text-center h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px] flex justify-center items-center gap-2"
         >
           More on github
           <LinkIcon />

@@ -68,3 +68,44 @@ body {
   background-position: top;
   background-repeat: repeat-y;
 }
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp50 {
+  0% {
+    transform: translateY(70%);
+    opacity: 0;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp100 {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#my-name {
+  animation: slideUp 600ms ease-in;
+}
+#profession {
+  animation: slideUp50 600ms ease-in;
+}
+#more-info {
+  animation: slideUp100 600ms ease-in;
+}

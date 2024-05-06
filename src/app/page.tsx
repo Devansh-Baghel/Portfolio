@@ -1,6 +1,7 @@
 import { FaGithub as GithubIcon } from "react-icons/fa";
 import { FaLinkedin as LinkedinIcon } from "react-icons/fa";
 import { MdOutgoingMail as MailIcon } from "react-icons/md";
+import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
 import Projects from "./components/Projects";
 import TechStack from "./components/Stack";
 import Contact from "./components/Contact";
@@ -14,13 +15,16 @@ export default function Home() {
           alt=""
           className="images absolute z-[-10] w-[400px] h-[400px] top-[-120px] left-[-80px] animate-spin animate-infinite animate-duration-[40000ms] animate-ease-in-out"
         />
-        <h1 className="text-[60px] mt-4 leading-tight lg:text-[70px]">
+        <h1
+          className="text-[60px] mt-4 leading-tight lg:text-[70px]"
+          id="my-name"
+        >
           Devansh Baghel
         </h1>
-        <h3 className="text-[27px] mt-20 lg:text-[32px]">
+        <h3 className="text-[27px] mt-20 lg:text-[32px]" id="profession">
           Fullstack Developer
         </h3>
-        <p className="text-xl mt-4">
+        <p className="text-xl mt-4" id="more-info">
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
           apps with{" "}
           <a
@@ -48,6 +52,9 @@ export default function Home() {
           <a href="https://linkedin.com/in/devanshbaghel" target="_blank">
             <LinkedinIcon className="w-8 h-8" />
           </a>
+          <a href="https://twitter.com/DevanshBaghel5" target="_blank">
+            <TwitterIcon className="w-8 h-8" />
+          </a>
           <a href="mailto:hello@baghel.dev" target="_blank">
             <MailIcon className="w-10 h-10" />
           </a>
@@ -55,7 +62,12 @@ export default function Home() {
       </aside>
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
-        <img src="/Grad_07.png" alt="" className="hidden lg:block images" />
+        <img
+          src="/Grad_07.png"
+          alt=""
+          className="hidden lg:block images"
+          id="hero-img"
+        />
         <Projects />
         <TechStack />
         <Contact />

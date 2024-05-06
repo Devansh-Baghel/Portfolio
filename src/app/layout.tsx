@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Devansh Baghel",
+  title: "Devansh Baghel - Portfolio",
   description: "Portfolio of Devansh Baghel",
   icons: {
     icon: "/shape-76.svg",
@@ -23,10 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
+      <Toaster position="top-center" reverseOrder={false} />
       <body className={inter.className}>{children}</body>
     </html>
   );

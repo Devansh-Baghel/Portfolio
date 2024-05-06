@@ -7,16 +7,19 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="sm:max-w-[600px] mx-auto">
-      <aside className="text-slate-900 pl-10 pt-14 pr-6">
-        <img 
-        src="/shape-76.svg" 
-        alt="" 
-        className="absolute z-[-10] w-[400px] h-[400px] top-[-120px] left-[-80px] animate-spin animate-infinite animate-duration-[40000ms] animate-ease-in-out" 
-        
+    <main className="sm:max-w-[600px] mx-auto relative lg:max-w-[1400px]">
+      <aside className="text-slate-900 pl-10 pt-14 pr-6 lg:fixed lg:pl-20 lg:max-w-[500px]">
+        <img
+          src="/shape-76.svg"
+          alt=""
+          className="images absolute z-[-10] w-[400px] h-[400px] top-[-120px] left-[-80px] animate-spin animate-infinite animate-duration-[40000ms] animate-ease-in-out"
         />
-        <h1 className="text-[60px] mt-4 leading-tight">Devansh Baghel</h1>
-        <h3 className="text-[27px] mt-20">Fullstack Developer</h3>
+        <h1 className="text-[60px] mt-4 leading-tight lg:text-[70px]">
+          Devansh Baghel
+        </h1>
+        <h3 className="text-[27px] mt-20 lg:text-[32px]">
+          Fullstack Developer
+        </h3>
         <p className="text-xl mt-4">
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
           apps with{" "}
@@ -50,15 +53,13 @@ export default function Home() {
           </a>
         </div>
       </aside>
-      <div>
-        <img src="/Grad_07.png" alt="" className="hidden xl:block"/>
+
+      <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
+        <img src="/Grad_07.png" alt="" className="hidden lg:block images" />
+        <Projects />
+        <TechStack />
+        <Contact />
       </div>
-
-      <Projects />
-
-      <TechStack />
-
-      <Contact />
     </main>
   );
 }

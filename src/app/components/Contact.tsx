@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { useState } from "react";
-import toast from "react-hot-toast"
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -12,23 +12,31 @@ export default function Contact() {
   async function sendEmail(formdata: FormData) {
     if (!name || !message || !email) return;
 
-    const emailPromise = axios.post(`/api/email`, { name, email, message }).then(() => {
-      setName("");
-      setEmail("");
-      setMessage("");
-    })
+    const emailPromise = axios
+      .post(`/api/email`, { name, email, message })
+      .then(() => {
+        setName("");
+        setEmail("");
+        setMessage("");
+      });
 
     toast.promise(emailPromise, {
       loading: "Sending email...",
       success: "Thank you for contacting me!",
-      error: "Something went wrong while sending email :("
-    })
+      error: "Something went wrong while sending email :(",
+    });
   }
 
   return (
-    <section id="contact" className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-20">
+    <section
+      id="contact"
+      className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-20 2xl:pb-60"
+    >
       <h3 className="text-4xl">Contact me</h3>
-      <form action={sendEmail} className="flex flex-col gap-6 text-xl placeholder:text-xl">
+      <form
+        action={sendEmail}
+        className="flex flex-col gap-6 text-xl placeholder:text-xl"
+      >
         <input
           className="wrapper p-6 md:h-20 border-slate-900 border-[3px] rounded-[30px] placeholder:text-xl placeholder:text-slate-800 focus:outline-none"
           required
@@ -57,7 +65,7 @@ export default function Contact() {
           value={message}
         />
 
-        <button className="text-sm md:text-xl px-6 py-4 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white">
+        <button className="max-w-[600px] text-sm md:text-xl px-6 py-4 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white">
           Send
         </button>
       </form>

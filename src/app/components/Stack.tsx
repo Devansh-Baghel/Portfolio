@@ -1,12 +1,12 @@
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="text-slate-900 p-6">
-      <h3>
+    <section id="tech-stack" className="text-slate-900 p-4 flex flex-col gap-6 mt-20">
+      <h3 className="text-4xl">
         Tech Stack <span className="hidden md:inline">/ Tools</span>
       </h3>
 
-      <div>
-        <h3>Frontend</h3>
+      <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
+        <h3 className="text-3xl mb-4">Frontend</h3>
 
         <div className="badge-container">
           <img
@@ -47,8 +47,8 @@ export default function TechStack() {
           />
         </div>
       </div>
-      <div>
-        <h3>Backend</h3>
+      <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
+        <h3 className="text-3xl mb-4">Backend</h3>
 
         <div className="badge-container">
           <img
@@ -85,8 +85,8 @@ export default function TechStack() {
           />
         </div>
       </div>
-      <div>
-        <h3>Miscellaneous</h3>
+      <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
+        <h3 className="text-3xl mb-4">Miscellaneous</h3>
 
         <div className="badge-container">
           <img

@@ -3,7 +3,7 @@ import { FaCodeBranch as CodeIcon } from "react-icons/fa6";
 
 export default function Projects() {
   return (
-    <section id="projects" className="text-slate-900 p-4 mt-20">
+    <section id="projects" className="text-slate-900 p-6 mt-20">
       <h3 className="text-4xl mb-6">Projects</h3>
 
       <div id="projects-container" className="flex flex-col gap-6">

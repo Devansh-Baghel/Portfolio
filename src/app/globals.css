@@ -12,6 +12,7 @@ html {
 }
 
 h1,
+h2,
 h3,
 .font-chromate {
   font-family: "Chromate", sans-serif;
@@ -49,21 +50,21 @@ body {
 }
 
 #projects-container {
-  background-image: url("/Grad_02.png");
+  background-image: url("/Grad_02.webp");
   background-size: contain;
   background-position: top;
   background-repeat: repeat-y;
 }
 
 #tech-stack {
-  background-image: url("/Grad_10.png");
+  background-image: url("/Grad_10.webp");
   background-size: contain;
   background-position: top;
   background-repeat: repeat-y;
 }
 
 #contact {
-  background-image: url("/Grad_05.png");
+  background-image: url("/Grad_05.webp");
   background-size: contain;
   background-position: top;
   background-repeat: repeat-y;

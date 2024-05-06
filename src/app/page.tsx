@@ -21,9 +21,9 @@ export default function Home() {
         >
           Devansh Baghel
         </h1>
-        <h3 className="text-[27px] mt-20 lg:text-[32px]" id="profession">
+        <h2 className="text-[27px] mt-20 lg:text-[32px]" id="profession">
           Fullstack Developer
-        </h3>
+        </h2>
         <p className="text-xl mt-4" id="more-info">
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
           apps with{" "}
@@ -46,16 +46,28 @@ export default function Home() {
         </a>
 
         <div className="mt-6 flex gap-4 items-center">
-          <a href="https://github.com/devansh-baghel" target="_blank">
+          <a
+            href="https://github.com/devansh-baghel"
+            target="_blank"
+            aria-label="Github"
+          >
             <GithubIcon className="w-8 h-8" />
           </a>
-          <a href="https://linkedin.com/in/devanshbaghel" target="_blank">
+          <a
+            href="https://linkedin.com/in/devanshbaghel"
+            target="_blank"
+            aria-label="Linkedin"
+          >
             <LinkedinIcon className="w-8 h-8" />
           </a>
-          <a href="https://twitter.com/DevanshBaghel5" target="_blank">
+          <a
+            href="https://twitter.com/DevanshBaghel5"
+            target="_blank"
+            aria-label="Twitter"
+          >
             <TwitterIcon className="w-8 h-8" />
           </a>
-          <a href="mailto:hello@baghel.dev" target="_blank">
+          <a href="mailto:hello@baghel.dev" target="_blank" aria-label="Email">
             <MailIcon className="w-10 h-10" />
           </a>
         </div>
@@ -63,7 +75,7 @@ export default function Home() {
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
         <img
-          src="/Grad_07.png"
+          src="/Grad_07.webp"
           alt=""
           className="hidden lg:block images"
           id="hero-img"

@@ -52,12 +52,14 @@ body {
   background-image: url("/Grad_02.png");
   background-size: contain;
   background-position: top;
+  background-repeat: repeat-y;
 }
 
 #tech-stack {
   background-image: url("/Grad_10.png");
   background-size: contain;
   background-position: top;
+  background-repeat: repeat-y;
 }
 
 #contact {

@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="sm:max-w-[600px] mx-auto">
       <aside className="text-slate-900 pl-10 pt-14 pr-6">
         <img 
         src="/shape-76.svg" 

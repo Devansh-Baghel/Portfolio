@@ -35,12 +35,16 @@ export default function Home() {
           </a>
           .
         </p>
-        <button className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-6 bg-slate-900 text-white">
+        <a
+          href="#"
+          target="_blank"
+          className="text-sm inline-block md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-6 bg-slate-900 text-white"
+        >
           Résumé
-        </button>
+        </a>
         <a
           href="#contact"
-          className="text-sm md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] ml-[20px]"
+          className="text-sm inline-block md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] ml-[20px]"
         >
           Contact me
         </a>

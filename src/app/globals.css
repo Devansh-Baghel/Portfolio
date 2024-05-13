@@ -110,3 +110,9 @@ body {
 #more-info {
   animation: slideUp100 600ms ease-in;
 }
+
+#down-arrow {
+  top: calc(100vh - 80px);
+  left: calc(50% - 14px);
+  z-index: 2;
+}

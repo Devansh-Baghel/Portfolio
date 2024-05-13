@@ -5,6 +5,7 @@ import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
 import Projects from "./components/Projects";
 import TechStack from "./components/Stack";
 import Contact from "./components/Contact";
+import ScrollButton from "./components/ScrollButton";
 
 export default function Home() {
   return (
@@ -76,6 +77,8 @@ export default function Home() {
           </a>
         </div>
       </aside>
+
+      <ScrollButton />
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
         <img

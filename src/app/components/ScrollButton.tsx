@@ -3,14 +3,14 @@ import { TbArrowNarrowDown as DownArrowIcon } from "react-icons/tb";
 import React, { useState, useEffect } from "react";
 
 const ScrollButton = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(window.innerWidth > 1100);
 
   const handleScroll = () => {
     // Check if the user has scrolled more than 100 pixels
     if (window.scrollY > 100) {
       setIsVisible(false);
     } else {
-      setIsVisible(true);
+      setIsVisible(window.innerWidth > 1100);
     }
   };
 
@@ -36,18 +36,5 @@ const ScrollButton = () => {
     </div>
   );
 };
-
-// const scrollButtonStyle = {
-//   position: "fixed",
-//   bottom: "50px",
-//   right: "50px",
-//   padding: "10px 20px",
-//   backgroundColor: "#007BFF",
-//   color: "#FFF",
-//   border: "none",
-//   borderRadius: "5px",
-//   cursor: "pointer",
-//   zIndex: 1000,
-// };
 
 export default ScrollButton;

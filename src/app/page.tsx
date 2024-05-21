@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </aside>
 
-      <ScrollButton />
+      {/* <ScrollButton /> */}
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
         <img

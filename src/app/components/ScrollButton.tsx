@@ -3,25 +3,36 @@ import { TbArrowNarrowDown as DownArrowIcon } from "react-icons/tb";
 import React, { useState, useEffect } from "react";
 
 const ScrollButton = () => {
-  const [isVisible, setIsVisible] = useState(window.innerWidth > 1100);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMobileScreen, setIsMobileScreen] = useState(true);
+
+  const handleResize = () => {
+    setIsMobileScreen(window.innerWidth <= 768);
+  };
 
   const handleScroll = () => {
-    // Check if the user has scrolled more than 100 pixels
     if (window.scrollY > 100) {
       setIsVisible(false);
     } else {
-      setIsVisible(window.innerWidth > 1100);
+      setIsVisible(!isMobileScreen);
     }
   };
 
   useEffect(() => {
-    // Add event listener for scroll
     window.addEventListener("scroll", handleScroll);
-    // Clean up the event listener on component unmount
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if (isMobileScreen) {
+    return null;
+  }
 
   return (
     <div>

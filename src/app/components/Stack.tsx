@@ -10,6 +10,10 @@ export default function TechStack() {
 
         <div className="badge-container">
           <img
+            src="https://img.shields.io/badge/Next-black?style=for-the-badge&amp;logo=next.js&amp;logoColor=white"
+            alt="Next JS"
+          />
+          <img
             src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&amp;logo=typescript&amp;logoColor=white"
             alt="TypeScript"
           />
@@ -30,10 +34,6 @@ export default function TechStack() {
             alt="React Router"
           />
           <img
-            src="https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&amp;logo=react"
-            alt="Context-API"
-          />
-          <img
             src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&amp;logo=html5&amp;logoColor=white"
             alt="HTML5"
           />
@@ -51,10 +51,6 @@ export default function TechStack() {
         <h3 className="text-3xl mb-4">Backend</h3>
 
         <div className="badge-container">
-          <img
-            src="https://img.shields.io/badge/Next-black?style=for-the-badge&amp;logo=next.js&amp;logoColor=white"
-            alt="Next JS"
-          />
           <img
             src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white"
             alt="NodeJS"

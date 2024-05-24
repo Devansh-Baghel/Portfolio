@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import TechStack from "./components/Stack";
 import Contact from "./components/Contact";
 import ScrollButton from "./components/ScrollButton";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -81,11 +82,12 @@ export default function Home() {
       <ScrollButton />
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
-        <img
+        <Image
           src="/Grad_07.webp"
-          alt=""
+          alt="Backgrouno gradient"
+          width={700}
+          height={700}
           className="hidden lg:block images"
-          id="hero-img"
         />
         <Projects />
         <TechStack />

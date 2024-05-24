@@ -1,1 +1,5 @@
 - [ ] Add external link icons in all links that open in a new tab
+- [ ] Add blog section
+- [ ] Add more stuff that a page visitor can do/interact with
+- [ ] Make resume
+- [ ] Add resume

@@ -1,5 +1,28 @@
 import Image from "next/image";
 
+const frontend = [
+  "next.svg",
+  "ts.svg",
+  "js.svg",
+  "react.svg",
+  "react_query.svg",
+  "tailwindcss.svg",
+  "html.svg",
+  "css.svg",
+];
+
+const backend = [
+  "mongodb.svg",
+  "node.svg",
+  "express.svg",
+  "postman.svg",
+  "docker.svg",
+  "heroku.svg",
+  "python.svg",
+];
+
+const misc = ["linux.svg", "git.svg", "github.svg", "bash.svg", "neovim.svg"];
+
 // TODO: add tooltip on hover to these icons
 export default function TechStack() {
   return (
@@ -14,7 +37,6 @@ export default function TechStack() {
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl mb-4">Frontend</h3>
 
-        {/* TODO: use skillicons.dev instead of this, looks cluttered */}
         {/* <div className="badge-container">
           <img
             src="https://img.shields.io/badge/Next-black?style=for-the-badge&amp;logo=next.js&amp;logoColor=white"
@@ -53,13 +75,23 @@ export default function TechStack() {
             alt="TailwindCSS"
           />
         </div> */}
-        <Image
-          // fill
+        {/* <Image
           height={100}
           width={400}
           alt="Frontend Tools"
           src="https://go-skill-icons.vercel.app/api/icons?i=nextjs,ts,js,react,reactquery,tailwind,html,css"
-        />
+        /> */}
+        <div className="flex flex-wrap gap-4">
+          {frontend.map((elm) => (
+            <Image
+              height={45}
+              width={45}
+              alt={elm}
+              key={elm}
+              src={`/skillicons/${elm}`}
+            />
+          ))}
+        </div>
       </div>
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl mb-4">Backend</h3>
@@ -94,13 +126,24 @@ export default function TechStack() {
             alt="Vercel"
           />
         </div> */}
-        <Image
+        {/* <Image
           // fill
           height={50}
           width={400}
           alt="Backend Tools"
           src="https://go-skill-icons.vercel.app/api/icons?i=mongodb,nodejs,express,postman,docker,heroku,python,asd"
-        />
+        /> */}
+        <div className="flex flex-wrap gap-4">
+          {backend.map((elm) => (
+            <Image
+              height={45}
+              width={45}
+              alt={elm}
+              key={elm}
+              src={`/skillicons/${elm}`}
+            />
+          ))}
+        </div>
       </div>
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl mb-4">Miscellaneous</h3>
@@ -137,13 +180,24 @@ export default function TechStack() {
           />
         </div> */}
 
-        <Image
+        {/* <Image
           // fill
           height={80}
           width={400}
           alt="Miscellaneous Tools"
           src="https://go-skill-icons.vercel.app/api/icons?i=linux,git,github,bash,neovim,asd,asd,asd"
-        />
+        /> */}
+        <div className="flex flex-wrap gap-4">
+          {misc.map((elm) => (
+            <Image
+              height={45}
+              width={45}
+              alt={elm}
+              key={elm}
+              src={`/skillicons/${elm}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

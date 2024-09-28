@@ -1,6 +1,12 @@
+import Image from "next/image";
+
+// TODO: add tooltip on hover to these icons
 export default function TechStack() {
   return (
-    <section id="tech-stack" className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-0">
+    <section
+      id="tech-stack"
+      className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-0"
+    >
       <h3 className="text-4xl">
         Tech Stack <span className="hidden md:inline">/ Tools</span>
       </h3>
@@ -8,7 +14,8 @@ export default function TechStack() {
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl mb-4">Frontend</h3>
 
-        <div className="badge-container">
+        {/* TODO: use skillicons.dev instead of this, looks cluttered */}
+        {/* <div className="badge-container">
           <img
             src="https://img.shields.io/badge/Next-black?style=for-the-badge&amp;logo=next.js&amp;logoColor=white"
             alt="Next JS"
@@ -45,12 +52,19 @@ export default function TechStack() {
             src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&amp;logo=tailwind-css&amp;logoColor=white"
             alt="TailwindCSS"
           />
-        </div>
+        </div> */}
+        <Image
+          // fill
+          height={100}
+          width={400}
+          alt="Frontend Tools"
+          src="https://go-skill-icons.vercel.app/api/icons?i=nextjs,ts,js,react,reactquery,tailwind,html,css"
+        />
       </div>
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl mb-4">Backend</h3>
 
-        <div className="badge-container">
+        {/* <div className="badge-container">
           <img
             src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white"
             alt="NodeJS"
@@ -79,12 +93,19 @@ export default function TechStack() {
             src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&amp;logo=vercel&amp;logoColor=white"
             alt="Vercel"
           />
-        </div>
+        </div> */}
+        <Image
+          // fill
+          height={50}
+          width={400}
+          alt="Backend Tools"
+          src="https://go-skill-icons.vercel.app/api/icons?i=mongodb,nodejs,express,postman,docker,heroku,python,asd"
+        />
       </div>
       <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
         <h3 className="text-3xl mb-4">Miscellaneous</h3>
 
-        <div className="badge-container">
+        {/* <div className="badge-container">
           <img
             src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black"
             alt="Linux"
@@ -114,7 +135,15 @@ export default function TechStack() {
             src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&amp;style=for-the-badge&amp;logo=neovim&amp;logoColor=white"
             alt="Neovim"
           />
-        </div>
+        </div> */}
+
+        <Image
+          // fill
+          height={80}
+          width={400}
+          alt="Miscellaneous Tools"
+          src="https://go-skill-icons.vercel.app/api/icons?i=linux,git,github,bash,neovim,asd,asd,asd"
+        />
       </div>
     </section>
   );

@@ -3,3 +3,5 @@
 - [ ] Add more stuff that a page visitor can do/interact with
 - [ ] Make resume
 - [ ] Add resume
+- [ ] add all meta tags https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
+- [ ] https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image

@@ -32,7 +32,7 @@ export default function Contact() {
       id="contact"
       className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-20 2xl:pb-60"
     >
-      <h3 className="text-4xl">Contact me</h3>
+      <h3 className="text-4xl contact-title mb-4">Contact me</h3>
       <form
         action={sendEmail}
         className="flex flex-col gap-6 text-xl placeholder:text-xl"

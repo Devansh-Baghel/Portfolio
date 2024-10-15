@@ -57,7 +57,9 @@ body {
 }
 
 #tech-stack {
-  background-image: url("/Grad_10.webp");
+  /* background-image: url("/Grad_10.webp"); */
+  /* background-image: url("/image223.webp"); */
+  background-image: url("/image224.webp");
   background-size: contain;
   background-position: top;
   background-repeat: repeat-y;
@@ -125,3 +127,53 @@ body {
   writing-mode: tb-rl;
   transform: rotate(deg);
 } */
+
+/* .stack-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2.2fr 0.9fr;
+} */
+
+.tech-stack-title,
+.projects-title,
+.contact-title {
+  position: relative;
+  z-index: 10;
+}
+
+.tech-stack-title::before,
+.projects-title::before,
+.contact-title::before {
+  content: "";
+  opacity: 0.3;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 20px;
+  height: 50%;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: -1;
+}
+
+.tech-stack-title::before {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 186, 59) 0%,
+    rgba(255, 165, 0, 0) 100%
+  );
+  width: 80%;
+}
+
+.projects-title::before {
+  background: linear-gradient(
+    90deg,
+    rgb(82, 151, 255) 0%,
+    rgba(255, 165, 0, 0) 100%
+  );
+  width: 60%;
+}
+
+.contact-title::before {
+  background: linear-gradient(90deg, #f956a6 0%, rgba(255, 165, 0, 0) 100%);
+  width: 45%;
+}

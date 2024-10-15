@@ -120,8 +120,8 @@ body {
 .glow {
   filter: url(#glow);
 }
-
+/* 
 .vertical {
   writing-mode: tb-rl;
-  transform: rotate(0deg);
-}
+  transform: rotate(deg);
+} */

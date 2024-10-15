@@ -1,6 +1,6 @@
 # 💼 Portfolio - [baghel.dev](https://baghel.dev/)
 
-Welcome to the repository for my personal portfolio website, [baghel.dev](https://baghel.dev/), showcasing my projects, skills, and professional experience as a full-stack developer. This portfolio is built with a modern tech stack to highlight my expertise in web development and software engineering.
+Welcome to the repository for my personal portfolio website, [baghel.dev](https://baghel.dev/), showcasing my projects, skills, and professional experience as a full-stack developer.
 
 ## 🛠️ Tech Stack
 - Frontend: Next.js 14, React 18

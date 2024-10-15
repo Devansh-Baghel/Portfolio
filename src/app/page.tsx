@@ -12,8 +12,10 @@ export default function Home() {
   return (
     <main className="sm:max-w-[600px] mx-auto relative lg:max-w-[1400px]">
       <aside className="text-slate-900 pl-10 pt-14 pr-6 lg:fixed lg:pl-20 lg:max-w-[500px]">
-        <img
-          src="/shape-76.svg"
+        <Image
+          src="/shape-76.png"
+          height={400}
+          width={400}
           alt=""
           className="images absolute z-[-10] w-[400px] h-[400px] top-[-120px] left-[-80px] animate-spin animate-infinite animate-duration-[40000ms] animate-ease-in-out"
         />

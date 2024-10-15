@@ -5,3 +5,5 @@
 - [ ] Add resume
 - [ ] add all meta tags https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
 - [ ] https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image
+- [ ] https://nextjs.org/docs/app/building-your-application/optimizing/fonts
+- [ ] add tailwind-motion https://github.com/romboHQ/tailwindcss-motion

@@ -34,10 +34,10 @@ export default function TechStack() {
         Tech Stack <span className="hidden md:inline">/ Tools</span>
       </h3>
 
-      <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
-        <h3 className="text-3xl mb-4">Frontend</h3>
+      <div className="wrapper p-6 border-slate-900 border-[2px] rounded-[30px] flex flex-row-reverse justify-between gap-6 items-center">
+        <h3 className="text-3xl vertical">Frontend</h3>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 max-w-80">
           {frontend.map((elm) => (
             <Image
               height={45}
@@ -49,10 +49,10 @@ export default function TechStack() {
           ))}
         </div>
       </div>
-      <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
-        <h3 className="text-3xl mb-4">Backend</h3>
+      <div className="wrapper p-6 border-slate-900 border-[2px] rounded-[30px] flex flex-row-reverse justify-between gap-6 items-center">
+        <h3 className="text-3xl vertical">Backend</h3>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 max-w-80">
           {backend.map((elm) => (
             <Image
               height={45}
@@ -64,10 +64,10 @@ export default function TechStack() {
           ))}
         </div>
       </div>
-      <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px]">
-        <h3 className="text-3xl mb-4">Miscellaneous</h3>
+      <div className="wrapper p-6 border-slate-900 border-[2px] rounded-[30px] flex flex-row-reverse justify-between gap-6 items-center">
+        <h3 className="text-3xl vertical">Misc.</h3>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 max-w-80">
           {misc.map((elm) => (
             <Image
               height={45}

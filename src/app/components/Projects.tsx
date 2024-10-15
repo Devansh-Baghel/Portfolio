@@ -6,7 +6,7 @@ import { VscGitStash as CodeStashIcon } from "react-icons/vsc";
 export default function Projects() {
   return (
     <section id="projects" className="text-slate-900 p-6 mt-32">
-      <h3 className="text-4xl mb-6">Selected Work</h3>
+      <h3 className="text-4xl mb-6 motion-preset-blur-right">Selected Work</h3>
 
       <div id="projects-container" className="flex flex-col gap-6">
         <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">

@@ -70,7 +70,7 @@ body {
   background-repeat: repeat-y;
 }
 
-@keyframes slideUp {
+/* @keyframes slideUp {
   0% {
     transform: translateY(20%);
     opacity: 0;
@@ -109,10 +109,19 @@ body {
 }
 #more-info {
   animation: slideUp100 600ms ease-in;
-}
+} */
 
 #down-arrow {
   top: calc(100vh - 80px);
   left: calc(50% - 14px);
   z-index: 2;
+}
+
+.glow {
+  filter: url(#glow);
+}
+
+.vertical {
+  writing-mode: tb-rl;
+  transform: rotate(0deg);
 }

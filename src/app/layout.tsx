@@ -6,6 +6,8 @@ import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// TODO: add opengraph images
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata#opengraph
 export const metadata: Metadata = {
   title: "Devansh Baghel - Portfolio",
   description: "Portfolio of Devansh Baghel",

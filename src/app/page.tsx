@@ -48,8 +48,9 @@ export default function Home() {
           .
         </p>
         <a
-          href="#"
+          href="/resume.pdf"
           target="_blank"
+          rel="noopener noreferrer"
           className="text-sm motion-preset-slide-right motion-delay-500 inline-block md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-6 bg-slate-900 text-white"
         >
           Résumé

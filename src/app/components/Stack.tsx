@@ -28,17 +28,17 @@ export default function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-0 max-w-[630px]"
+      className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900"
     >
-      <h3 className="text-4xl tech-stack-title mb-4">
+      <h3 className="tech-stack-title mb-4 text-4xl">
         Tech Stack <span className="hidden md:inline">/ Tools</span>
       </h3>
 
-      <div className="md:grid flex flex-col gap-6 grid-rows-[1fr_1fr] grid-cols-[2.2fr_0.9fr] stack-wrapper">
-        <div className="wrapper row-start-1 row-end-2 col-start-1 col-end-2 p-6 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-3xl mb-4 vertical">Frontend</h3>
+      <div className="stack-wrapper flex grid-cols-[2.2fr_0.9fr] grid-rows-[1fr_1fr] flex-col gap-6 md:grid">
+        <div className="wrapper col-start-1 col-end-2 row-start-1 row-end-2 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+          <h3 className="vertical mb-4 text-3xl">Frontend</h3>
 
-          <div className="flex flex-wrap gap-4 max-w-80">
+          <div className="flex max-w-80 flex-wrap gap-4">
             {frontend.map((elm) => (
               <Image
                 height={45}
@@ -50,10 +50,10 @@ export default function TechStack() {
             ))}
           </div>
         </div>
-        <div className="wrapper row-start-2 row-end-3 col-start-1 col-end-2 p-6 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-3xl mb-4 vertical">Backend</h3>
+        <div className="wrapper col-start-1 col-end-2 row-start-2 row-end-3 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+          <h3 className="vertical mb-4 text-3xl">Backend</h3>
 
-          <div className="flex flex-wrap gap-4 max-w-80">
+          <div className="flex max-w-80 flex-wrap gap-4">
             {backend.map((elm) => (
               <Image
                 height={45}
@@ -65,10 +65,10 @@ export default function TechStack() {
             ))}
           </div>
         </div>
-        <div className="wrapper row-start-1 row-end-3 col-start-2 col-end-3 p-6 border-slate-900 border-[3px] rounded-[30px]">
-          <h3 className="text-3xl mb-4 vertical">Misc.</h3>
+        <div className="wrapper col-start-2 col-end-3 row-start-1 row-end-3 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+          <h3 className="vertical mb-4 text-3xl">Misc.</h3>
 
-          <div className="flex flex-wrap gap-4 max-w-80">
+          <div className="flex max-w-80 flex-wrap gap-4">
             {misc.map((elm) => (
               <Image
                 height={45}

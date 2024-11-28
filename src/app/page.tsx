@@ -8,40 +8,42 @@ import Contact from "./components/Contact";
 import ScrollButton from "./components/ScrollButton";
 import Image from "next/image";
 import Glow from "./components/Glow";
+import { darkButton, lightButton } from "@/utils/constants";
+import { twMerge } from "tailwind-merge";
 
 export default function Home() {
   return (
-    <main className="sm:max-w-[600px] mx-auto relative lg:max-w-[1400px]">
-      <aside className="text-slate-900 pl-10 pt-14 pr-6 lg:fixed lg:pl-20 lg:max-w-[500px]">
+    <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
+      <aside className="pl-10 pr-6 pt-14 text-slate-900 lg:fixed lg:max-w-[500px] lg:pl-20">
         <Image
           src="/shape-76.svg"
           height={400}
           width={400}
           alt=""
-          className="images glow absolute z-[-10] w-[400px] h-[400px] top-[-120px] left-[-80px] animate-spin animate-infinite animate-duration-[40000ms] animate-ease-in-out"
+          className="images glow absolute left-[-80px] top-[-120px] z-[-10] h-[400px] w-[400px] animate-spin animate-duration-[40000ms] animate-infinite animate-ease-in-out"
         />
         <Glow />
         <h1
-          className="text-[60px] mt-4 leading-tight lg:text-[70px] motion-preset-slide-right"
+          className="motion-preset-slide-right mt-4 text-[60px] leading-tight lg:text-[70px]"
           id="my-name"
         >
           Devansh Baghel
         </h1>
         <h2
-          className="text-[27px] mt-20 lg:text-[32px] motion-preset-slide-right motion-delay-200"
+          className="motion-preset-slide-right mt-20 text-[27px] motion-delay-200 lg:text-[32px]"
           id="profession"
         >
           Fullstack Developer
         </h2>
         <p
-          className="text-xl mt-4 motion-preset-slide-right motion-delay-300"
+          className="motion-preset-slide-right mt-4 text-xl motion-delay-300"
           id="more-info"
         >
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
           apps with{" "}
           <a
             href="#tech-stack"
-            className="underline cursor-pointer underline-offset-2 "
+            className="cursor-pointer underline underline-offset-2"
           >
             modern tools
           </a>
@@ -51,41 +53,41 @@ export default function Home() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm motion-preset-slide-right motion-delay-500 inline-block md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] mt-6 bg-slate-900 text-white"
+          className="motion-preset-slide-right mt-6 inline-block rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl xl:border-[3px]"
         >
           Résumé
         </a>
         <a
           href="#contact"
-          className="text-sm motion-preset-slide-right motion-delay-500 inline-block md:text-xl px-6 py-2 border-2 xl:border-[3px] font-medium border-slate-900 rounded-[30px] ml-[20px]"
+          className="motion-preset-slide-right ml-[20px] inline-block rounded-[30px] border-[3px] border-slate-900 px-6 py-2 text-sm font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl"
         >
           Contact me
         </a>
 
-        <div className="mt-6 flex gap-4 items-center motion-preset-slide-right motion-delay-500">
+        <div className="motion-preset-slide-right mt-6 flex items-center gap-4 motion-delay-500">
           <a
             href="https://github.com/devansh-baghel"
             target="_blank"
             aria-label="Github"
           >
-            <GithubIcon className="w-8 h-8" />
+            <GithubIcon className="h-8 w-8" />
           </a>
           <a
             href="https://linkedin.com/in/devanshbaghel"
             target="_blank"
             aria-label="Linkedin"
           >
-            <LinkedinIcon className="w-8 h-8" />
+            <LinkedinIcon className="h-8 w-8" />
           </a>
           <a
             href="https://twitter.com/DevanshBaghel5"
             target="_blank"
             aria-label="Twitter"
           >
-            <TwitterIcon className="w-8 h-8" />
+            <TwitterIcon className="h-8 w-8" />
           </a>
           <a href="mailto:hello@baghel.dev" target="_blank" aria-label="Email">
-            <MailIcon className="w-10 h-10" />
+            <MailIcon className="h-10 w-10" />
           </a>
         </div>
       </aside>
@@ -98,7 +100,7 @@ export default function Home() {
           alt="Backgrouno gradient"
           width={700}
           height={700}
-          className="hidden lg:block images motion-preset-slide-left motion-duration-1500"
+          className="images motion-preset-slide-left hidden motion-duration-1500 lg:block"
         />
         <Projects />
         <TechStack />

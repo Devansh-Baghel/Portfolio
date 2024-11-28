@@ -5,14 +5,14 @@ import { VscGitStash as CodeStashIcon } from "react-icons/vsc";
 // TODO: convert all these images to next/image
 export default function Projects() {
   return (
-    <section id="projects" className="text-slate-900 p-6 mt-32">
-      <h3 className="text-4xl mb-8 motion-preset-blur-right projects-title">
+    <section id="projects" className="mt-32 p-6 text-slate-900">
+      <h3 className="projects-title motion-preset-blur-right mb-8 text-4xl">
         Selected Work
       </h3>
 
       <div id="projects-container" className="flex flex-col gap-6">
-        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
-          <h3 className="text-3xl flex gap-4">
+        <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+          <h3 className="flex gap-4 text-3xl">
             CodeStash
             <CodeStashIcon className="text-green" />
           </h3>
@@ -24,26 +24,26 @@ export default function Projects() {
             // width={400}
             // height={400}
           /> */}
-          <div className="text-lg flex flex-col md:flex-row gap-2 md:gap-4">
+          <div className="flex flex-col gap-2 text-lg md:flex-row md:gap-4">
             <a
               target="_blank"
               href="https://codestash.baghel.dev"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white flex items-center gap-2"
+              className="flex items-center gap-2 rounded-[30px] border-[2px] border-slate-900 bg-slate-900 px-6 py-1 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
               Deployed site
-              <LinkIcon className="w-[20px] h-[20px] inline text-white" />
+              <LinkIcon className="inline h-[20px] w-[20px] text-white" />
             </a>
             <a
               target="_blank"
               href="https://github.com/devansh-baghel/codestash"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] flex items-center gap-2"
+              className="flex items-center gap-2 rounded-[30px] border-[2px] border-slate-900 px-6 py-1 font-medium shadow-[2px_2px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
               Source code
-              <CodeIcon className="w-[17px] h-[17px] inline" />
+              <CodeIcon className="inline h-[17px] w-[17px]" />
             </a>
           </div>
           <div>
-            <p className="text-xl mb-2">
+            <p className="mb-2 text-xl">
               The best way to save, store and share your code snippets.
             </p>
             <div className="badge-container">
@@ -90,7 +90,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="wrapper p-6 border-slate-900 border-[3px] rounded-[30px] flex flex-col gap-4">
+        <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
           <h3 className="text-3xl">SpendSync 💸✨</h3>
           {/* <Image
             src="/spendsync.png"
@@ -100,26 +100,26 @@ export default function Projects() {
             // width={400}
             // height={400}
           /> */}
-          <div className="text-lg flex flex-col md:flex-row gap-2 md:gap-4">
+          <div className="flex flex-col gap-2 text-lg md:flex-row md:gap-4">
             <a
               target="_blank"
               href="https://spendsync.baghel.dev"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white flex items-center gap-2"
+              className="flex items-center gap-2 rounded-[30px] border-[2px] border-slate-900 bg-slate-900 px-6 py-1 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
               Deployed site
-              <LinkIcon className="w-[20px] h-[20px] inline text-white" />
+              <LinkIcon className="inline h-[20px] w-[20px] text-white" />
             </a>
             <a
               target="_blank"
               href="https://github.com/devansh-baghel/spendsync"
-              className="px-6 py-1 border-[2px] font-medium border-slate-900 rounded-[30px] flex items-center gap-2"
+              className="flex items-center gap-2 rounded-[30px] border-[2px] border-slate-900 px-6 py-1 font-medium shadow-[2px_2px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
               Source code
-              <CodeIcon className="w-[17px] h-[17px] inline" />
+              <CodeIcon className="inline h-[17px] w-[17px]" />
             </a>
           </div>
           <div>
-            <p className="text-xl mb-2">
+            <p className="mb-2 text-xl">
               An all in one financial planning and money tracking tool with a
               sleek and intuitive user interface.
             </p>
@@ -171,7 +171,7 @@ export default function Projects() {
         <a
           href="https://github.com/devansh-baghel"
           target="_blank"
-          className="wrapper text-center h-16 border-slate-900 border-[3px] font-medium rounded-[30px] text-[20px] flex justify-center items-center gap-2"
+          className="wrapper flex h-16 items-center justify-center gap-2 rounded-[30px] border-[3px] border-slate-900 text-center text-[20px] font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
         >
           More on github
           <LinkIcon />

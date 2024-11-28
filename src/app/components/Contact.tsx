@@ -30,15 +30,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="text-slate-900 p-6 flex flex-col gap-6 mt-32 pb-20 2xl:pb-60"
+      className="mt-32 flex flex-col gap-6 p-6 pb-20 text-slate-900 2xl:pb-60"
     >
-      <h3 className="text-4xl contact-title mb-4">Contact me</h3>
+      <h3 className="contact-title mb-4 text-4xl">Contact me</h3>
       <form
         action={sendEmail}
         className="flex flex-col gap-6 text-xl placeholder:text-xl"
       >
         <input
-          className="wrapper p-6 md:h-20 border-slate-900 border-[3px] rounded-[30px] placeholder:text-xl placeholder:text-slate-800 focus:outline-none"
+          className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-20"
           required
           placeholder="Your name"
           id="name"
@@ -47,7 +47,7 @@ export default function Contact() {
           value={name}
         />
         <input
-          className="wrapper p-6 md:h-20 border-slate-900 border-[3px] rounded-[30px] placeholder:text-xl placeholder:text-slate-800 focus:outline-none"
+          className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-20"
           required
           placeholder="Your email"
           id="email"
@@ -57,7 +57,7 @@ export default function Contact() {
           value={email}
         />
         <textarea
-          className="wrapper p-6 md:h-32 border-slate-900 border-[3px] rounded-[30px] placeholder:text-xl placeholder:text-slate-800 focus:outline-none"
+          className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-32"
           required
           placeholder="Your message"
           id="message"
@@ -65,7 +65,7 @@ export default function Contact() {
           value={message}
         />
 
-        <button className="max-w-[600px] text-sm md:text-xl px-6 py-4 border-[2px] font-medium border-slate-900 rounded-[30px] bg-slate-900 text-white">
+        <button className="max-w-[600px] rounded-[30px] border-[2px] border-slate-900 bg-slate-900 px-6 py-4 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl">
           Send
         </button>
       </form>

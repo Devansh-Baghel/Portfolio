@@ -136,14 +136,16 @@ body {
 
 .tech-stack-title,
 .projects-title,
-.contact-title {
+.contact-title,
+.gitroll-title {
   position: relative;
   z-index: 10;
 }
 
 .tech-stack-title::before,
 .projects-title::before,
-.contact-title::before {
+.contact-title::before,
+.gitroll-title::before {
   content: "";
   opacity: 0.3;
   border-top-left-radius: 40px;
@@ -162,6 +164,15 @@ body {
     rgba(255, 165, 0, 0) 100%
   );
   width: 80%;
+}
+
+.gitroll-title::before {
+  background: linear-gradient(
+    90deg,
+    rgb(116, 241, 14) 0%,
+    rgba(255, 165, 0, 0) 100%
+  );
+  width: 60%;
 }
 
 .projects-title::before {

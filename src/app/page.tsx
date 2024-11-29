@@ -10,6 +10,7 @@ import Image from "next/image";
 import Glow from "./components/Glow";
 import { darkButton, lightButton } from "@/utils/constants";
 import { twMerge } from "tailwind-merge";
+import GitRoll from "./components/GitRoll";
 
 export default function Home() {
   return (
@@ -104,6 +105,7 @@ export default function Home() {
         />
         <Projects />
         <TechStack />
+        <GitRoll />
         <Contact />
       </div>
     </main>

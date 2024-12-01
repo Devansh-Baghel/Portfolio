@@ -1,9 +1,16 @@
 - [ ] Add external link icons in all links that open in a new tab
 - [ ] Add blog section
-- [ ] Add more stuff that a page visitor can do/interact with
-- [ ] Make resume
-- [ ] Add resume
+- [x] Make page feel more interactive
+- [x] Make resume
+- [x] Add resume
 - [ ] add all meta tags https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
 - [ ] https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image
 - [ ] https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - [ ] add tailwind-motion https://github.com/romboHQ/tailwindcss-motion
+- [ ] add "learn more" button on each project for user to click and view a detailed write up of the project with image carousal, and a BIG button to take to the live site.
+- [x] add gitroll profile
+- [ ] add oss.gg hackathon thing
+- [ ] add hacktoberfest thing maybe
+- [ ] update readme on github to the newest version of the ui
+- [ ] use the accent color lime-500 more often here and there in the ui
+- [ ] gitroll profile section looks a little boring right now, add color or something

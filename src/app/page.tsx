@@ -44,7 +44,7 @@ export default function Home() {
           apps with{" "}
           <a
             href="#tech-stack"
-            className="cursor-pointer underline underline-offset-2"
+            className="cursor-pointer underline underline-offset-2 hover:text-lime-500"
           >
             modern tools
           </a>

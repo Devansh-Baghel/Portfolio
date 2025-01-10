@@ -9,11 +9,18 @@ export default function GitRoll() {
       <a
         href="https://gitroll.io/profile/uEYBeQmpK8LQdxyyFmiTOicIEPrG2"
         target="_blank"
+        className="group relative"
       >
         <img
           src="gitroll-normal.png"
-          className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+          className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none"
           alt="GitRoll Profile Badge"
+        />
+
+        <img
+          src="/Grad_18.png"
+          alt=""
+          className="absolute right-6 top-4 size-20 transition-all duration-200 group-hover:translate-x-1 group-hover:translate-y-1 sm:size-32 md:size-40"
         />
       </a>
     </section>

@@ -9,8 +9,8 @@
 - [ ] add tailwind-motion https://github.com/romboHQ/tailwindcss-motion
 - [ ] add "learn more" button on each project for user to click and view a detailed write up of the project with image carousal, and a BIG button to take to the live site.
 - [x] add gitroll profile
+- [x] gitroll profile section looks a little boring right now, add color or something
 - [ ] add oss.gg hackathon thing
 - [ ] add hacktoberfest thing maybe
 - [ ] update readme on github to the newest version of the ui
 - [ ] use the accent color lime-500 more often here and there in the ui
-- [ ] gitroll profile section looks a little boring right now, add color or something

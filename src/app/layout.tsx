@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "@/lib/hint.min.css";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 

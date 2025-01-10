@@ -1,27 +1,33 @@
 import Image from "next/image";
 
 const frontend = [
-  "next.svg",
-  "ts.svg",
-  "js.svg",
-  "react.svg",
-  "react_query.svg",
-  "tailwindcss.svg",
-  "html.svg",
-  "css.svg",
+  { path: "next.svg", name: "Next.js" },
+  { path: "ts.svg", name: "TypeScript" },
+  { path: "js.svg", name: "JavaScript" },
+  { path: "react.svg", name: "React" },
+  { path: "react_query.svg", name: "React Query" },
+  { path: "tailwindcss.svg", name: "Tailwind CSS" },
+  { path: "html.svg", name: "HTML" },
+  { path: "css.svg", name: "CSS" },
 ];
 
 const backend = [
-  "mongodb.svg",
-  "node.svg",
-  "express.svg",
-  "postman.svg",
-  "docker.svg",
-  "heroku.svg",
-  "python.svg",
+  { path: "mongodb.svg", name: "MongoDB" },
+  { path: "node.svg", name: "Node.js" },
+  { path: "express.svg", name: "Express.js" },
+  { path: "postman.svg", name: "Postman" },
+  { path: "docker.svg", name: "Docker" },
+  { path: "heroku.svg", name: "Heroku" },
+  { path: "python.svg", name: "Python" },
 ];
 
-const misc = ["linux.svg", "git.svg", "github.svg", "bash.svg", "neovim.svg"];
+const misc = [
+  { path: "linux.svg", name: "Linux" },
+  { path: "git.svg", name: "Git" },
+  { path: "github.svg", name: "GitHub" },
+  { path: "bash.svg", name: "Bash" },
+  { path: "neovim.svg", name: "Neovim" },
+];
 
 // TODO: add tooltip on hover to these icons
 export default function TechStack() {
@@ -40,13 +46,18 @@ export default function TechStack() {
 
           <div className="flex max-w-80 flex-wrap gap-4">
             {frontend.map((elm) => (
-              <Image
-                height={45}
-                width={45}
-                alt={elm}
-                key={elm}
-                src={`/skillicons/${elm}`}
-              />
+              <span
+                className="hint--top hint--rounded"
+                key={elm.path}
+                aria-label={elm.name}
+              >
+                <Image
+                  height={45}
+                  width={45}
+                  alt={elm.name}
+                  src={`/skillicons/${elm.path}`}
+                />
+              </span>
             ))}
           </div>
         </div>
@@ -55,13 +66,18 @@ export default function TechStack() {
 
           <div className="flex max-w-80 flex-wrap gap-4">
             {backend.map((elm) => (
-              <Image
-                height={45}
-                width={45}
-                alt={elm}
-                key={elm}
-                src={`/skillicons/${elm}`}
-              />
+              <span
+                className="hint--top hint--rounded"
+                key={elm.path}
+                aria-label={elm.name}
+              >
+                <Image
+                  height={45}
+                  width={45}
+                  alt={elm.name}
+                  src={`/skillicons/${elm.path}`}
+                />
+              </span>
             ))}
           </div>
         </div>
@@ -70,13 +86,18 @@ export default function TechStack() {
 
           <div className="flex max-w-80 flex-wrap gap-4">
             {misc.map((elm) => (
-              <Image
-                height={45}
-                width={45}
-                alt={elm}
-                key={elm}
-                src={`/skillicons/${elm}`}
-              />
+              <span
+                className="hint--top hint--rounded"
+                key={elm.path}
+                aria-label={elm.name}
+              >
+                <Image
+                  height={45}
+                  width={45}
+                  alt={elm.name}
+                  src={`/skillicons/${elm.path}`}
+                />
+              </span>
             ))}
           </div>
         </div>

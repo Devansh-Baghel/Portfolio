@@ -98,7 +98,7 @@ export default function Home() {
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
         <Image
           src="/Grad_07.webp"
-          alt="Backgrouno gradient"
+          alt="Background gradient"
           width={700}
           height={700}
           className="images motion-preset-slide-left hidden motion-duration-1500 lg:block"

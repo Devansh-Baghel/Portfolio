@@ -12,7 +12,7 @@ export default function GitRoll() {
         className="group relative"
       >
         <img
-          src="/gitroll_09.jpg"
+          src="/gitroll_18.avif"
           className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none"
           alt="GitRoll Profile Badge"
         />

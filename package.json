@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "axios": "^1.7.4",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
@@ -19,6 +20,7 @@
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/node": "^20.12.9",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",

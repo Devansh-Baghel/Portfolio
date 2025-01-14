@@ -6,12 +6,17 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:worker": "opennextjs-cloudflare",
+    "dev:worker": "wrangler dev --port 8771",
+    "preview:worker": "pnpm run build:worker && pnpm run dev:worker",
+    "deploy:worker": "pnpm run build:worker && wrangler deploy"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.1.0",
     "aos": "^2.3.4",
     "axios": "^1.7.4",
+    "caniuse-lite": "^1.0.30001692",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
@@ -21,6 +26,7 @@
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^0.3.8",
     "@types/aos": "^3.0.7",
     "@types/node": "^20.12.9",
     "@types/react": "npm:types-react@19.0.0-rc.1",
@@ -34,7 +40,8 @@
     "tailwindcss": "^3.4.3",
     "tailwindcss-animated": "^1.0.1",
     "tailwindcss-motion": "0.3.0-beta",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "wrangler": "^3.101.0"
   },
   "pnpm": {
     "overrides": {

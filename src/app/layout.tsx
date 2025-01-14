@@ -4,6 +4,7 @@ import "./globals.css";
 import "@/lib/hint.min.css";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Toaster position="top-center" reverseOrder={false} />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -5,8 +5,18 @@ import "@/lib/hint.min.css";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const chromate = localFont({
+  src: "./Chromate-Regular.ttf",
+  variable: "--font-chromate",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 // TODO: add opengraph images
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata#opengraph
@@ -27,7 +37,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <Toaster position="top-center" reverseOrder={false} />
         {children}
         <SpeedInsights />

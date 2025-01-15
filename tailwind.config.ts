@@ -13,11 +13,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+        heading: ["var(--font-chromate)"],
+      },
     },
   },
-  plugins: [
-    require("tailwindcss-animated"),
-    require("tailwindcss-motion"),
-  ],
+  plugins: [require("tailwindcss-animated"), require("tailwindcss-motion")],
 };
 export default config;

@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: "Chromate";
   src: url("/font/Chromate-Regular.ttf") format("truetype");
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -15,7 +15,7 @@ h1,
 h2,
 h3,
 .font-chromate {
-  font-family: "Chromate", sans-serif;
+  font-family: var(--font-chromate), sans-serif;
 }
 
 body {

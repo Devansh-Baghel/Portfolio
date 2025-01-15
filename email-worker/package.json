@@ -12,8 +12,15 @@
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.5.2",
     "@cloudflare/workers-types": "^4.20250109.0",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
     "typescript": "^5.5.2",
     "vitest": "2.1.8",
     "wrangler": "^3.102.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "resend": "^4.1.1"
   }
 }

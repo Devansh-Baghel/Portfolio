@@ -1,20 +1,33 @@
 import React from 'react';
+import { Hono } from 'hono';
+import { cors } from 'hono/cors';
 import { Resend } from 'resend';
 import { EmailTemplate } from './emails/email-template';
 
-export default {
-	async fetch(request, env, context): Promise<Response> {
-		const resend = new Resend(env.RESEND_API_KEY);
+const app = new Hono();
 
-		const { name, message, email } = await request.json();
+app.use(
+	'/api/*',
+	cors({ origin: ['https://baghel.dev', 'http://localhost:3000', 'https://localhost:8771', 'https://portfolio.dbaghel.workers.dev'] }),
+);
 
-		const data = await resend.emails.send({
-			from: `${name} <onboarding@resend.dev>`,
-			to: ['devanshbaghel85@gmail.com'],
-			subject: `Message from ${name} on baghel.dev`,
-			react: <EmailTemplate name={name} email={email} message={message} />,
-		});
+app.post('/api/email', async (c) => {
+	const resend = new Resend(c.env.RESEND_API_KEY);
 
-		return Response.json(data);
-	},
-} satisfies ExportedHandler<Env, ExecutionContext>;
+	const { name, message, email } = await c.req.json();
+
+	const { data, error } = await resend.emails.send({
+		from: `${name} <onboarding@resend.dev>`,
+		to: ['devanshbaghel85@gmail.com'],
+		subject: `Message from ${name} on baghel.dev`,
+		react: <EmailTemplate name={name} email={email} message={message} />,
+	});
+
+	if (error) {
+		return c.json(error, 400);
+	}
+
+	return c.json(data);
+});
+
+export default app;

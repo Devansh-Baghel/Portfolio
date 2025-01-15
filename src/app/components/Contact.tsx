@@ -14,7 +14,11 @@ export default function Contact() {
     if (!name || !message || !email) return;
 
     const emailPromise = axios
-      .post(`/api/email`, { name, email, message })
+      .post("https://email-worker.dbaghel.workers.dev/api/email", {
+        name,
+        email,
+        message,
+      })
       .then(() => {
         setName("");
         setEmail("");

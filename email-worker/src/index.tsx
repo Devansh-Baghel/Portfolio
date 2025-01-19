@@ -8,7 +8,7 @@ const app = new Hono();
 
 app.use(
 	'/api/*',
-	cors({ origin: ['https://baghel.dev', 'http://localhost:3000', 'http://localhost:8771', 'https://portfolio-pages.pages.dev/'] }),
+	cors({ origin: ['https://baghel.dev', 'http://localhost:3000', 'http://localhost:8771', 'https://portfolio-pages.pages.dev'] }),
 );
 
 app.post('/api/email', async (c) => {

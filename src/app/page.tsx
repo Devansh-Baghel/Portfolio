@@ -25,21 +25,21 @@ export default function Home() {
         />
         <Glow />
         <h1
-          className="blur-in-500 motion-preset-slide-right mt-4 text-[60px] leading-tight lg:text-[70px]"
+          className="animate-blur-in-500 motion-preset-slide-right mt-4 text-[60px] leading-tight lg:text-[70px]"
           id="my-name"
         >
           Devansh Baghel
         </h1>
 
         <h2
-          className="blur-in-600 motion-preset-slide-right mt-20 text-[27px] motion-delay-200 lg:text-[32px]"
+          className="animate-blur-in-600 motion-preset-slide-right mt-20 text-[27px] motion-delay-200 lg:text-[32px]"
           id="profession"
         >
           Fullstack Developer
         </h2>
 
         <p
-          className="blur-in-700 motion-preset-slide-right mt-4 text-xl motion-delay-300"
+          className="animate-blur-in-700 motion-preset-slide-right mt-4 text-xl motion-delay-300"
           id="more-info"
         >
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
@@ -57,18 +57,18 @@ export default function Home() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="blur-in-800 motion-preset-slide-right mt-6 inline-block rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl xl:border-[3px]"
+          className="animate-blur-in-800 motion-preset-slide-right mt-6 inline-block rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl xl:border-[3px]"
         >
           Résumé
         </a>
         <a
           href="#contact"
-          className="blur-in-800 motion-preset-slide-right ml-[20px] inline-block rounded-[30px] border-[3px] border-slate-900 px-6 py-2 text-sm font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl"
+          className="animate-blur-in-800 motion-preset-slide-right ml-[20px] inline-block rounded-[30px] border-[3px] border-slate-900 px-6 py-2 text-sm font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl"
         >
           Contact me
         </a>
 
-        <div className="blur-in-900 motion-preset-slide-right mt-6 flex items-center gap-4 motion-delay-500">
+        <div className="animate-blur-in-900 motion-preset-slide-right mt-6 flex items-center gap-4 motion-delay-500">
           <a
             href="https://github.com/devansh-baghel"
             target="_blank"
@@ -104,7 +104,7 @@ export default function Home() {
           alt="Background gradient"
           width={700}
           height={700}
-          className="images blur-in-900 motion-preset-slide-left hidden motion-duration-1500 lg:block"
+          className="images animate-blur-in-900 motion-preset-slide-left hidden motion-duration-1500 lg:block"
           priority
           fetchPriority="high"
         />

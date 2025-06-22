@@ -17,6 +17,15 @@ const config: Config = {
         sans: ["var(--font-inter)"],
         heading: ["var(--font-chromate)"],
       },
+      keyframes: {
+        "blur-in": {
+          "0%": { filter: "blur(8px)", opacity: "0" },
+          "100%": { filter: "blur(0px)", opacity: "1" },
+        },
+      },
+      animation: {
+        "blur-in": "blur-in 500ms ease-out forwards",
+      },
     },
   },
   plugins: [require("tailwindcss-animated"), require("tailwindcss-motion")],

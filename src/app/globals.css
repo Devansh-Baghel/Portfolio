@@ -7,6 +7,54 @@
   src: url("/font/Chromate-Regular.ttf") format("truetype");
 } */
 
+@layer utilities {
+  .blur-in-100 {
+    animation: blur-in 100ms ease-out forwards;
+  }
+  .blur-in-200 {
+    animation: blur-in 200ms ease-out forwards;
+  }
+  .blur-in-300 {
+    animation: blur-in 300ms ease-out forwards;
+  }
+  .blur-in-400 {
+    animation: blur-in 400ms ease-out forwards;
+  }
+  .blur-in-500 {
+    animation: blur-in 500ms ease-out forwards;
+  }
+  .blur-in-600 {
+    animation: blur-in 600ms ease-out forwards;
+  }
+  .blur-in-700 {
+    animation: blur-in 700ms ease-out forwards;
+  }
+  .blur-in-800 {
+    animation: blur-in 800ms ease-out forwards;
+  }
+  .blur-in-900 {
+    animation: blur-in 900ms ease-out forwards;
+  }
+  .blur-in-1000 {
+    animation: blur-in 1000ms ease-out forwards;
+  }
+  .blur-in-1100 {
+    animation: blur-in 1100ms ease-out forwards;
+  }
+  .blur-in-1200 {
+    animation: blur-in 1200ms ease-out forwards;
+  }
+  .blur-in-1300 {
+    animation: blur-in 1300ms ease-out forwards;
+  }
+  .blur-in-1400 {
+    animation: blur-in 1400ms ease-out forwards;
+  }
+  .blur-in-1500 {
+    animation: blur-in 1500ms ease-out forwards;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -14,3 +14,8 @@
 - [ ] add hacktoberfest thing maybe
 - [ ] update readme on github to the newest version of the ui
 - [ ] use the accent color lime-500 more often here and there in the ui
+
+- [ ] use next-seo package
+- [ ] use next-sitemap package
+- [ ] use next-progress-bar package
+- [ ] add letterboxd or maybe something from bento.me

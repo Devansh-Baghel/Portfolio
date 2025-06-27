@@ -4,7 +4,6 @@ import "./globals.css";
 import "@/lib/hint.min.css";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 
 const chromate = localFont({
@@ -40,7 +39,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <Toaster position="top-center" reverseOrder={false} />
         {children}
-        <SpeedInsights />
       </body>
     </html>
   );

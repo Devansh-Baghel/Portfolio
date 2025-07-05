@@ -6,9 +6,9 @@
   font-family: "Chromate";
   src: url("/font/Chromate-Regular.ttf") format("truetype");
 } */
-
 html {
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 h1,

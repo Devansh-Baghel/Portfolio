@@ -20,4 +20,6 @@
 - [ ] use next-progress-bar package
 - [ ] add letterboxd or maybe something from bento.me
 - [ ] update gitroll profile
-- [ ] fix gitroll issues
+- [ ] fix issues inside of the gitroll projects
+- [x] fix hover issue with commit history
+- [ ] add tooltip in commit history that tells user to shift+scroll when they hover commit history year.

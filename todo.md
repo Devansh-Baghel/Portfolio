@@ -19,3 +19,5 @@
 - [ ] use next-sitemap package
 - [ ] use next-progress-bar package
 - [ ] add letterboxd or maybe something from bento.me
+- [ ] update gitroll profile
+- [ ] fix gitroll issues

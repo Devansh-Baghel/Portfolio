@@ -5,6 +5,7 @@ import "@/lib/hint.min.css";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
+import { PostHogProvider } from "./providers";
 
 const chromate = localFont({
   src: "./Chromate-Regular.ttf",
@@ -37,8 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
-        <Toaster position="top-center" reverseOrder={false} />
-        {children}
+        <PostHogProvider>
+          <Toaster position="top-center" reverseOrder={false} />
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );

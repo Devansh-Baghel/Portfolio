@@ -23,3 +23,5 @@
 - [ ] fix issues inside of the gitroll projects
 - [x] fix hover issue with commit history
 - [ ] add tooltip in commit history that tells user to shift+scroll when they hover commit history year.
+- [ ] custom 404 page
+- [x] posthog analytics

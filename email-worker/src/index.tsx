@@ -17,7 +17,7 @@ app.post('/api/email', async (c) => {
 	const { name, message, email } = await c.req.json();
 
 	const { data, error } = await resend.emails.send({
-		from: `${name} <onboarding@resend.dev>`,
+		from: `${name} <contact@baghel.dev>`,
 		to: ['devanshbaghel85@gmail.com'],
 		subject: `Message from ${name} on baghel.dev`,
 		react: <EmailTemplate name={name} email={email} message={message} />,

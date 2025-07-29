@@ -6,6 +6,7 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
 import { PostHogProvider } from "./providers";
+import StructuredData from "@/components/StructuredData";
 
 const chromate = localFont({
   src: "./Chromate-Regular.ttf",
@@ -101,6 +102,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <StructuredData />
+      </head>
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <PostHogProvider>
           <Toaster position="top-center" reverseOrder={false} />

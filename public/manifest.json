@@ -1,0 +1,16 @@
+{
+  "name": "Devansh Baghel - Full Stack Developer",
+  "short_name": "Devansh Baghel",
+  "description": "Full Stack Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#84cc16",
+  "icons": [
+    {
+      "src": "/shape-76.svg",
+      "sizes": "76x76",
+      "type": "image/svg+xml"
+    }
+  ]
+}

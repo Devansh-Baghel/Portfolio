@@ -35,7 +35,7 @@ export default function NotFound() {
 
               {/* Description */}
               <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-lg motion-delay-300 md:text-xl">
-                Oops! The page you're looking for doesn't exist. It might have
+                Oops! The page you&apos;re looking for doesn&apos;t exist. It might have
                 been moved, deleted, or you entered the wrong URL.
               </p>
 

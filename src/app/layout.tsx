@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: "Devansh Baghel Portfolio",
     images: [
       {
-        url: "/og-image.png", // You'll need to create this
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Devansh Baghel - Full Stack Developer",
@@ -82,15 +82,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://baghel.dev",
   },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification
-  },
   icons: {
-    icon: "/shape-76.svg",
-    shortcut: "/shape-76.svg",
-    apple: "/apple-touch-icon.png", // You'll need to create this
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "android-chrome",
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+      },
+      {
+        rel: "android-chrome",
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+      },
+    ],
   },
-  manifest: "/manifest.json", // You'll need to create this
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -104,6 +117,25 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <PostHogProvider>

@@ -11,6 +11,7 @@ import Glow from "@/components/Glow";
 import GitRoll from "@/components/GitRoll";
 import heroImage from "../../public/Grad_07.webp";
 import Github from "@/components/Github";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -112,6 +113,7 @@ export default function Home() {
         <Projects />
         <TechStack />
         <Github />
+        <Blog />
         <GitRoll />
         <Contact />
       </div>

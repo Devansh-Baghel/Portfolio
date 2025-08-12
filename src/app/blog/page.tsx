@@ -1,0 +1,152 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import Glow from "@/components/Glow";
+import { Calendar, ArrowLeft, ExternalLink } from "lucide-react";
+
+// Mock blog data - replace with your actual blog posts later
+const blogPosts = [
+  {
+    id: 1,
+    title: "Building a Modern Full-Stack Application with Next.js and TypeScript",
+    excerpt: "A comprehensive guide to building scalable web applications using Next.js 15, TypeScript, and modern development practices.",
+    date: "2024-12-15",
+    readTime: "8 min read",
+    tags: ["Next.js", "TypeScript", "React", "Full-Stack"],
+    slug: "building-modern-fullstack-app-nextjs-typescript"
+  },
+  {
+    id: 2,
+    title: "Optimizing Database Queries in MongoDB for Better Performance",
+    excerpt: "Learn advanced MongoDB optimization techniques, indexing strategies, and query patterns to boost your application's performance.",
+    date: "2024-11-28",
+    readTime: "12 min read",
+    tags: ["MongoDB", "Database", "Performance", "Backend"],
+    slug: "optimizing-mongodb-queries-performance"
+  },
+  {
+    id: 3,
+    title: "Creating Responsive Animations with Tailwind CSS and Framer Motion",
+    excerpt: "Discover how to create smooth, performant animations that enhance user experience without compromising site performance.",
+    date: "2024-11-10",
+    readTime: "6 min read",
+    tags: ["CSS", "Animations", "Tailwind", "UI/UX"],
+    slug: "responsive-animations-tailwind-framer-motion"
+  }
+];
+
+export default function BlogPage() {
+  return (
+    <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[1400px]">
+      <div className="p-6 pt-14 text-slate-900 lg:px-20">
+        {/* Background decorative element */}
+        <Image
+          src="/shape-76.svg"
+          height={300}
+          width={300}
+          alt=""
+          priority
+          className="images glow absolute left-[-60px] top-[-80px] z-[-10] h-[300px] w-[300px] animate-spin opacity-50 animate-duration-[40000ms] animate-infinite animate-ease-in-out"
+        />
+        <Glow />
+
+        {/* Header */}
+        <div className="mb-12">
+          <Link
+            href="/"
+            className="motion-preset-slide-right inline-flex animate-blur-in-500 items-center gap-2 text-lg font-medium hover:text-lime-500 motion-delay-100"
+          >
+            <ArrowLeft className="h-5 w-5" />
+            Back to Portfolio
+          </Link>
+          
+          <h1 className="motion-preset-slide-right mt-6 animate-blur-in-600 font-heading text-[60px] leading-tight motion-delay-200 lg:text-[70px]">
+            Blog
+          </h1>
+          
+          <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300">
+            Thoughts on web development, programming, and building things on the internet.
+          </p>
+        </div>
+
+        {/* Blog Posts */}
+        <div className="flex flex-col gap-8">
+          {blogPosts.map((post, index) => (
+            <article
+              key={post.id}
+              className="motion-preset-slide-right animate-blur-in-800"
+              style={{ animationDelay: `${400 + index * 100}ms` }}
+            >
+              <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                {/* Post Header */}
+                <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <time dateTime={post.date}>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </time>
+                  </div>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+
+                {/* Post Title */}
+                <h2 className="mb-4 font-heading text-3xl hover:text-lime-500">
+                  <Link href={`/blog/${post.slug}`}>
+                    {post.title}
+                  </Link>
+                </h2>
+
+                {/* Post Excerpt */}
+                <p className="mb-6 text-lg leading-relaxed text-slate-700">
+                  {post.excerpt}
+                </p>
+
+                {/* Tags */}
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-[20px] border-2 border-slate-900 bg-lime-500 px-3 py-1 text-sm font-medium text-slate-900"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Read More Link */}
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-2 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+                >
+                  Read More
+                  <ExternalLink className="h-4 w-4" />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-16 text-center">
+          <p className="text-slate-600">
+            More posts coming soon! Follow me on{" "}
+            <a
+              href="https://twitter.com/DevanshBaghel5"
+              target="_blank"
+              className="underline underline-offset-2 hover:text-lime-500"
+            >
+              Twitter
+            </a>{" "}
+            for updates.
+          </p>
+        </div>
+      </div>
+    </main>
+  );
+}

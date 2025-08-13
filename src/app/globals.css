@@ -11,9 +11,6 @@ html {
   background-color: white;
 }
 
-h1,
-h2,
-h3,
 .font-chromate {
   font-family: var(--font-chromate), sans-serif;
 }
@@ -36,6 +33,11 @@ body {
   backdrop-filter: blur(10px);
   /* height: 250px; */
   max-width: 600px;
+}
+
+.blog-wrapper {
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
 }
 
 .badge-container {
@@ -198,4 +200,31 @@ body {
 
 .disable-scrollbar *::-webkit-scrollbar {
   display: none;
+}
+
+#blog-container {
+  background-image: url("/backgrounds/Grad_17.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat-y;
+}
+
+/* Syntax highlighting styles */
+pre code .sh__token--keyword {
+  color: #ff7b72;
+}
+pre code .sh__token--string {
+  color: #a5d6ff;
+}
+pre code .sh__token--comment {
+  color: #8b949e;
+}
+pre code .sh__token--number {
+  color: #79c0ff;
+}
+pre code .sh__token--function {
+  color: #d2a8ff;
+}
+pre code .sh__token--punctuation {
+  color: #e6edf3;
 }

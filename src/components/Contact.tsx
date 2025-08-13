@@ -38,7 +38,10 @@ export default function Contact() {
         id="contact"
         className="mt-32 flex flex-col gap-6 p-6 pb-20 text-slate-900 2xl:pb-60"
       >
-        <h3 className="contact-title mb-4 text-4xl" data-aos="fade-left">
+        <h3
+          className="contact-title mb-4 font-heading text-4xl"
+          data-aos="fade-left"
+        >
           Contact me
         </h3>
         <form

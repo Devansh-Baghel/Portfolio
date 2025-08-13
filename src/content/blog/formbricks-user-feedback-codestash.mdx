@@ -1,0 +1,133 @@
+---
+title: "Integrating Formbricks for User Feedback in CodeStash"
+date: "2025-01-15"
+excerpt: "Learn how to add in-app user feedback surveys using Formbricks to gather insights about AI-generated content and improve user experience in your Next.js applications."
+readTime: "7 min read"
+tags: ["Formbricks", "Next.js", "User Feedback", "CodeStash", "AI", "Surveys"]
+---
+
+## Introduction
+
+So, I’ve been working on [CodeStash](https://codestash.baghel.dev/), this platform for sharing and discussing code snippets, kind of a cross between Reddit and Stack Overflow. The cool part? There’s a built-in AI that explains code snippets, powered by Google Gemini. Whether it's some gnarly JavaScript or Python code, CodeStash lets users request an AI explanation on demand. But… AI explanations can be a bit hit-or-miss. Some users might find the response super helpful, while others? Not so much. That’s where [Formbricks](https://formbricks.com/) comes in.
+
+In this post, I’ll show you how I added Formbricks to survey users after they get an AI answer, checking if they found it useful. If you’re curious about in-app feedback or just want to see how Formbricks can fit into your projects, stick around!
+
+## Why Bother with Surveys?
+
+AI is impressive, but let’s face it—sometimes it misses the mark. By asking users directly if an explanation helped, I get honest, in-the-moment feedback that I can use to fine-tune CodeStash. And Formbricks makes it super simple to add these quick, no-fuss surveys directly into the app. Win-win.
+
+## Adding Formbricks into CodeStash (w/ Next.js)
+
+Adding Formbricks was straightforward, and the setup took less than 10 minutes. So if you're thinking, "I don't have time to add all this survey stuff," trust me, it's quicker than you think. Here’s a breakdown:
+
+### Step 1: Create Formbricks Account
+
+Follow the steps in this [quickstart guide](https://formbricks.com/docs/link-surveys/quickstart) to get started with Formbricks.
+
+### Step 2: Install Formbricks
+
+You’ll first need the Formbricks package. Run this command to install it, then follow the steps at :
+
+```bash
+npm install @formbricks/js zod
+```
+
+Now, create a `app/formbricks.tsx` file
+
+```typescript
+"use client";
+
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import formbricks from "@formbricks/js";
+
+export default function FormbricksProvider() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    formbricks.init({
+      environmentId: "<environment-id>",
+      apiHost: "<api-host>",
+      userId: "<user-id>", //optional
+    });
+  }, []);
+
+  useEffect(() => {
+    formbricks?.registerRouteChange();
+  }, [pathname, searchParams]);
+
+  return null;
+}
+```
+
+Now, update your `app/layout.tsx` file.
+
+```typescript
+// other imports
+import FormbricksProvider from "./formbricks";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <FormbricksProvider />
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### Step 3: Embed the Survey
+
+After an AI explanation is served, a survey pops up asking users how they liked it. Here’s how to embed the survey component right in the response.
+
+In your Formbricks account, create a new survey and in the survey trigger under settings add a code trigger with the key "ai_answer".
+
+Now we can use `formbricks.track("ai_answer")` method anywhere in our code to programmatically trigger a survey.
+
+For example...
+
+```typescript
+import formbricks from "@formbricks/js";
+import axios from "axios";
+
+await axios.get("/ai/explain").then((res) => {
+  formbricks.track("ai_answer");
+});
+```
+
+### Step 4: Customize the Survey Questions
+
+In the Formbricks dashboard, tweak the survey to fit what you’re looking for. I went with questions like:
+
+“Was this explanation helpful?” (Yes, No)
+“How can we improve AI explanations?” (Optional)
+
+I kept the survey short and simple so that users aren't too distracted by the survey.
+
+The best part? You can set the survey to appear every so often, so you’re not spamming users every time they ask for an explanation.
+
+## Screenshots
+
+![Screenshot of Formbricks integrated in CodeStash](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uzowi1dwerdesbw76lt6.png)
+
+![Screenshot of Formbricks integrated in CodeStash](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g7xayynr4iiizwdmwfau.png)
+
+![Screenshot of Formbricks integrated in CodeStash](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4nh20685yl8apk7b8n8c.png)
+
+## Seeing the Feedback in Action
+
+Once responses start rolling in, Formbricks gives you the data all nice and neat. Now I can see what’s working, what’s confusing, and what needs a tweak or two.
+
+![Formbricks dashboard showing survey results](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ie39qtrvwf7e02kzgp7.png)
+
+## Wrapping It Up
+
+Adding Formbricks to CodeStash made it easy to capture honest feedback without interrupting the user experience. So if you’re building with user feedback in mind, give Formbricks a try!
+
+Thanks for reading, and if you’re into these tools as much as I am, don’t forget to star [Formbricks’ GitHub repo](https://github.com/formbricks/formbricks/) ⭐—and if you like [CodeStash](https://codestash.baghel.dev/), give that a [star](https://github.com/Devansh-Baghel/CodeStash) too!
+
+## References
+
+1. [Formbricks docs](https://formbricks.com/docs/introduction/what-is-formbricks)
+2. [Next.js docs](https://nextjs.org/docs)

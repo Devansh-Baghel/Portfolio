@@ -15,21 +15,24 @@ const frontend = [
 ];
 
 const backend = [
-  { path: "mongodb.svg", name: "MongoDB" },
+  { path: "workers.svg", name: "Cloudflare Workers" },
   { path: "node.svg", name: "Node.js" },
+  { path: "bun.svg", name: "Bun" },
   { path: "express.svg", name: "Express.js" },
+  { path: "mongodb.svg", name: "MongoDB" },
+  { path: "sqlite.svg", name: "SQLite" },
   { path: "postman.svg", name: "Postman" },
   { path: "docker.svg", name: "Docker" },
   { path: "heroku.svg", name: "Heroku" },
-  { path: "python.svg", name: "Python" },
 ];
 
 const misc = [
+  { path: "cloudflare.svg", name: "Cloudflare" },
   { path: "linux.svg", name: "Linux" },
-  { path: "git.svg", name: "Git" },
+  { path: "git-light.svg", name: "Git" },
   { path: "github.svg", name: "GitHub" },
   { path: "bash.svg", name: "Bash" },
-  { path: "neovim.svg", name: "Neovim" },
+  { path: "figma.svg", name: "Figma" },
 ];
 
 // TODO: add tooltip on hover to these icons

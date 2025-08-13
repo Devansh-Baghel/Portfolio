@@ -26,7 +26,7 @@ export default async function Blog() {
             <>
               <Link href={`/blog/${latestPost.slug}`}>
                 <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-                  <h4 className="mb-2 text-xl font-medium">
+                  <h4 className="mb-2 text-xl font-bold">
                     {latestPost.title}
                   </h4>
                   <p className="mb-4 text-slate-600">{latestPost.excerpt}</p>

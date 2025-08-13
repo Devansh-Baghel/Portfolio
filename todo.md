@@ -29,3 +29,14 @@
 - [ ] change "back to blog", "back to portfolio" to a breadcrums component.
 - [ ] make syntax highlighting work inside code blocks
 - [ ] make syntax highlighting work inside inline code blocks like `bun add xyz` that.
+- [ ] current projects section looks very crowded, will look even more crowded once i add pickpocket here, fix this somehow.
+- [x] add cloudflare workers to stack
+- [x] add cloudflare to stack
+- [x] add figma to stack
+- [ ] add tanstack start to stack
+- [ ] add drizzle to stack
+- [x] add sqlite / d1 to stack
+- [ ] add hono to stack
+- [x] add bun to stack
+- [ ] https://www.fancycomponents.dev/docs/components/blocks/float add this
+- [ ] https://www.fancycomponents.dev/docs/components/blocks/stacking-cards add this to showcase projects

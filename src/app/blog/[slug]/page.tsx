@@ -60,7 +60,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[1200px]">
+    <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
       <div className="p-6 pt-14 text-slate-900 lg:px-20">
         {/* Background decorative element */}
         <Image

@@ -27,3 +27,5 @@
 - [x] posthog analytics
 - [ ] change default font from inter to alexandria
 - [ ] change "back to blog", "back to portfolio" to a breadcrums component.
+- [ ] make syntax highlighting work inside code blocks
+- [ ] make syntax highlighting work inside inline code blocks like `bun add xyz` that.

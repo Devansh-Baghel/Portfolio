@@ -11,9 +11,9 @@ html {
   background-color: white;
 }
 
-h1,
+/* h1,
 h2,
-h3,
+h3, */
 .font-chromate {
   font-family: var(--font-chromate), sans-serif;
 }
@@ -210,4 +210,24 @@ body {
   background-size: contain;
   background-position: top;
   background-repeat: repeat-y;
+}
+
+/* Syntax highlighting styles */
+pre code .sh__token--keyword {
+  color: #ff7b72;
+}
+pre code .sh__token--string {
+  color: #a5d6ff;
+}
+pre code .sh__token--comment {
+  color: #8b949e;
+}
+pre code .sh__token--number {
+  color: #79c0ff;
+}
+pre code .sh__token--function {
+  color: #d2a8ff;
+}
+pre code .sh__token--punctuation {
+  color: #e6edf3;
 }

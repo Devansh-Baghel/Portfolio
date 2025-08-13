@@ -1,46 +1,17 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import Glow from "@/components/Glow";
 import { Calendar, ArrowLeft, ExternalLink } from "lucide-react";
+import { getAllBlogPosts } from "@/lib/mdx";
+import { format } from "date-fns";
 
-// Mock blog data - replace with your actual blog posts later
-const blogPosts = [
-  {
-    id: 1,
-    title: "Building a Modern Full-Stack Application with Next.js and TypeScript",
-    excerpt: "A comprehensive guide to building scalable web applications using Next.js 15, TypeScript, and modern development practices.",
-    date: "2024-12-15",
-    readTime: "8 min read",
-    tags: ["Next.js", "TypeScript", "React", "Full-Stack"],
-    slug: "building-modern-fullstack-app-nextjs-typescript"
-  },
-  {
-    id: 2,
-    title: "Optimizing Database Queries in MongoDB for Better Performance",
-    excerpt: "Learn advanced MongoDB optimization techniques, indexing strategies, and query patterns to boost your application's performance.",
-    date: "2024-11-28",
-    readTime: "12 min read",
-    tags: ["MongoDB", "Database", "Performance", "Backend"],
-    slug: "optimizing-mongodb-queries-performance"
-  },
-  {
-    id: 3,
-    title: "Creating Responsive Animations with Tailwind CSS and Framer Motion",
-    excerpt: "Discover how to create smooth, performant animations that enhance user experience without compromising site performance.",
-    date: "2024-11-10",
-    readTime: "6 min read",
-    tags: ["CSS", "Animations", "Tailwind", "UI/UX"],
-    slug: "responsive-animations-tailwind-framer-motion"
-  }
-];
+export default async function BlogPage() {
+  const blogPosts = await getAllBlogPosts();
 
-export default function BlogPage() {
   return (
     <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[1400px]">
+      {/* Rest of your component remains the same */}
       <div className="p-6 pt-14 text-slate-900 lg:px-20">
-        {/* Background decorative element */}
         <Image
           src="/shape-76.svg"
           height={300}
@@ -51,7 +22,6 @@ export default function BlogPage() {
         />
         <Glow />
 
-        {/* Header */}
         <div className="mb-12">
           <Link
             href="/"
@@ -71,67 +41,64 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Blog Posts */}
         <div className="flex flex-col gap-8" id="blog-container">
-          {blogPosts.map((post, index) => (
-            <article
-              key={post.id}
-              className="blog-wrapper motion-preset-slide-right animate-blur-in-800"
-              style={{ animationDelay: `${400 + index * 100}ms` }}
-            >
-              <div className="rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-                {/* Post Header */}
-                <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </time>
+          {blogPosts.length > 0 ? (
+            blogPosts.map((post, index) => (
+              <article
+                key={post.slug}
+                className="blog-wrapper motion-preset-slide-right animate-blur-in-800"
+                style={{ animationDelay: `${400 + index * 100}ms` }}
+              >
+                <div className="rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                  <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      <time dateTime={post.date}>
+                        {format(new Date(post.date), 'MMMM d, yyyy')}
+                      </time>
+                    </div>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
                   </div>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
+
+                  <h4 className="mb-4 text-3xl font-semibold hover:text-lime-500">
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h4>
+
+                  <p className="mb-6 text-lg leading-relaxed text-slate-700">
+                    {post.excerpt}
+                  </p>
+
+                  {post.tags.length > 0 && (
+                    <div className="mb-6 flex flex-wrap gap-2">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-[20px] border-2 border-slate-900 bg-lime-500 px-3 py-1 text-sm font-medium text-slate-900"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center gap-2 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+                  >
+                    Read More
+                    <ExternalLink className="h-4 w-4" />
+                  </Link>
                 </div>
-
-                {/* Post Title */}
-                <h4 className="mb-4 text-3xl font-semibold hover:text-lime-500">
-                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                </h4>
-
-                {/* Post Excerpt */}
-                <p className="mb-6 text-lg leading-relaxed text-slate-700">
-                  {post.excerpt}
-                </p>
-
-                {/* Tags */}
-                <div className="mb-6 flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-[20px] border-2 border-slate-900 bg-lime-500 px-3 py-1 text-sm font-medium text-slate-900"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Read More Link */}
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
-                >
-                  Read More
-                  <ExternalLink className="h-4 w-4" />
-                </Link>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          ) : (
+            <div className="text-center text-slate-600">
+              <p>No blog posts yet. Coming soon!</p>
+            </div>
+          )}
         </div>
 
-        {/* Footer */}
         <div className="mt-16 text-center">
           <p className="text-slate-600">
             More posts coming soon! Follow me on{" "}

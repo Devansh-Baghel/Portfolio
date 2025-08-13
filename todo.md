@@ -26,3 +26,4 @@
 - [x] custom 404 page
 - [x] posthog analytics
 - [ ] change default font from inter to alexandria
+- [ ] change "back to blog", "back to portfolio" to a breadcrums component.

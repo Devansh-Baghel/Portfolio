@@ -1,0 +1,169 @@
+---
+title: "Adding Rate Limiting to Express API with Unkey"
+date: "2024-12-15"
+excerpt: "Learn how to implement rate limiting in your Express API using Unkey's ratelimiter to prevent abuse and manage resource usage effectively."
+readTime: "8 min read"
+tags: ["Express", "Rate Limiting", "API", "Node.js", "Unkey"]
+---
+
+Recently, I made a platform called [CodeStash](https://codestash.baghel.dev) that allows developers to upload, store, and share code snippets. It combines the best of Reddit and Stack Overflow with features like voting, commenting, and AI-driven code explanations.
+
+I am getting these AI generated code explanations from Google Gemini 1.5 flash that only allows me to make 15 requests per minute in the free tier (not a problem for my zero user app), but I still thought it would be pretty neat if I could implement a basic level of rate-limiting on that specific route.
+
+In this blog post, I'll show you how to add rate-limiting to your express app using [Unkey's ratelimiter](https://www.unkey.com/docs/ratelimiting/introduction).
+
+## Overview of the AI feature
+
+User goes to the post that they want the AI explanation of ([Bubble sort in Java](https://codestash.baghel.dev/post/66f18c3e1fbd570b39e6a223) snippet in this case) and clicks the "Explain this" button.
+
+![Post on CodeStash about bubble sort in java](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ir45ia6ahowrfr2844yr.png)
+
+Then a request is made to the backend endpoint `/api/v1/ai/explain` and the controller that handles that request looks something like:
+
+```ts
+export const getAiAnswer = asyncHandler(async (req: UserRequest, res) => {
+  const { postId } = req.query;
+
+  if (!postId) return new ApiError(400, "Post id is required to get comments");
+
+  const post = await Post.findById(postId);
+
+  if (!post) throw new ApiError(404, "Post with this id does not exist");
+
+  const apiKey = process.env.GEMINI_API_KEY!;
+  const genAI = new GoogleGenerativeAI(apiKey);
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-flash",
+  });
+
+  const generationConfig = {
+    temperature: 1,
+    topP: 0.95,
+    topK: 64,
+    maxOutputTokens: 8192,
+    responseMimeType: "text/plain",
+  };
+
+  const chatSession = model.startChat({
+    generationConfig,
+    // safetySettings: Adjust safety settings
+    // See https://ai.google.dev/gemini-api/docs/safety-settings
+    history: [],
+  });
+
+  const prompt = `I am providing you a code snippet, please explain me this code snippet, only give small and consice explanation, only give answers in valid markdown format, make sure to use markdown format extensively, if possible use indenting in the markdown in bullet points etc. The code snippet is: ${post.content}`;
+
+  const result = await chatSession.sendMessage(prompt);
+  const aiAnswer = result.response.text();
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, { aiAnswer }, "AI answer sent successfully"));
+});
+```
+
+And this endpoint then sends a response which we display to the user.
+
+![AI explanation of the post on CodeStash about bubble sort in java](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q659t6t8r8n5nwkn7fv5.png)
+
+## Integrating Unkey's ratelimiter
+
+First we need to install @unkey/ratelimit package.
+
+```bash
+pnpm add @unkey/ratelimit
+```
+
+Then we need to set our root key.
+
+```env
+UNKEY_ROOT_KEY="YOUR_KEY"
+```
+
+Then create a new file `utils/ratelimit.ts`.
+
+```ts
+import { Ratelimit } from "@unkey/ratelimit";
+
+if (!process.env.UNKEY_ROOT_KEY) {
+  throw new Error("UNKEY_ROOT_KEY is not set");
+}
+
+export const limiter = new Ratelimit({
+  namespace: "codestash",
+  limit: 10,
+  duration: "60s",
+  rootKey: process.env.UNKEY_ROOT_KEY,
+});
+```
+
+Replace the namespace, limit and duration with whatever you want.
+
+Now all we need to do is add these 3 lines into any endpoint that you want to be ratelimited.
+
+```ts
+const identifier = req.ip;
+
+const ratelimit = await limiter.limit(identifier);
+if (!ratelimit.success) throw new ApiError(429, "Too many requests");
+```
+
+So in my case I added it to `/api/v1/ai/explain`.
+
+```ts
+export const getAiAnswer = asyncHandler(async (req: UserRequest, res) => {
+  const { postId } = req.query;
+  const identifier = req.ip;
+
+  const ratelimit = await limiter.limit(identifier);
+  if (!ratelimit.success) throw new ApiError(429, "Too many requests");
+
+  if (!postId) return new ApiError(400, "Post id is required to get comments");
+
+  const post = await Post.findById(postId);
+
+  if (!post) throw new ApiError(404, "Post with this id does not exist");
+
+  const apiKey = process.env.GEMINI_API_KEY!;
+  const genAI = new GoogleGenerativeAI(apiKey);
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-flash",
+  });
+
+  const generationConfig = {
+    temperature: 1,
+    topP: 0.95,
+    topK: 64,
+    maxOutputTokens: 8192,
+    responseMimeType: "text/plain",
+  };
+
+  const chatSession = model.startChat({
+    generationConfig,
+    // safetySettings: Adjust safety settings
+    // See https://ai.google.dev/gemini-api/docs/safety-settings
+    history: [],
+  });
+
+  const prompt = `I am providing you a code snippet, please explain me this code snippet, only give small and consice explanation, only give answers in valid markdown format, make sure to use markdown format extensively, if possible use indenting in the markdown in bullet points etc. The code snippet is: ${post.content}`;
+
+  const result = await chatSession.sendMessage(prompt);
+  const aiAnswer = result.response.text();
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, { aiAnswer }, "AI answer sent successfully"));
+});
+```
+
+And done, That's it! We have successfully added rate-limiting to our express API.
+
+---
+
+Thanks for reading! I hope this post gave you insight into how you can leverage Unkey’s ratelimiter to enhance your own applications.
+
+For more information on Unkey, visit their [official website](https://unkey.com).
+
+Also leave a star on [CodeStash's github repo](https://github.com/Devansh-Baghel/CodeStash) if you like the project.

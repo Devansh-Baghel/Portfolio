@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
 import { getAllBlogPosts } from "@/lib/mdx";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const blogPosts = getAllBlogPosts();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogPosts = await getAllBlogPosts();
 
   const blogSitemaps = blogPosts.map((post) => ({
     url: `https://baghel.dev/blog/${post.slug}`,

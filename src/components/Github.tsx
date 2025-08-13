@@ -1,4 +1,5 @@
 "use client";
+
 import AOSComponent from "@/lib/aos";
 import GitHubCalendar from "react-github-calendar";
 

@@ -12,6 +12,7 @@ import GitRoll from "@/components/GitRoll";
 import heroImage from "../../public/Grad_07.webp";
 import Github from "@/components/Github";
 import Blog from "@/components/Blog";
+import EasterEggLogs from "@/components/EasterEgg";
 
 export default function Home() {
   return (
@@ -27,14 +28,14 @@ export default function Home() {
         />
         <Glow />
         <h1
-          className="motion-preset-slide-right mt-4 animate-blur-in-500 text-[60px] leading-tight lg:text-[70px] font-heading"
+          className="motion-preset-slide-right mt-4 animate-blur-in-500 font-heading text-[60px] leading-tight lg:text-[70px]"
           id="my-name"
         >
           Devansh Baghel
         </h1>
 
         <h2
-          className="motion-preset-slide-right mt-20 animate-blur-in-600 text-[27px] motion-delay-200 lg:text-[32px] font-heading"
+          className="motion-preset-slide-right mt-20 animate-blur-in-600 font-heading text-[27px] motion-delay-200 lg:text-[32px]"
           id="profession"
         >
           Fullstack Developer
@@ -110,6 +111,7 @@ export default function Home() {
           priority
           fetchPriority="high"
         />
+        <EasterEggLogs />
         <Projects />
         <TechStack />
         <Github />

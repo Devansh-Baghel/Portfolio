@@ -55,39 +55,40 @@ export default function BlogPage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="motion-preset-slide-right inline-flex animate-blur-in-500 items-center gap-2 text-lg font-medium hover:text-lime-500 motion-delay-100"
+            className="motion-preset-slide-right inline-flex animate-blur-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
           >
             <ArrowLeft className="h-5 w-5" />
             Back to Portfolio
           </Link>
-          
+
           <h1 className="motion-preset-slide-right mt-6 animate-blur-in-600 font-heading text-[60px] leading-tight motion-delay-200 lg:text-[70px]">
             Blog
           </h1>
-          
+
           <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300">
-            Thoughts on web development, programming, and building things on the internet.
+            Thoughts on web development, programming, and building things on the
+            internet.
           </p>
         </div>
 
         {/* Blog Posts */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8" id="blog-container">
           {blogPosts.map((post, index) => (
             <article
               key={post.id}
-              className="motion-preset-slide-right animate-blur-in-800"
+              className="blog-wrapper motion-preset-slide-right animate-blur-in-800"
               style={{ animationDelay: `${400 + index * 100}ms` }}
             >
-              <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+              <div className="rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
                 {/* Post Header */}
                 <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
                       })}
                     </time>
                   </div>
@@ -96,11 +97,9 @@ export default function BlogPage() {
                 </div>
 
                 {/* Post Title */}
-                <h2 className="mb-4 font-heading text-3xl hover:text-lime-500">
-                  <Link href={`/blog/${post.slug}`}>
-                    {post.title}
-                  </Link>
-                </h2>
+                <h4 className="mb-4 text-3xl font-semibold hover:text-lime-500">
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                </h4>
 
                 {/* Post Excerpt */}
                 <p className="mb-6 text-lg leading-relaxed text-slate-700">

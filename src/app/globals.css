@@ -38,6 +38,11 @@ body {
   max-width: 600px;
 }
 
+.blog-wrapper {
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+}
+
 .badge-container {
   display: flex;
   flex-wrap: wrap;
@@ -198,4 +203,11 @@ body {
 
 .disable-scrollbar *::-webkit-scrollbar {
   display: none;
+}
+
+#blog-container {
+  background-image: url("/backgrounds/Grad_17.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat-y;
 }

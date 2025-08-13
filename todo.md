@@ -25,3 +25,4 @@
 - [ ] add tooltip in commit history that tells user to shift+scroll when they hover commit history year.
 - [x] custom 404 page
 - [x] posthog analytics
+- [ ] change default font from inter to alexandria

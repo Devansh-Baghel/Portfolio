@@ -27,14 +27,14 @@ export default function Home() {
         />
         <Glow />
         <h1
-          className="motion-preset-slide-right mt-4 animate-blur-in-500 text-[60px] leading-tight lg:text-[70px]"
+          className="motion-preset-slide-right mt-4 animate-blur-in-500 text-[60px] leading-tight lg:text-[70px] font-heading"
           id="my-name"
         >
           Devansh Baghel
         </h1>
 
         <h2
-          className="motion-preset-slide-right mt-20 animate-blur-in-600 text-[27px] motion-delay-200 lg:text-[32px]"
+          className="motion-preset-slide-right mt-20 animate-blur-in-600 text-[27px] motion-delay-200 lg:text-[32px] font-heading"
           id="profession"
         >
           Fullstack Developer

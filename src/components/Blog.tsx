@@ -14,7 +14,10 @@ export default async function Blog() {
         id="blog"
         className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900"
       >
-        <h3 className="gitroll-title mb-4 text-4xl" data-aos="fade-left">
+        <h3
+          className="gitroll-title mb-4 font-heading text-4xl"
+          data-aos="fade-left"
+        >
           Latest Posts
         </h3>
 
@@ -26,11 +29,11 @@ export default async function Blog() {
                   <h4 className="mb-2 text-xl font-medium">
                     {latestPost.title}
                   </h4>
-                  <p className="mb-4 text-slate-600">
-                    {latestPost.excerpt}
-                  </p>
+                  <p className="mb-4 text-slate-600">{latestPost.excerpt}</p>
                   <div className="flex items-center gap-4 text-sm text-slate-500">
-                    <span>{format(new Date(latestPost.date), 'MMM d, yyyy')}</span>
+                    <span>
+                      {format(new Date(latestPost.date), "MMM d, yyyy")}
+                    </span>
                     <span>•</span>
                     <span>{latestPost.readTime}</span>
                   </div>
@@ -46,7 +49,7 @@ export default async function Blog() {
               </Link>
             </>
           ) : (
-            <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] text-center">
+            <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 text-center shadow-[4px_4px_0px_0px_#1e293b]">
               <p className="text-slate-600">No blog posts yet. Coming soon!</p>
             </div>
           )}

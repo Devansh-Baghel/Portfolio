@@ -20,6 +20,8 @@ const components = {
   a: (props: any) => (
     <Link
       href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-lime-600 underline underline-offset-2 hover:text-lime-500"
       {...props}
     />

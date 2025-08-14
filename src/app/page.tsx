@@ -114,11 +114,40 @@ export default function Home() {
         />
         <EasterEggLogs />
         <Projects />
+        <FloatingShape
+          shapeUrl="/shapes/shape-77.svg"
+          directionClass="left-[-20px] bottom-[-20px]"
+          amplitude={[40, 100, 30]}
+          speed={0.2}
+        />
         <TechStack />
+        <FloatingShape
+          shapeUrl="/shapes/custom/shape-86-green.svg"
+          directionClass="right-0"
+          amplitude={[100, 100, 30]}
+          speed={0.2}
+        />
         <Github />
+        <FloatingShape
+          shapeUrl="/shapes/shape-79.svg"
+          directionClass="left-[-20px] bottom-[-20px]"
+          amplitude={[40, 100, 30]}
+          speed={0.2}
+        />
         <Blog />
-        <FloatingShape shapeUrl="/shapes/shape-91.svg" />
+        <FloatingShape
+          shapeUrl="/shapes/shape-85.svg"
+          directionClass="right-0"
+          amplitude={[100, 100, 30]}
+          speed={0.2}
+        />
         <GitRoll />
+        <FloatingShape
+          shapeUrl="/shapes/shape-80.svg"
+          directionClass="left-[-20px] bottom-[-20px]"
+          amplitude={[40, 100, 30]}
+          speed={0.2}
+        />
         <Contact />
       </div>
     </main>

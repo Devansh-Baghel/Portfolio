@@ -120,6 +120,11 @@ body {
 .glow {
   filter: url(#glow);
 }
+
+.glow-lite {
+  filter: url(#glow_lite);
+}
+
 /* 
 .vertical {
   writing-mode: tb-rl;

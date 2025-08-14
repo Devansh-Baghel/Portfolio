@@ -10,9 +10,12 @@ export default function Github() {
     <AOSComponent>
       <section
         id="github"
-        className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900"
+        className="relative z-10 mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900"
       >
-        <h3 className="gitroll-title mb-4 text-4xl font-heading" data-aos="fade-left">
+        <h3
+          className="gitroll-title mb-4 font-heading text-4xl"
+          data-aos="fade-left"
+        >
           Commit History
         </h3>
 

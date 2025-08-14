@@ -9,7 +9,7 @@ import AOSComponent from "@/lib/aos";
 export default function Projects() {
   return (
     <AOSComponent>
-      <section id="projects" className="mt-32 p-6 text-slate-900">
+      <section id="projects" className="relative z-10 mt-32 p-6 text-slate-900">
         <h3
           data-aos="fade-left"
           className="projects-title motion-preset-blur-right mb-8 font-heading text-4xl"
@@ -17,7 +17,7 @@ export default function Projects() {
           Selected Work
         </h3>
 
-        <div id="projects-container" className="flex flex-col gap-6">
+        <div id="projects-container" className="flex flex-col gap-6 mb-6">
           <div data-aos="fade-left">
             <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
               <h3 className="flex gap-4 font-heading text-3xl">
@@ -179,16 +179,15 @@ export default function Projects() {
               </div>
             </div>
           </div>
-
-          <a
-            href="https://github.com/devansh-baghel"
-            target="_blank"
-            className="wrapper flex h-16 items-center justify-center gap-2 rounded-[30px] border-[3px] border-slate-900 text-center text-[20px] font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
-          >
-            More on github
-            <LinkIcon />
-          </a>
         </div>
+        <a
+          href="https://github.com/devansh-baghel"
+          target="_blank"
+          className="wrapper flex h-16 items-center justify-center gap-2 rounded-[30px] border-[3px] border-slate-900 text-center text-[20px] font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+        >
+          More on github
+          <LinkIcon />
+        </a>
       </section>
     </AOSComponent>
   );

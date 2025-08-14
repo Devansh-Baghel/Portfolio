@@ -7,7 +7,7 @@ export default function GitRoll() {
     <AOSComponent>
       <section
         id="gitroll"
-        className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900"
+        className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900 relative z-10"
       >
         <h3
           className="tech-stack-title mb-4 font-heading text-4xl"

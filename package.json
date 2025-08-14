@@ -30,13 +30,12 @@
     "react-github-calendar": "^4.5.9",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
+    "react-syntax-highlighter": "^15.6.1",
     "rehype-autolink-headings": "^7.1.0",
-    "rehype-highlight": "^7.0.2",
     "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "resend": "^3.5.0",
-    "sugar-high": "^0.9.3",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.19.1",
     "@types/react": "^19.1.10",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.0.2",

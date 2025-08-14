@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
 import { highlight } from "sugar-high";
+import CodeBlock from "./CodeBlock";
 
 const components = {
   h1: (props: any) => (
@@ -36,20 +37,27 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ children, ...props }: any) => {
-    return (
-      <pre
-        className="my-6 overflow-x-auto rounded-lg bg-slate-900 p-4 text-white"
-        {...props}
-      >
-        {children}
-      </pre>
-    );
+  pre: ({ children }: any) => {
+    // children is typically <code className="language-xxx">...</code>
+    const child = Array.isArray(children) ? children[0] : children;
+    const className = child?.props?.className || "";
+    const language = (className.match(/language-(\w+)/)?.[1] ||
+      "tsx") as string;
+    const code =
+      typeof child?.props?.children === "string"
+        ? child.props.children
+        : String(child?.props?.children || "");
+    return <CodeBlock language={language}>{code}</CodeBlock>;
   },
-  code: ({ children, ...props }: any) => {
-    const codeHTML = highlight(children);
-    return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
-  },
+  // Keep inline code simple, styled by Tailwind/CSS
+  code: ({ children, ...props }: any) => (
+    <code
+      className="rounded bg-slate-100 px-1.5 py-0.5 text-[0.95em]"
+      {...props}
+    >
+      {children}
+    </code>
+  ),
   blockquote: (props: any) => (
     <blockquote
       className="my-6 border-l-4 border-lime-500 bg-slate-50 py-2 pl-4 italic"

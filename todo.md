@@ -27,8 +27,8 @@
 - [x] posthog analytics
 - [ ] change default font from inter to alexandria
 - [ ] change "back to blog", "back to portfolio" to a breadcrums component.
-- [ ] make syntax highlighting work inside code blocks
-- [ ] make syntax highlighting work inside inline code blocks like `bun add xyz` that.
+- [x] make syntax highlighting work inside code blocks
+- [x] make syntax highlighting work inside inline code blocks like `bun add xyz` that.
 - [ ] current projects section looks very crowded, will look even more crowded once i add pickpocket here, fix this somehow.
 - [x] add cloudflare workers to stack
 - [x] add cloudflare to stack

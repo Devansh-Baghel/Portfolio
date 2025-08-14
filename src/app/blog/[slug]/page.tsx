@@ -19,7 +19,6 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // ✅ Await params before accessing properties
   const { slug } = await params;
   const post = await getBlogPost(slug);
 

@@ -9,7 +9,7 @@ export default async function BlogPage() {
   const blogPosts = await getAllBlogPosts();
 
   return (
-    <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[1400px]">
+    <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
       {/* Rest of your component remains the same */}
       <div className="p-6 pt-14 text-slate-900 lg:px-20">
         <Image

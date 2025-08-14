@@ -13,6 +13,7 @@ import heroImage from "../../public/Grad_07.webp";
 import Github from "@/components/Github";
 import Blog from "@/components/Blog";
 import EasterEggLogs from "@/components/EasterEgg";
+import FloatingShape from "@/components/FloatingShape";
 
 export default function Home() {
   return (
@@ -116,6 +117,7 @@ export default function Home() {
         <TechStack />
         <Github />
         <Blog />
+        <FloatingShape shapeUrl="/shapes/shape-91.svg" />
         <GitRoll />
         <Contact />
       </div>

@@ -12,7 +12,7 @@ export default async function Blog() {
     <AOSComponent>
       <section
         id="blog"
-        className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900"
+        className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900 z-10"
       >
         <h3
           className="gitroll-title mb-4 font-heading text-4xl"

@@ -1,42 +1,47 @@
-- [ ] Add external link icons in all links that open in a new tab
-- [ ] Add blog section
+## Done
 - [x] Make page feel more interactive
 - [x] Make resume
 - [x] Add resume
-- [ ] add all meta tags https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
-- [ ] https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image
-- [ ] https://nextjs.org/docs/app/building-your-application/optimizing/fonts
-- [ ] add tailwind-motion https://github.com/romboHQ/tailwindcss-motion
-- [ ] add "learn more" button on each project for user to click and view a detailed write up of the project with image carousal, and a BIG button to take to the live site.
 - [x] add gitroll profile
 - [x] gitroll profile section looks a little boring right now, add color or something
+- [x] fix hover issue with commit history
+- [x] custom 404 page
+- [x] posthog analytics
+- [x] make syntax highlighting work inside code blocks
+- [x] make syntax highlighting work inside inline code blocks like `bun add xyz` that.
+- [x] add cloudflare workers to stack
+- [x] add cloudflare to stack
+- [x] add figma to stack
+- [x] add sqlite / d1 to stack
+- [x] add bun to stack
+- [x] Add external link icons in all links that open in a new tab
+- [x] Add blog section
+- [x] add all meta tags https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
+- [x] https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image
+- [x] add tailwind-motion https://github.com/romboHQ/tailwindcss-motion
+- [x] use the accent color lime-500 more often here and there in the ui
+- [x] add sitemap
+
+
+## Not done yet
+- [ ] https://nextjs.org/docs/app/building-your-application/optimizing/fonts
+- [ ] add "learn more" button on each project for user to click and view a detailed write up of the project with image carousal, and a BIG button to take to the live site.
 - [ ] add oss.gg hackathon thing
 - [ ] add hacktoberfest thing maybe
 - [ ] update readme on github to the newest version of the ui
-- [ ] use the accent color lime-500 more often here and there in the ui
-
+- [ ] confirm whether we need the next-seo package or not.
 - [ ] use next-seo package
-- [ ] use next-sitemap package
 - [ ] use next-progress-bar package
 - [ ] add letterboxd or maybe something from bento.me
 - [ ] update gitroll profile
 - [ ] fix issues inside of the gitroll projects
-- [x] fix hover issue with commit history
 - [ ] add tooltip in commit history that tells user to shift+scroll when they hover commit history year.
-- [x] custom 404 page
-- [x] posthog analytics
 - [ ] change default font from inter to alexandria
 - [ ] change "back to blog", "back to portfolio" to a breadcrums component.
-- [x] make syntax highlighting work inside code blocks
-- [x] make syntax highlighting work inside inline code blocks like `bun add xyz` that.
 - [ ] current projects section looks very crowded, will look even more crowded once i add pickpocket here, fix this somehow.
-- [x] add cloudflare workers to stack
-- [x] add cloudflare to stack
-- [x] add figma to stack
 - [ ] add tanstack start to stack
 - [ ] add drizzle to stack
-- [x] add sqlite / d1 to stack
 - [ ] add hono to stack
-- [x] add bun to stack
 - [ ] https://www.fancycomponents.dev/docs/components/blocks/float add this
 - [ ] https://www.fancycomponents.dev/docs/components/blocks/stacking-cards add this to showcase projects
+- [ ] https://www.fancycomponents.dev/docs/components/blocks/sticky-footer add this for the footer maybe

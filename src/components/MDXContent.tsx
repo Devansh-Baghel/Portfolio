@@ -1,7 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
-import { highlight } from "sugar-high";
 import CodeBlock from "./CodeBlock";
 
 const components = {

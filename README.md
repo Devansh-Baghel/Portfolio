@@ -13,6 +13,14 @@ Welcome to the repository for my personal portfolio website, [baghel.dev](https:
 - **Analytics**: PostHog integration for user analytics
 - **Performance Optimized**: Fast loading with optimized images and efficient bundling
 
+## 📸 Screenshots
+<img width="1906" height="1080" alt="2025-08-18_06-39" src="https://github.com/user-attachments/assets/b08758b4-a483-4221-8c4e-3d076431281e" />
+<img width="1904" height="1079" alt="2025-08-18_06-39_1" src="https://github.com/user-attachments/assets/c01b7595-dc93-439e-a746-7b8abb9affeb" />
+<img width="1902" height="1080" alt="2025-08-18_06-40" src="https://github.com/user-attachments/assets/f71321c3-d134-4cbe-b606-588b8a393f2b" />
+<img width="1904" height="1079" alt="2025-08-18_06-40_1" src="https://github.com/user-attachments/assets/478e7e14-b6ba-40d5-b852-46349a8acf81" />
+<img width="1903" height="1080" alt="2025-08-18_06-41_1" src="https://github.com/user-attachments/assets/1ad6bfec-f3b5-40da-82a4-fc398616d99a" />
+
+
 ## 🛠️ Tech Stack
 
 ### Frontend

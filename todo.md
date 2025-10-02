@@ -46,3 +46,6 @@
 - [ ] https://www.fancycomponents.dev/docs/components/blocks/stacking-cards add this to showcase projects
 - [ ] https://www.fancycomponents.dev/docs/components/blocks/sticky-footer add this for the footer maybe
 - [ ] easter eggs through url params, spin etc
+- [ ] add kawaii logo easter eggs from here https://github.com/SAWARATSUKI/KawaiiLogos
+
+- [ ] https://reactbits.dev/components/scroll-stack add this so that all my projects stack up like this

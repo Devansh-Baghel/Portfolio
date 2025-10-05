@@ -25,7 +25,7 @@ export default function StructuredData() {
         sameAs: [
           "https://github.com/devansh-baghel",
           "https://linkedin.com/in/devanshbaghel",
-          "https://twitter.com/DevanshBaghel5",
+          "https://twitter.com/bagheldotdev",
         ],
       },
       {

@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Devansh Baghel - Full Stack Developer & Software Engineer",
     description:
       "Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies.",
-    creator: "@DevanshBaghel5",
+    creator: "@bagheldotdev",
     images: ["/og-image.png"],
   },
   alternates: {

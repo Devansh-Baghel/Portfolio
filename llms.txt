@@ -12549,7 +12549,7 @@ export default function Home() {
             <LinkedinIcon className="h-8 w-8" />
           </a>
           <a
-            href="https://twitter.com/DevanshBaghel5"
+            href="https://twitter.com/bagheldotdev"
             target="_blank"
             aria-label="Twitter"
           >

@@ -102,7 +102,7 @@ export default async function BlogPage() {
           <p className="text-slate-600">
             More posts coming soon! Follow me on{" "}
             <a
-              href="https://twitter.com/DevanshBaghel5"
+              href="https://twitter.com/bagheldotdev"
               target="_blank"
               className="underline underline-offset-2 hover:text-lime-500"
             >

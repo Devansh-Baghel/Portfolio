@@ -203,6 +203,6 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 - **Email**: [hello@baghel.dev](mailto:hello@baghel.dev)
 - **GitHub**: [@devansh-baghel](https://github.com/devansh-baghel)
 - **LinkedIn**: [devanshbaghel](https://linkedin.com/in/devanshbaghel)
-- **Twitter**: [@DevanshBaghel5](https://twitter.com/DevanshBaghel5)
+- **Twitter**: [@bagheldotdev](https://twitter.com/bagheldotdev)
 
 ---

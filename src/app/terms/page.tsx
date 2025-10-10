@@ -1,6 +1,6 @@
 export default function Terms() {
   return (
-    <section className="py-10 px-20 flex flex-col gap-4">
+    <section className="flex flex-col gap-4 px-20 py-10">
       <h1 className="text-4xl">Terms & Conditions</h1>
       <h3 className="text-xl">Last updated on 19-11-2024 23:26:36</h3>
       <p>
@@ -65,6 +65,20 @@ export default function Terms() {
         must be communicated to us using the contact information provided on
         this website.
       </p>
+      <a
+        href="http://www.dmca.com/Protection/Status.aspx?ID=43804db4-aeab-4cca-94bd-55b7f9adc40d"
+        title="DMCA.com Protection Status"
+        className="dmca-badge"
+      >
+        {" "}
+        <img
+          src="https://images.dmca.com/Badges/dmca_protected_sml_120ac.png?ID=43804db4-aeab-4cca-94bd-55b7f9adc40d"
+          alt="DMCA.com Protection Status"
+        />
+      </a>{" "}
+      <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
+        {" "}
+      </script>
     </section>
   );
 }

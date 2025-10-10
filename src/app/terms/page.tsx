@@ -66,7 +66,7 @@ export default function Terms() {
         this website.
       </p>
       <a
-        href="http://www.dmca.com/Protection/Status.aspx?ID=43804db4-aeab-4cca-94bd-55b7f9adc40d"
+        href="https://www.dmca.com/Protection/Status.aspx?ID=43804db4-aeab-4cca-94bd-55b7f9adc40d"
         title="DMCA.com Protection Status"
         className="dmca-badge"
       >
@@ -76,7 +76,7 @@ export default function Terms() {
           alt="DMCA.com Protection Status"
         />
       </a>{" "}
-      <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
+      <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" defer>
         {" "}
       </script>
     </section>

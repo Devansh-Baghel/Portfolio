@@ -14,6 +14,7 @@ import Github from "@/components/Github";
 import Blog from "@/components/Blog";
 import EasterEggLogs from "@/components/EasterEgg";
 import FloatingShape from "@/components/FloatingShape";
+import HeroImage from "@/components/HeroImage";
 
 export default function Home() {
   return (
@@ -103,15 +104,8 @@ export default function Home() {
       <ScrollButton />
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
-        <Image
-          src={heroImage}
-          alt="Background gradient"
-          width={700}
-          height={700}
-          className="images motion-preset-slide-left hidden animate-blur-in-900 motion-duration-1500 lg:block"
-          priority
-          fetchPriority="high"
-        />
+
+        <HeroImage />
         <EasterEggLogs />
         <Projects />
         <FloatingShape

@@ -42,7 +42,8 @@
     "remark-gfm": "^4.0.1",
     "resend": "^3.5.0",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.181.0"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "^0.3.10",

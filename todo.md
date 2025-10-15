@@ -49,3 +49,4 @@
 - [ ] add kawaii logo easter eggs from here https://github.com/SAWARATSUKI/KawaiiLogos
 
 - [ ] https://reactbits.dev/components/scroll-stack add this so that all my projects stack up like this
+- [ ] create a proper way to switch between various types of loading animations that you want, like if you want sliding in animation or blurr animation, or a loader animation.

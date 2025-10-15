@@ -1,20 +1,19 @@
-import { FaGithub as GithubIcon } from "react-icons/fa";
-import { FaLinkedin as LinkedinIcon } from "react-icons/fa";
-import { MdOutgoingMail as MailIcon } from "react-icons/md";
-import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
-import Projects from "@/components/Projects";
-import TechStack from "@/components/Stack";
-import Contact from "@/components/Contact";
-import ScrollButton from "@/components/ScrollButton";
-import Image from "next/image";
-import Glow from "@/components/Glow";
-import GitRoll from "@/components/GitRoll";
-import heroImage from "../../public/Grad_07.webp";
-import Github from "@/components/Github";
-import Blog from "@/components/Blog";
-import EasterEggLogs from "@/components/EasterEgg";
-import FloatingShape from "@/components/FloatingShape";
-import HeroImage from "@/components/HeroImage";
+import { FaGithub as GithubIcon } from 'react-icons/fa'
+import { FaLinkedin as LinkedinIcon } from 'react-icons/fa'
+import { MdOutgoingMail as MailIcon } from 'react-icons/md'
+import { FaXTwitter as TwitterIcon } from 'react-icons/fa6'
+import Projects from '@/components/Projects'
+import TechStack from '@/components/Stack'
+import Contact from '@/components/Contact'
+import ScrollButton from '@/components/ScrollButton'
+import Image from 'next/image'
+import Glow from '@/components/Glow'
+import GitRoll from '@/components/GitRoll'
+import Github from '@/components/Github'
+import Blog from '@/components/Blog'
+import EasterEggLogs from '@/components/EasterEgg'
+import FloatingShape from '@/components/FloatingShape'
+import HeroImage from '@/components/HeroImage'
 
 export default function Home() {
   return (
@@ -24,7 +23,7 @@ export default function Home() {
           src="/shape-76.svg"
           height={400}
           width={400}
-          alt=""
+          alt="rotating blob"
           priority
           className="images glow absolute left-[-80px] top-[-120px] z-[-10] h-[400px] w-[400px] animate-spin animate-duration-[40000ms] animate-infinite animate-ease-in-out"
         />
@@ -48,7 +47,7 @@ export default function Home() {
           id="more-info"
         >
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
-          apps with{" "}
+          apps with{' '}
           <a
             href="#tech-stack"
             className="cursor-pointer underline underline-offset-2 hover:text-lime-500"
@@ -104,7 +103,6 @@ export default function Home() {
       <ScrollButton />
 
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
-
         <HeroImage />
         <EasterEggLogs />
         <Projects />
@@ -145,5 +143,5 @@ export default function Home() {
         <Contact />
       </div>
     </main>
-  );
+  )
 }

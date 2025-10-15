@@ -180,6 +180,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
+
         <a
           href="https://github.com/devansh-baghel"
           target="_blank"
@@ -190,5 +191,5 @@ export default function Projects() {
         </a>
       </section>
     </AOSComponent>
-  );
+  )
 }

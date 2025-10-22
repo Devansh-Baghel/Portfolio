@@ -191,5 +191,5 @@ export default function Projects() {
         </a>
       </section>
     </AOSComponent>
-  )
+  );
 }

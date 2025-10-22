@@ -21,6 +21,7 @@
 - [x] add tailwind-motion https://github.com/romboHQ/tailwindcss-motion
 - [x] use the accent color lime-500 more often here and there in the ui
 - [x] add sitemap
+- [x] add the spin faster easter egg.
 
 
 ## Not done yet
@@ -50,3 +51,4 @@
 
 - [ ] https://reactbits.dev/components/scroll-stack add this so that all my projects stack up like this
 - [ ] create a proper way to switch between various types of loading animations that you want, like if you want sliding in animation or blurr animation, or a loader animation.
+- [ ] update the console logs for easter eggs after you are done implementing some of them.

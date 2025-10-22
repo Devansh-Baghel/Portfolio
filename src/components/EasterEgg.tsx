@@ -19,9 +19,9 @@ export default function EasterEggLogs() {
     // Add a global function
     (window as any).showSecrets = () => {
       console.log("🚀 Here are some hidden shortcuts:");
-      console.log("- Press 'k' for Konami code mode");
-      console.log("- Click the spinning shape 10 times");
-      console.log("- Try the secret route: /matrix");
+      // console.log("- Press 'k' for Konami code mode");
+      // console.log("- Click the spinning shape 10 times");
+      console.log('- Want to see something cool? Try /?spin=faster');
     };
   }, []);
 

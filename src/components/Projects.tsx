@@ -14,7 +14,7 @@ export default function Projects() {
           data-aos="fade-left"
           className="projects-title motion-preset-blur-right mb-8 font-heading text-4xl"
         >
-          Selected Work
+          Selected Projects
         </h3>
 
         <div id="projects-container" className="mb-6 flex flex-col gap-6">

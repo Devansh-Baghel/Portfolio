@@ -37,7 +37,7 @@ const ScrollButton = () => {
   return (
     <div>
       {isVisible && (
-        <a href="#projects" aria-label="Scroll down to projects">
+        <a href="#work" aria-label="Scroll down to projects">
           <DownArrowIcon
             className="absolute h-12 w-12 animate-bounce text-slate-800"
             id="down-arrow"

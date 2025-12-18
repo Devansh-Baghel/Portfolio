@@ -47,6 +47,13 @@ body {
   border-radius: 15px;
 }
 
+#experience-container {
+  background-image: url("/backgrounds/Grad_03.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat-y;
+}
+
 #projects-container {
   background-image: url("/Grad_02.webp");
   background-size: contain;
@@ -137,6 +144,7 @@ body {
   grid-template-columns: 2.2fr 0.9fr;
 } */
 
+.work-title,
 .tech-stack-title,
 .projects-title,
 .contact-title,
@@ -145,6 +153,7 @@ body {
   z-index: 10;
 }
 
+.work-title::before,
 .tech-stack-title::before,
 .projects-title::before,
 .contact-title::before,
@@ -158,6 +167,15 @@ body {
   bottom: -5px;
   left: 0;
   z-index: -1;
+}
+
+.work-title::before {
+  background: linear-gradient(
+    90deg,
+    #4d16ff 0%,
+    rgba(255, 165, 0, 0) 80%
+  );
+  width: 80%;
 }
 
 .tech-stack-title::before {
@@ -278,3 +296,5 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+

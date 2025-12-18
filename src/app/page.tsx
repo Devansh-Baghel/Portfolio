@@ -16,6 +16,7 @@ import FloatingShape from '@/components/FloatingShape'
 import HeroImage from '@/components/HeroImage'
 import { Suspense } from 'react';
 import SpinningShape from '@/components/SpinningShape'
+import WorkExperience from '@/components/WorkExperience';
 
 export default function Home() {
   return (
@@ -113,6 +114,7 @@ export default function Home() {
       <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
         <HeroImage />
         <EasterEggLogs />
+        <WorkExperience />
         <Projects />
         <FloatingShape
           shapeUrl="/shapes/shape-77.svg"

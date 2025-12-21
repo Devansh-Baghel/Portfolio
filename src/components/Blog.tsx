@@ -1,8 +1,8 @@
-import AOSComponent from "@/lib/aos";
-import Link from "next/link";
-import { LuExternalLink as LinkIcon } from "react-icons/lu";
-import { getAllBlogPosts } from "@/lib/mdx";
-import { format } from "date-fns";
+import AOSComponent from '@/lib/aos';
+import Link from 'next/link';
+import { LuExternalLink as LinkIcon } from 'react-icons/lu';
+import { getAllBlogPosts } from '@/lib/mdx';
+import { format } from 'date-fns';
 
 export default async function Blog() {
   const blogPosts = await getAllBlogPosts();
@@ -26,13 +26,11 @@ export default async function Blog() {
             <>
               <Link href={`/blog/${latestPost.slug}`}>
                 <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-                  <h4 className="mb-2 text-xl font-bold">
-                    {latestPost.title}
-                  </h4>
+                  <h4 className="mb-2 text-xl font-bold">{latestPost.title}</h4>
                   <p className="mb-4 text-slate-600">{latestPost.excerpt}</p>
                   <div className="flex items-center gap-4 text-sm text-slate-500">
                     <span>
-                      {format(new Date(latestPost.date), "MMM d, yyyy")}
+                      {format(new Date(latestPost.date), 'MMM d, yyyy')}
                     </span>
                     <span>•</span>
                     <span>{latestPost.readTime}</span>

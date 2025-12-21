@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
-import { getBlogPost, getAllBlogSlugs } from "@/lib/mdx";
-import Link from "next/link";
-import Image from "next/image";
-import Glow from "@/components/Glow";
-import MDXContent from "@/components/MDXContent";
-import { Calendar, ArrowLeft, Clock } from "lucide-react";
-import { format } from "date-fns";
+import { notFound } from 'next/navigation';
+import { getBlogPost, getAllBlogSlugs } from '@/lib/mdx';
+import Link from 'next/link';
+import Image from 'next/image';
+import Glow from '@/components/Glow';
+import MDXContent from '@/components/MDXContent';
+import { Calendar, ArrowLeft, Clock } from 'lucide-react';
+import { format } from 'date-fns';
 
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Post Not Found",
+      title: 'Post Not Found',
     };
   }
 
@@ -34,12 +34,12 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      type: "article",
+      type: 'article',
       publishedTime: post.date,
-      authors: ["Devansh Baghel"],
+      authors: ['Devansh Baghel'],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
     },
@@ -90,7 +90,7 @@ export default async function BlogPostPage({
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
               <time dateTime={post.date}>
-                {format(new Date(post.date), "MMMM d, yyyy")}
+                {format(new Date(post.date), 'MMMM d, yyyy')}
               </time>
             </div>
             <span>•</span>

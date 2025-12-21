@@ -1,6 +1,6 @@
-"use client";
-import { TbArrowNarrowDown as DownArrowIcon } from "react-icons/tb";
-import React, { useState, useEffect } from "react";
+'use client';
+import { TbArrowNarrowDown as DownArrowIcon } from 'react-icons/tb';
+import React, { useState, useEffect } from 'react';
 
 const ScrollButton = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -19,14 +19,14 @@ const ScrollButton = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
     handleResize();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 

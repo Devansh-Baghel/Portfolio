@@ -1,21 +1,21 @@
-import { FaGithub as GithubIcon } from 'react-icons/fa'
-import { FaLinkedin as LinkedinIcon } from 'react-icons/fa'
-import { MdOutgoingMail as MailIcon } from 'react-icons/md'
-import { FaXTwitter as TwitterIcon } from 'react-icons/fa6'
-import Projects from '@/components/Projects'
-import TechStack from '@/components/Stack'
-import Contact from '@/components/Contact'
-import ScrollButton from '@/components/ScrollButton'
-import Image from 'next/image'
-import Glow from '@/components/Glow'
-import GitRoll from '@/components/GitRoll'
-import Github from '@/components/Github'
-import Blog from '@/components/Blog'
-import EasterEggLogs from '@/components/EasterEgg'
-import FloatingShape from '@/components/FloatingShape'
-import HeroImage from '@/components/HeroImage'
+import { FaGithub as GithubIcon } from 'react-icons/fa';
+import { FaLinkedin as LinkedinIcon } from 'react-icons/fa';
+import { MdOutgoingMail as MailIcon } from 'react-icons/md';
+import { FaXTwitter as TwitterIcon } from 'react-icons/fa6';
+import Projects from '@/components/Projects';
+import TechStack from '@/components/Stack';
+import Contact from '@/components/Contact';
+import ScrollButton from '@/components/ScrollButton';
+import Image from 'next/image';
+import Glow from '@/components/Glow';
+import GitRoll from '@/components/GitRoll';
+import Github from '@/components/Github';
+import Blog from '@/components/Blog';
+import EasterEggLogs from '@/components/EasterEgg';
+import FloatingShape from '@/components/FloatingShape';
+import HeroImage from '@/components/HeroImage';
 import { Suspense } from 'react';
-import SpinningShape from '@/components/SpinningShape'
+import SpinningShape from '@/components/SpinningShape';
 import WorkExperience from '@/components/WorkExperience';
 
 export default function Home() {

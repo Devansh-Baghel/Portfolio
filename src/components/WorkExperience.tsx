@@ -1,14 +1,17 @@
-"use client";
+'use client';
 
-import { MdWork as WorkIcon } from "react-icons/md";
-import { BsBuildingsFill as CompanyIcon } from "react-icons/bs";
-import { FaLocationDot as LocationIcon } from "react-icons/fa6";
-import AOSComponent from "@/lib/aos";
+import { MdWork as WorkIcon } from 'react-icons/md';
+import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
+import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
+import AOSComponent from '@/lib/aos';
 
 export default function WorkExperience() {
   return (
     <AOSComponent>
-      <section id="work" className="relative z-10 mt-32 2xl:mt-52 p-6 text-slate-900">
+      <section
+        id="work"
+        className="relative z-10 mt-32 2xl:mt-52 p-6 text-slate-900"
+      >
         <h3
           data-aos="fade-left"
           className="work-title motion-preset-blur-right mb-8 font-heading text-4xl flex items-center gap-2"
@@ -45,19 +48,24 @@ export default function WorkExperience() {
                 <li className="flex gap-3 text-lg bg-white/80 rounded-lg shadow-md px-4 py-2 hover:border-l-4 border-slate-700 transition-all duration-100">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-900"></span>
                   <span>
-                    Maintained and developed features for a full-stack YouTube views marketplace using Next.js frontend and Node.js/TypeScript backend
+                    Maintained and developed features for a full-stack YouTube
+                    views marketplace using Next.js frontend and
+                    Node.js/TypeScript backend
                   </span>
                 </li>
                 <li className="flex gap-3 text-lg bg-white/80 rounded-lg shadow-md px-4 py-2 hover:border-l-4 border-slate-700 transition-all duration-100">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-900"></span>
                   <span>
-                    Implemented AI-powered features using OpenRouter and Vercel AI SDK for automated tag generation and content optimization
+                    Implemented AI-powered features using OpenRouter and Vercel
+                    AI SDK for automated tag generation and content optimization
                   </span>
                 </li>
                 <li className="flex gap-3 text-lg bg-white/80 rounded-lg shadow-md px-4 py-2 hover:border-l-4 border-slate-700 transition-all duration-100">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-900"></span>
                   <span>
-                    Built automated MongoDB backup system with cron jobs (6-hour intervals) and Cloudflare R2 integration for cloud storage with automated cleanup policies
+                    Built automated MongoDB backup system with cron jobs (6-hour
+                    intervals) and Cloudflare R2 integration for cloud storage
+                    with automated cleanup policies
                   </span>
                 </li>
                 <li className="flex gap-3 text-lg bg-white/80 rounded-lg shadow-md px-4 py-2 hover:border-l-4 border-slate-700 transition-all duration-100">

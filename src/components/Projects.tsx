@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { LuExternalLink as LinkIcon } from "react-icons/lu";
-import { FaCodeBranch as CodeIcon } from "react-icons/fa6";
-import { VscGitStash as CodeStashIcon } from "react-icons/vsc";
-import AOSComponent from "@/lib/aos";
+import { LuExternalLink as LinkIcon } from 'react-icons/lu';
+import { FaCodeBranch as CodeIcon } from 'react-icons/fa6';
+import { VscGitStash as CodeStashIcon } from 'react-icons/vsc';
+import AOSComponent from '@/lib/aos';
 
 // TODO: convert all these images to next/image
 export default function Projects() {

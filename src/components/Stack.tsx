@@ -1,38 +1,38 @@
-"use client";
+'use client';
 
-import AOSComponent from "@/lib/aos";
-import Image from "next/image";
+import AOSComponent from '@/lib/aos';
+import Image from 'next/image';
 
 const frontend = [
-  { path: "next.svg", name: "Next.js" },
-  { path: "ts.svg", name: "TypeScript" },
-  { path: "js.svg", name: "JavaScript" },
-  { path: "react.svg", name: "React" },
-  { path: "react_query.svg", name: "React Query" },
-  { path: "tailwindcss.svg", name: "Tailwind CSS" },
-  { path: "html.svg", name: "HTML" },
-  { path: "css.svg", name: "CSS" },
+  { path: 'next.svg', name: 'Next.js' },
+  { path: 'ts.svg', name: 'TypeScript' },
+  { path: 'js.svg', name: 'JavaScript' },
+  { path: 'react.svg', name: 'React' },
+  { path: 'react_query.svg', name: 'React Query' },
+  { path: 'tailwindcss.svg', name: 'Tailwind CSS' },
+  { path: 'html.svg', name: 'HTML' },
+  { path: 'css.svg', name: 'CSS' },
 ];
 
 const backend = [
-  { path: "workers.svg", name: "Cloudflare Workers" },
-  { path: "node.svg", name: "Node.js" },
-  { path: "bun.svg", name: "Bun" },
-  { path: "express.svg", name: "Express.js" },
-  { path: "mongodb.svg", name: "MongoDB" },
-  { path: "sqlite.svg", name: "SQLite" },
-  { path: "postman.svg", name: "Postman" },
-  { path: "docker.svg", name: "Docker" },
-  { path: "heroku.svg", name: "Heroku" },
+  { path: 'workers.svg', name: 'Cloudflare Workers' },
+  { path: 'node.svg', name: 'Node.js' },
+  { path: 'bun.svg', name: 'Bun' },
+  { path: 'express.svg', name: 'Express.js' },
+  { path: 'mongodb.svg', name: 'MongoDB' },
+  { path: 'sqlite.svg', name: 'SQLite' },
+  { path: 'postman.svg', name: 'Postman' },
+  { path: 'docker.svg', name: 'Docker' },
+  { path: 'heroku.svg', name: 'Heroku' },
 ];
 
 const misc = [
-  { path: "cloudflare.svg", name: "Cloudflare" },
-  { path: "linux.svg", name: "Linux" },
-  { path: "git-light.svg", name: "Git" },
-  { path: "github.svg", name: "GitHub" },
-  { path: "bash.svg", name: "Bash" },
-  { path: "figma.svg", name: "Figma" },
+  { path: 'cloudflare.svg', name: 'Cloudflare' },
+  { path: 'linux.svg', name: 'Linux' },
+  { path: 'git-light.svg', name: 'Git' },
+  { path: 'github.svg', name: 'GitHub' },
+  { path: 'bash.svg', name: 'Bash' },
+  { path: 'figma.svg', name: 'Figma' },
 ];
 
 // TODO: add tooltip on hover to these icons

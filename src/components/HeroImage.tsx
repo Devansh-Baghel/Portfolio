@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import GridDistortion from "./GridDistortion";
+import React from 'react';
+import GridDistortion from './GridDistortion';
 
 function HeroImage() {
   return (

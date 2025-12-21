@@ -41,7 +41,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
   strength = 0.15,
   relaxation = 0.9,
   imageSrc,
-  className = ''
+  className = '',
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -63,7 +63,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
-      powerPreference: 'high-performance'
+      powerPreference: 'high-performance',
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0);
@@ -80,11 +80,11 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
       time: { value: 0 },
       resolution: { value: new THREE.Vector4() },
       uTexture: { value: null as THREE.Texture | null },
-      uDataTexture: { value: null as THREE.DataTexture | null }
+      uDataTexture: { value: null as THREE.DataTexture | null },
     };
 
     const textureLoader = new THREE.TextureLoader();
-    textureLoader.load(imageSrc, texture => {
+    textureLoader.load(imageSrc, (texture) => {
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
       texture.wrapS = THREE.ClampToEdgeWrapping;
@@ -101,7 +101,13 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
       data[i * 4 + 1] = Math.random() * 255 - 125;
     }
 
-    const dataTexture = new THREE.DataTexture(data, size, size, THREE.RGBAFormat, THREE.FloatType);
+    const dataTexture = new THREE.DataTexture(
+      data,
+      size,
+      size,
+      THREE.RGBAFormat,
+      THREE.FloatType,
+    );
     dataTexture.needsUpdate = true;
     uniforms.uDataTexture.value = dataTexture;
 
@@ -110,7 +116,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
       uniforms,
       vertexShader,
       fragmentShader,
-      transparent: true
+      transparent: true,
     });
 
     const geometry = new THREE.PlaneGeometry(1, 1, size - 1, size - 1);
@@ -162,7 +168,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
       prevX: 0,
       prevY: 0,
       vX: 0,
-      vY: 0
+      vY: 0,
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -184,7 +190,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
         prevX: 0,
         prevY: 0,
         vX: 0,
-        vY: 0
+        vY: 0,
       });
     };
 
@@ -216,7 +222,8 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
 
       for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
-          const distSq = Math.pow(gridMouseX - i, 2) + Math.pow(gridMouseY - j, 2);
+          const distSq =
+            Math.pow(gridMouseX - i, 2) + Math.pow(gridMouseY - j, 2);
           if (distSq < maxDist * maxDist) {
             const index = 4 * (i + size * j);
             const power = Math.min(maxDist / Math.sqrt(distSq), 10);
@@ -273,7 +280,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
         width: '100%',
         height: '100%',
         minWidth: '0',
-        minHeight: '0'
+        minHeight: '0',
       }}
     />
   );

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import Glow from "@/components/Glow";
+import Image from 'next/image';
+import Link from 'next/link';
+import Glow from '@/components/Glow';
 
 export default function NotFound() {
   return (
@@ -35,8 +35,8 @@ export default function NotFound() {
 
               {/* Description */}
               <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-lg motion-delay-300 md:text-xl">
-                Oops! The page you&apos;re looking for doesn&apos;t exist. It might have
-                been moved, deleted, or you entered the wrong URL.
+                Oops! The page you&apos;re looking for doesn&apos;t exist. It
+                might have been moved, deleted, or you entered the wrong URL.
               </p>
 
               {/* Action buttons */}

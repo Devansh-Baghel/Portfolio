@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import AOSComponent from "@/lib/aos";
+import AOSComponent from '@/lib/aos';
 
 export default function GitRoll() {
   return (

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
+import Link from 'next/link';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { HiMail } from 'react-icons/hi';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,9 +20,7 @@ export default function Footer() {
             <h3 className="font-heading text-3xl md:text-4xl">
               Devansh Baghel
             </h3>
-            <p className="mt-2 text-lg text-slate-600">
-              Full Stack Developer
-            </p>
+            <p className="mt-2 text-lg text-slate-600">Full Stack Developer</p>
           </div>
 
           {/* Social links */}
@@ -109,11 +107,9 @@ export default function Footer() {
 
           {/* Bottom section */}
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-600 md:flex-row">
-            <p>
-              © {currentYear} Devansh Baghel. All rights reserved.
-            </p>
+            <p>© {currentYear} Devansh Baghel. All rights reserved.</p>
             <p className="text-center">
-              Built with <span className="text-lime-500">Next.js</span> &{" "}
+              Built with <span className="text-lime-500">Next.js</span> &{' '}
               <span className="text-lime-500">Tailwind CSS</span>
             </p>
           </div>

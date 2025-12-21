@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import React from "react";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import React from 'react';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 // Import only the languages you need
-import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
-import ts from "react-syntax-highlighter/dist/esm/languages/prism/typescript";
-import js from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
-import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+import ts from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
+import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+import bash from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
 // Import a Prism theme
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-SyntaxHighlighter.registerLanguage("tsx", tsx);
-SyntaxHighlighter.registerLanguage("typescript", ts);
-SyntaxHighlighter.registerLanguage("ts", ts);
-SyntaxHighlighter.registerLanguage("javascript", js);
-SyntaxHighlighter.registerLanguage("js", js);
-SyntaxHighlighter.registerLanguage("bash", bash);
-SyntaxHighlighter.registerLanguage("sh", bash);
+SyntaxHighlighter.registerLanguage('tsx', tsx);
+SyntaxHighlighter.registerLanguage('typescript', ts);
+SyntaxHighlighter.registerLanguage('ts', ts);
+SyntaxHighlighter.registerLanguage('javascript', js);
+SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage('bash', bash);
+SyntaxHighlighter.registerLanguage('sh', bash);
 
 type Props = {
   language?: string;
@@ -25,7 +25,7 @@ type Props = {
 };
 
 export default function CodeBlock({
-  language = "tsx",
+  language = 'tsx',
   children,
   showLineNumbers = false,
 }: Props) {
@@ -37,13 +37,13 @@ export default function CodeBlock({
       wrapLongLines
       customStyle={{
         borderRadius: 12,
-        padding: "22px",
-        fontSize: "0.95rem",
+        padding: '22px',
+        fontSize: '0.95rem',
       }}
       codeTagProps={{
         style: {
           fontFamily:
-            "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
         },
       }}
     >

@@ -70,14 +70,14 @@ export default function Terms() {
         title="DMCA.com Protection Status"
         className="dmca-badge"
       >
-        {" "}
+        {' '}
         <img
           src="https://images.dmca.com/Badges/dmca_protected_sml_120ac.png?ID=43804db4-aeab-4cca-94bd-55b7f9adc40d"
           alt="DMCA.com Protection Status"
         />
-      </a>{" "}
+      </a>{' '}
       <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" defer>
-        {" "}
+        {' '}
       </script>
     </section>
   );

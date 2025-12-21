@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import AOSComponent from "@/lib/aos";
-import axios from "axios";
-import { useState } from "react";
-import toast from "react-hot-toast";
+import AOSComponent from '@/lib/aos';
+import axios from 'axios';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   async function sendEmail(formdata: FormData) {
     if (!name || !message || !email) return;
 
     const emailPromise = axios
-      .post("https://email-worker.dbaghel.workers.dev/api/email", {
+      .post('https://email-worker.dbaghel.workers.dev/api/email', {
         name,
         email,
         message,
       })
       .then(() => {
-        setName("");
-        setEmail("");
-        setMessage("");
+        setName('');
+        setEmail('');
+        setMessage('');
       });
 
     toast.promise(emailPromise, {
-      loading: "Sending email...",
-      success: "Thank you for contacting me!",
-      error: "Something went wrong while sending email :(",
+      loading: 'Sending email...',
+      success: 'Thank you for contacting me!',
+      error: 'Something went wrong while sending email :(',
     });
   }
 

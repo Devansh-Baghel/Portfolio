@@ -1,109 +1,109 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import "@/lib/hint.min.css";
-import axios from "axios";
-import { Toaster } from "react-hot-toast";
-import localFont from "next/font/local";
-import { PostHogProvider } from "./providers";
-import StructuredData from "@/components/StructuredData";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import '@/lib/hint.min.css';
+import axios from 'axios';
+import { Toaster } from 'react-hot-toast';
+import localFont from 'next/font/local';
+import { PostHogProvider } from './providers';
+import StructuredData from '@/components/StructuredData';
 
 const chromate = localFont({
-  src: "./Chromate-Regular.ttf",
-  variable: "--font-chromate",
-  display: "swap",
+  src: './Chromate-Regular.ttf',
+  variable: '--font-chromate',
+  display: 'swap',
 });
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://baghel.dev"),
+  metadataBase: new URL('https://baghel.dev'),
   title: {
-    default: "Devansh Baghel - Full Stack Developer & Software Engineer",
-    template: "%s | Devansh Baghel",
+    default: 'Devansh Baghel - Full Stack Developer & Software Engineer',
+    template: '%s | Devansh Baghel',
   },
   description:
-    "Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies. View my portfolio of projects including CodeStash and SpendSync.",
+    'Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies. View my portfolio of projects including CodeStash and SpendSync.',
   keywords: [
-    "Devansh Baghel",
-    "Full Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript Developer",
-    "JavaScript Developer",
-    "Software Engineer",
-    "Web Developer",
-    "Portfolio",
-    "CodeStash",
-    "SpendSync",
+    'Devansh Baghel',
+    'Full Stack Developer',
+    'React Developer',
+    'Next.js Developer',
+    'TypeScript Developer',
+    'JavaScript Developer',
+    'Software Engineer',
+    'Web Developer',
+    'Portfolio',
+    'CodeStash',
+    'SpendSync',
   ],
-  authors: [{ name: "Devansh Baghel", url: "https://baghel.dev" }],
-  creator: "Devansh Baghel",
-  publisher: "Devansh Baghel",
+  authors: [{ name: 'Devansh Baghel', url: 'https://baghel.dev' }],
+  creator: 'Devansh Baghel',
+  publisher: 'Devansh Baghel',
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://baghel.dev",
-    title: "Devansh Baghel - Full Stack Developer & Software Engineer",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://baghel.dev',
+    title: 'Devansh Baghel - Full Stack Developer & Software Engineer',
     description:
-      "Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies. View my portfolio of projects including CodeStash and SpendSync.",
-    siteName: "Devansh Baghel Portfolio",
+      'Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies. View my portfolio of projects including CodeStash and SpendSync.',
+    siteName: 'Devansh Baghel Portfolio',
     images: [
       {
-        url: "/og-image.png",
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: "Devansh Baghel - Full Stack Developer",
+        alt: 'Devansh Baghel - Full Stack Developer',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Devansh Baghel - Full Stack Developer & Software Engineer",
+    card: 'summary_large_image',
+    title: 'Devansh Baghel - Full Stack Developer & Software Engineer',
     description:
-      "Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies.",
-    creator: "@bagheldotdev",
-    images: ["/og-image.png"],
+      'Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies.',
+    creator: '@bagheldotdev',
+    images: ['/og-image.png'],
   },
   alternates: {
-    canonical: "https://baghel.dev",
+    canonical: 'https://baghel.dev',
   },
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
     other: [
       {
-        rel: "android-chrome",
-        url: "/android-chrome-192x192.png",
-        sizes: "192x192",
+        rel: 'android-chrome',
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
       },
       {
-        rel: "android-chrome",
-        url: "/android-chrome-512x512.png",
-        sizes: "512x512",
+        rel: 'android-chrome',
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
       },
     ],
   },
-  manifest: "/manifest.json",
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import Image from "next/image";
-import Link from "next/link";
-import CodeBlock from "./CodeBlock";
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
+import Link from 'next/link';
+import CodeBlock from './CodeBlock';
 
 const components = {
   h1: (props: any) => (
@@ -29,7 +29,7 @@ const components = {
   img: (props: any) => (
     <Image
       src={props.src}
-      alt={props.alt || ""}
+      alt={props.alt || ''}
       width={1000}
       height={400}
       className="my-6 rounded-lg shadow-lg"
@@ -39,13 +39,13 @@ const components = {
   pre: ({ children }: any) => {
     // children is typically <code className="language-xxx">...</code>
     const child = Array.isArray(children) ? children[0] : children;
-    const className = child?.props?.className || "";
+    const className = child?.props?.className || '';
     const language = (className.match(/language-(\w+)/)?.[1] ||
-      "tsx") as string;
+      'tsx') as string;
     const code =
-      typeof child?.props?.children === "string"
+      typeof child?.props?.children === 'string'
         ? child.props.children
-        : String(child?.props?.children || "");
+        : String(child?.props?.children || '');
     return <CodeBlock language={language}>{code}</CodeBlock>;
   },
   // Keep inline code simple, styled by Tailwind/CSS

@@ -1,25 +1,25 @@
-import createMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "go-skill-icons.vercel.app",
+        protocol: 'https',
+        hostname: 'go-skill-icons.vercel.app',
       },
       {
-        protocol: "https",
-        hostname: "gitroll.io",
+        protocol: 'https',
+        hostname: 'gitroll.io',
       },
       {
-        protocol: "https",
-        hostname: "dev-to-uploads.s3.amazonaws.com",
+        protocol: 'https',
+        hostname: 'dev-to-uploads.s3.amazonaws.com',
       },
     ],
   },
@@ -28,7 +28,7 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
+    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
   },
 });
 

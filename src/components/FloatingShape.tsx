@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Float from "./fancy/blocks/float";
+import Image from 'next/image';
+import Float from './fancy/blocks/float';
 
 type FloatingShapeProps = {
   shapeUrl: string;

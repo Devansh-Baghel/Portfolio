@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
-import Glow from "@/components/Glow";
-import { Calendar, ArrowLeft, ExternalLink } from "lucide-react";
-import { getAllBlogPosts } from "@/lib/mdx";
-import { format } from "date-fns";
+import Link from 'next/link';
+import Image from 'next/image';
+import Glow from '@/components/Glow';
+import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
+import { getAllBlogPosts } from '@/lib/mdx';
+import { format } from 'date-fns';
 
 export default async function BlogPage() {
   const blogPosts = await getAllBlogPosts();
@@ -53,7 +53,7 @@ export default async function BlogPage() {
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
                       <time dateTime={post.date}>
-                        {format(new Date(post.date), "MMMM d, yyyy")}
+                        {format(new Date(post.date), 'MMMM d, yyyy')}
                       </time>
                     </div>
                     <span>•</span>
@@ -100,14 +100,14 @@ export default async function BlogPage() {
 
         <div className="mt-16 text-center">
           <p className="text-slate-600">
-            More posts coming soon! Follow me on{" "}
+            More posts coming soon! Follow me on{' '}
             <a
               href="https://twitter.com/bagheldotdev"
               target="_blank"
               className="underline underline-offset-2 hover:text-lime-500"
             >
               Twitter
-            </a>{" "}
+            </a>{' '}
             for updates.
           </p>
         </div>

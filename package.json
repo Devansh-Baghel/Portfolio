@@ -10,7 +10,9 @@
     "build:worker": "opennextjs-cloudflare",
     "dev:worker": "wrangler dev --port 8771",
     "preview:worker": "pnpm run build:worker && pnpm run dev:worker",
-    "deploy:worker": "pnpm run build:worker && wrangler deploy"
+    "deploy:worker": "pnpm run build:worker && wrangler deploy",
+    "format:check": "bunx --bun biome check",
+    "format:write": "bunx --bun biome format --write"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

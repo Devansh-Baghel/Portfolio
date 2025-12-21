@@ -15,7 +15,7 @@ export default function FloatingShape({
   speed,
 }: FloatingShapeProps) {
   return (
-    <Float speed={speed} amplitude={amplitude}>
+    <Float speed={speed} amplitude={amplitude} className="images">
       <svg width="0" height="0" id="glow__svg__lite">
         <filter id="glow_lite">
           <feGaussianBlur
@@ -44,6 +44,7 @@ export default function FloatingShape({
         alt=""
         priority
         className={`absolute ${directionClass} glow-lite -z-10 h-[100px] w-[100px]`}
+        draggable={false}
       />
     </Float>
   );

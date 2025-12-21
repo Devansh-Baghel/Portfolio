@@ -115,6 +115,12 @@ export default function Home() {
         <HeroImage />
         <EasterEggLogs />
         <WorkExperience />
+        <FloatingShape
+          shapeUrl="/shapes/shape-81.svg"
+          directionClass="left-[-20px] bottom-[-20px]"
+          amplitude={[40, 100, 30]}
+          speed={0.2}
+        />
         <Projects />
         <FloatingShape
           shapeUrl="/shapes/shape-77.svg"

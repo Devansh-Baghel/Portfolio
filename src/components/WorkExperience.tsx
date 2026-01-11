@@ -4,10 +4,12 @@ import { MdWork as WorkIcon } from 'react-icons/md';
 import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
 import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
 import AOSComponent from '@/lib/aos';
+import Snowfall from 'react-snowfall';
 
 export default function WorkExperience() {
   return (
     <AOSComponent>
+      <Snowfall />
       <section
         id="work"
         className="relative z-10 mt-32 2xl:mt-52 p-6 text-slate-900"

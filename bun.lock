@@ -26,6 +26,7 @@
         "react-github-calendar": "^4.5.9",
         "react-hot-toast": "^2.5.2",
         "react-icons": "^5.5.0",
+        "react-snowfall": "^2.4.0",
         "react-syntax-highlighter": "^15.6.1",
         "rehype-autolink-headings": "^7.1.0",
         "rehype-slug": "^6.0.0",
@@ -1530,6 +1531,8 @@
 
     "react-dom": ["react-dom@19.1.1", "", { "dependencies": { "scheduler": "^0.26.0" }, "peerDependencies": { "react": "^19.1.1" } }, "sha512-Dlq/5LAZgF0Gaz6yiqZCf6VCcZs1ghAJyrsu84Q/GT0gV+mCxbfmKNoGRKBYMJ8IEdGPqu49YWXD02GCknEDkw=="],
 
+    "react-fast-compare": ["react-fast-compare@3.2.2", "", {}, "sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ=="],
+
     "react-github-calendar": ["react-github-calendar@4.5.9", "", { "dependencies": { "react-activity-calendar": "^2.7.13" }, "peerDependencies": { "react": "^18.0.0 || ^19.0.0" } }, "sha512-5Ks2vGbR4KieM0vO49hJKy6hLKpFo7kbtOg+Z67qz83VeJy094okTGLt9+k2oryN5PKfjn5sJr0UObXSvNgcNw=="],
 
     "react-hot-toast": ["react-hot-toast@2.5.2", "", { "dependencies": { "csstype": "^3.1.3", "goober": "^2.1.16" }, "peerDependencies": { "react": ">=16", "react-dom": ">=16" } }, "sha512-Tun3BbCxzmXXM7C+NI4qiv6lT0uwGh4oAfeJyNOjYUejTsm35mK9iCaYLGv8cBz9L5YxZLx/2ii7zsIwPtPUdw=="],
@@ -1537,6 +1540,8 @@
     "react-icons": ["react-icons@5.5.0", "", { "peerDependencies": { "react": "*" } }, "sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw=="],
 
     "react-is": ["react-is@16.13.1", "", {}, "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="],
+
+    "react-snowfall": ["react-snowfall@2.4.0", "", { "dependencies": { "react-fast-compare": "^3.2.2" }, "peerDependencies": { "react": "^16.8 || 17.x || 18.x || 19.x", "react-dom": "^16.8 || 17.x || 18.x || 19.x" } }, "sha512-KAPMiGnxt11PEgC2pTVrTQsvk5jt1kLUtG+ZamiKLphTZ7GiYT1Aa5kX6jp4jKWq1kqJHchnGT9CDm4g86A5Gg=="],
 
     "react-syntax-highlighter": ["react-syntax-highlighter@15.6.1", "", { "dependencies": { "@babel/runtime": "^7.3.1", "highlight.js": "^10.4.1", "highlightjs-vue": "^1.0.0", "lowlight": "^1.17.0", "prismjs": "^1.27.0", "refractor": "^3.6.0" }, "peerDependencies": { "react": ">= 0.14.0" } }, "sha512-OqJ2/vL7lEeV5zTJyG7kmARppUjiB9h9udl4qHQjjgEos66z00Ia0OckwYfRxCSFrW8RJIBnsBwQsHZbVPspqg=="],
 

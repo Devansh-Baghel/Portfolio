@@ -37,6 +37,7 @@
     "react-github-calendar": "^4.5.9",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
+    "react-snowfall": "^2.4.0",
     "react-syntax-highlighter": "^15.6.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",

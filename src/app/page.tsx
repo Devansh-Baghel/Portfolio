@@ -21,14 +21,14 @@ import WorkExperience from '@/components/WorkExperience';
 export default function Home() {
   return (
     <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
-      <aside className="pl-10 pr-6 pt-14 text-slate-900 lg:fixed lg:max-w-[500px] lg:pl-20">
+      <aside className="pl-10 pr-6 pt-14 sticky lg:fixed text-slate-900 lg:max-w-[500px] lg:pl-20">
         <Suspense
           fallback={
             <Image
               src="/shape-76.svg"
               height={400}
               width={400}
-              alt=""
+              alt="spinning blob"
               priority
               className="images glow absolute left-[-80px] top-[-120px] z-[-10] h-[400px] w-[400px] animate-spin animate-duration-[40000ms] animate-infinite animate-ease-in-out"
             />

@@ -14,7 +14,7 @@ export default function SpinningShape() {
       src="/shape-76.svg"
       height={400}
       width={400}
-      alt=""
+      alt="spinning blob"
       priority
       className="images glow absolute left-[-80px] top-[-120px] z-[-10] h-[400px] w-[400px] animate-spin animate-infinite animate-ease-in-out"
       style={{ animationDuration: spinDuration }}

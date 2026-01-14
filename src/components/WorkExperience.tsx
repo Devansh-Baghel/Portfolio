@@ -3,6 +3,7 @@
 import { MdWork as WorkIcon } from 'react-icons/md';
 import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
 import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
+import { FaRegCalendarAlt as DateIcon } from "react-icons/fa";
 import AOSComponent from '@/lib/aos';
 import Snowfall from 'react-snowfall';
 
@@ -25,7 +26,7 @@ export default function WorkExperience() {
         <div id="experience-container" className="mb-6 flex flex-col gap-6">
           <div data-aos="fade-left">
             <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
-              <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+              <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
                 <div>
                   <h3 className="font-heading text-3xl">
                     Full Stack Developer
@@ -36,10 +37,11 @@ export default function WorkExperience() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm mt-2 text-slate-600 md:text-base text-right">
-                    November 2025 - Present
+                  <p className="text-sm mt-2 flex items-center gap-2 text-slate-600 md:text-base lg:text-right lg:flex-row-reverse">
+                    <DateIcon />
+                    Nov 2025 - Present
                   </p>
-                  <p className="mt-1 text-md self-end font-semibold text-slate-700 flex items-center gap-2 text-right">
+                  <p className="mt-1 text-md lg:self-end font-semibold text-slate-700 flex items-center gap-2 lg:text-right lg:flex-row-reverse">
                     <LocationIcon />
                     Remote
                   </p>

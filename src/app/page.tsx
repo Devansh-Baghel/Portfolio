@@ -17,6 +17,7 @@ import HeroImage from '@/components/HeroImage';
 import { Suspense } from 'react';
 import SpinningShape from '@/components/SpinningShape';
 import WorkExperience from '@/components/WorkExperience';
+import VisitorCounter from '@/components/VisitorCounter';
 
 export default function Home() {
   return (
@@ -107,6 +108,8 @@ export default function Home() {
             <MailIcon className="h-10 w-10" />
           </a>
         </div>
+
+        <VisitorCounter />
       </aside>
 
       <ScrollButton />

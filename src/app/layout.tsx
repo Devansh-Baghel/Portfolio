@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import localFont from 'next/font/local';
 import { PostHogProvider } from './providers';
 import StructuredData from '@/components/StructuredData';
+import VisitorBadge from '@/components/VisitorBadge';
 
 const chromate = localFont({
   src: './Chromate-Regular.ttf',
@@ -145,6 +146,7 @@ export default function RootLayout({
         <PostHogProvider>
           <Toaster position="top-center" reverseOrder={false} />
           {children}
+          <VisitorBadge />
         </PostHogProvider>
       </body>
     </html>

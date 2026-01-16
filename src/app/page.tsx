@@ -108,7 +108,6 @@ export default function Home() {
             <MailIcon className="h-10 w-10" />
           </a>
         </div>
-
         <VisitorCounter />
       </aside>
 

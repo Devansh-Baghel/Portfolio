@@ -42,7 +42,7 @@ export default function VisitorCounter() {
     if (!data) return null;
 
     return (
-        <div className="motion-preset-slide-right mt-6 flex flex-col gap-3 animate-blur-in-900 motion-delay-600">
+        <div className="motion-preset-slide-right mt-6 flex flex-col gap-3 animate-blur-in-900 motion-delay-600 lg:hidden">
             {/* Total Pageviews */}
             <div className="flex items-center gap-2 text-slate-900">
                 <FaEye className="h-5 w-5 text-lime-500" />

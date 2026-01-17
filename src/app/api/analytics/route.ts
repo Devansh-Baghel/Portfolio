@@ -53,8 +53,6 @@ export async function GET() {
 
     const data = await response.json();
 
-    console.log('PostHog response:', data.results);
-
     // PostHog returns data in results array
     const totalPageviews = data.results?.[0]?.[0] || 0;
     const uniqueVisitors = data.results?.[0]?.[1] || 0;

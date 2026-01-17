@@ -6,6 +6,9 @@ import Glow from '@/components/Glow';
 import MDXContent from '@/components/MDXContent';
 import { Calendar, ArrowLeft, Clock } from 'lucide-react';
 import { format } from 'date-fns';
+import Float from '@/components/fancy/blocks/float';
+import FloatingShape from '@/components/FloatingShape';
+import BlogFloatingShapes from '@/components/BlogFloatingShapes';
 
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
@@ -72,6 +75,8 @@ export default async function BlogPostPage({
         />
         <Glow />
 
+
+        <BlogFloatingShapes bottomPadding={500}>
         {/* Header */}
         <div className="mb-12">
           <Link
@@ -116,7 +121,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* Article Content */}
-        <article className="motion-preset-slide-right animate-blur-in-900 motion-delay-500">
+          <article className="motion-preset-slide-right animate-blur-in-900 motion-delay-500 backdrop-blur-sm rounded-[30px]">
           <div className="blog-wrapper rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] lg:p-12">
             <MDXContent content={post.content} />
           </div>
@@ -132,6 +137,7 @@ export default async function BlogPostPage({
             More Posts
           </Link>
         </div>
+        </BlogFloatingShapes>
       </div>
     </main>
   );

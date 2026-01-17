@@ -66,9 +66,9 @@ export default async function BlogPostPage({
           src="/shape-76.svg"
           height={300}
           width={300}
-          alt=""
+          alt="spinning blob"
           priority
-          className="images glow absolute left-[-60px] top-[-80px] z-[-10] h-[300px] w-[300px] animate-spin opacity-50 animate-duration-[40000ms] animate-infinite animate-ease-in-out"
+          className="images glow absolute left-[-80px] top-[-120px] h-[400px] w-[400px] animate-spin opacity-50 animate-duration-[40000ms] animate-infinite animate-ease-in-out"
         />
         <Glow />
 

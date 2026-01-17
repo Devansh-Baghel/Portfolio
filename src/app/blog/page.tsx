@@ -4,6 +4,7 @@ import Glow from '@/components/Glow';
 import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
+import FloatingShape from '@/components/FloatingShape';
 
 export default async function BlogPage() {
   const blogPosts = await getAllBlogPosts();
@@ -40,6 +41,13 @@ export default async function BlogPage() {
             internet.
           </p>
         </div>
+
+        <FloatingShape
+          shapeUrl="/shapes/shape-85.svg"
+          directionClass="right-0"
+          amplitude={[100, 100, 30]}
+          speed={0.2}
+        />
 
         <div className="flex flex-col gap-8" id="blog-container">
           {blogPosts.length > 0 ? (

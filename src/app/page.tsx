@@ -17,7 +17,7 @@ import HeroImage from '@/components/HeroImage';
 import { Suspense } from 'react';
 import SpinningShape from '@/components/SpinningShape';
 import WorkExperience from '@/components/WorkExperience';
-import VisitorCounter from '@/components/VisitorCounter';
+import VisitorCounter from '@/components/analytics/VisitorCounter';
 
 export default function Home() {
   return (

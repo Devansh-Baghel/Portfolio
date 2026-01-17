@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import localFont from 'next/font/local';
 import { PostHogProvider } from './providers';
 import StructuredData from '@/components/StructuredData';
-import VisitorBadge from '@/components/VisitorBadge';
+import VisitorBadge from '@/components/analytics/VisitorBadge';
 import { FaviconAnimator } from '@/components/FaviconAnimator';
 
 const chromate = localFont({

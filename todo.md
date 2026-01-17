@@ -23,7 +23,8 @@
 - [x] add sitemap
 - [x] add the spin faster easter egg.
 - [x] show posthog pageviews and visitors
-- [ ] 
+- [x] Add floating things in blogs
+- [x] show the spinning blog in blog pages
 
 
 ## Not done yet
@@ -54,4 +55,3 @@
 - [ ] https://reactbits.dev/components/scroll-stack add this so that all my projects stack up like this
 - [ ] create a proper way to switch between various types of loading animations that you want, like if you want sliding in animation or blurr animation, or a loader animation.
 - [ ] update the console logs for easter eggs after you are done implementing some of them.
-- [ ] Add floating things in blogs

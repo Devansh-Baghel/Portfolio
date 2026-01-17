@@ -112,6 +112,7 @@ body {
   bottom: -5px;
   left: 0;
   z-index: -1;
+  filter: blur(2px);
 }
 
 .work-title::before {

@@ -2,6 +2,7 @@
 
 import AOSComponent from '@/lib/aos';
 import { GitHubCalendar } from 'react-github-calendar';
+import LatestCommit from './LatestCommit';
 
 export default function Github() {
   const years = [2025, 2024, 2023];
@@ -18,6 +19,10 @@ export default function Github() {
         >
           Commit History
         </h3>
+        {/* 
+        <div className="mb-4">
+          <LatestCommit />
+        </div> */}
 
         <div className="flex flex-col gap-6">
           {years.map((year) => (

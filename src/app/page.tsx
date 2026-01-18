@@ -18,6 +18,8 @@ import { Suspense } from 'react';
 import SpinningShape from '@/components/SpinningShape';
 import WorkExperience from '@/components/WorkExperience';
 import VisitorCounter from '@/components/analytics/VisitorCounter';
+import LatestCommit from '@/components/LatestCommit';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -108,6 +110,11 @@ export default function Home() {
             <MailIcon className="h-10 w-10" />
           </a>
         </div>
+        {/* 
+        <div className="mt-4 motion-preset-slide-right animate-blur-in-1000 motion-delay-600">
+          <LatestCommit />
+        </div> */}
+
         <VisitorCounter />
       </aside>
 
@@ -159,6 +166,8 @@ export default function Home() {
           speed={0.2}
         />
         <Contact />
+        <Footer />
+
       </div>
     </main>
   );

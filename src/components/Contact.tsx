@@ -36,7 +36,7 @@ export default function Contact() {
     <AOSComponent>
       <section
         id="contact"
-        className="mt-32 flex flex-col gap-6 p-6 pb-2s0 text-slate-900 2xl:pb-60s"
+        className="mt-32 flex flex-col gap-6 px-6 pt-6 text-slate-900"
       >
         <h3
           className="contact-title mb-4 font-heading text-4xl"

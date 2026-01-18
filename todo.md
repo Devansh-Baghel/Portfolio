@@ -26,6 +26,8 @@
 - [x] Add floating things in blogs
 - [x] show the spinning blog in blog pages
 - [x] add floating shape in all blogs page
+- [x] https://www.fancycomponents.dev/docs/components/blocks/float add this
+- [x] reverse github contributions months, so go from jan-dec to dec-jan for each year, that way it looks much better.
 
 
 ## Not done yet
@@ -47,13 +49,13 @@
 - [ ] add tanstack start to stack
 - [ ] add drizzle to stack
 - [ ] add hono to stack
-- [ ] https://www.fancycomponents.dev/docs/components/blocks/float add this
 - [ ] https://www.fancycomponents.dev/docs/components/blocks/stacking-cards add this to showcase projects
 - [ ] https://www.fancycomponents.dev/docs/components/blocks/sticky-footer add this for the footer maybe
 - [ ] easter eggs through url params, spin etc
 - [ ] add kawaii logo easter eggs from here https://github.com/SAWARATSUKI/KawaiiLogos
-
 - [ ] https://reactbits.dev/components/scroll-stack add this so that all my projects stack up like this
 - [ ] create a proper way to switch between various types of loading animations that you want, like if you want sliding in animation or blurr animation, or a loader animation.
 - [ ] update the console logs for easter eggs after you are done implementing some of them.
 - [ ] remove react-snowfall later on in the future or maybe make it like react snowfall shows up in the winter and doesn't during the summer.
+- [ ] add feature where visitors can see what my last commit is in this portfolio, and it takes you to that commit page on github
+- [ ] blog on how ai made programming less fun

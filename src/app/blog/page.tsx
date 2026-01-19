@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Glow from '@/components/Glow';
@@ -5,6 +6,14 @@ import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
 import FloatingShape from '@/components/FloatingShape';
+
+export const metadata: Metadata = {
+  title: 'Blog | Devansh Baghel',
+  description: 'Thoughts on web development, programming, and building things on the internet.',
+  alternates: {
+    canonical: './',
+  },
+};
 
 export default async function BlogPage() {
   const blogPosts = await getAllBlogPosts();

@@ -19,6 +19,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.4.6",
     "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tooltip": "^1.2.8",
     "aos": "^2.3.4",
     "axios": "^1.10.0",
     "caniuse-lite": "^1.0.30001755",

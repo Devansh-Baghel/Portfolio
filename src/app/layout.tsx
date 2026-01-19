@@ -9,6 +9,7 @@ import { PostHogProvider } from './providers';
 import StructuredData from '@/components/StructuredData';
 import VisitorBadge from '@/components/analytics/VisitorBadge';
 import { FaviconAnimator } from '@/components/FaviconAnimator';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 const chromate = localFont({
   src: './Chromate-Regular.ttf',
@@ -144,10 +145,12 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
-        <FaviconAnimator />  {/* ADD THIS LINE */}
+        <FaviconAnimator />
         <PostHogProvider>
           <Toaster position="top-center" reverseOrder={false} />
+          {/* <TooltipProvider> */}
           {children}
+          {/* </TooltipProvider> */}
           <VisitorBadge />
         </PostHogProvider>
       </body>

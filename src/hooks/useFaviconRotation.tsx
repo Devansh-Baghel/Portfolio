@@ -24,7 +24,7 @@ export function useFaviconRotation() {
             return;
         }
 
-        console.log("Found favicon:", faviconLink.href);
+        // console.log("Found favicon:", faviconLink.href);
 
         // Create canvas for drawing rotated favicon
         const canvas = document.createElement("canvas");
@@ -46,7 +46,7 @@ export function useFaviconRotation() {
         }
 
         img.onload = () => {
-            console.log("Favicon loaded successfully, starting animation...");
+            // console.log("Favicon loaded successfully, starting animation...");
             canvas.width = img.width || 32;
             canvas.height = img.height || 32;
 

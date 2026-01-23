@@ -18,13 +18,30 @@ import { Suspense } from 'react';
 import SpinningShape from '@/components/SpinningShape';
 import WorkExperience from '@/components/WorkExperience';
 import VisitorCounter from '@/components/analytics/VisitorCounter';
-import LatestCommit from '@/components/LatestCommit';
 import Footer from '@/components/Footer';
+import { cn } from '@/lib/utils';
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const isBlackAndWhite = params.bw === "true";
+
+  const filterClass = cn(
+    "transition-[filter] duration-[5000ms] ease-in-out",
+    isBlackAndWhite && "grayscale"
+  );
+
   return (
     <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
-      <aside className="pl-10 pr-6 pt-14 sticky lg:fixed text-slate-900 lg:max-w-[500px] lg:pl-20">
+      <aside
+        className={cn(
+          "pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20",
+          filterClass
+        )}
+      >
         <Suspense
           fallback={
             <Image
@@ -110,7 +127,7 @@ export default function Home() {
             <MailIcon className="h-10 w-10" />
           </a>
         </div>
-        {/* 
+        {/*
         <div className="mt-4 motion-preset-slide-right animate-blur-in-1000 motion-delay-600">
           <LatestCommit />
         </div> */}
@@ -120,7 +137,9 @@ export default function Home() {
 
       <ScrollButton />
 
-      <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
+      <div className={cn(
+        "lg:absolute lg:right-0 lg:max-w-[700px]", filterClass
+      )}>
         <HeroImage />
         <EasterEggLogs />
         <WorkExperience />
@@ -170,5 +189,6 @@ export default function Home() {
 
       </div>
     </main>
+
   );
 }

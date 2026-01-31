@@ -48,7 +48,7 @@ export default function VisitorBadge() {
 
     if (loading) {
         return (
-            <div className="fixed right-6 top-6 z-50 animate-pulse">
+            <div className="fixed right-6 top-6 z-50 animate-pulse hidden lg:block">
                 <div className="rounded-3xl bg-white p-3">
                     <div className="flex items-center gap-2">
                         <FaEye className="h-4 w-4 text-slate-400" />

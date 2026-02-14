@@ -33,11 +33,7 @@ export default function VisitorBadge() {
     useEffect(() => {
         function handleScroll() {
             const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            const distanceFromBottom = documentHeight - scrollY - windowHeight;
-
-            const isInMiddleSection = scrollY > 800 && distanceFromBottom > 100;
+            const isInMiddleSection = scrollY > 800;
             setIsScrolled(isInMiddleSection);
         }
 

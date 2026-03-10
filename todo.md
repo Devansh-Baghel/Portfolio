@@ -59,3 +59,5 @@
 - [ ] remove react-snowfall later on in the future or maybe make it like react snowfall shows up in the winter and doesn't during the summer.
 - [ ] add feature where visitors can see what my last commit is in this portfolio, and it takes you to that commit page on github
 - [ ] blog on how ai made programming less fun
+- [ ] hide easter egg text in footer for mobile view
+- [ ] make the favicon easter egg hover text more clear (normal person doesn't know what a favicon is, say chrome tab icon maybe)

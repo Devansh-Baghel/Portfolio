@@ -28,6 +28,8 @@
 - [x] add floating shape in all blogs page
 - [x] https://www.fancycomponents.dev/docs/components/blocks/float add this
 - [x] reverse github contributions months, so go from jan-dec to dec-jan for each year, that way it looks much better.
+- [x] hide easter egg text in footer for mobile view
+- [x] make the favicon easter egg hover text more clear (normal person doesn't know what a favicon is, say chrome tab icon maybe)
 
 
 ## Not done yet
@@ -59,5 +61,3 @@
 - [ ] remove react-snowfall later on in the future or maybe make it like react snowfall shows up in the winter and doesn't during the summer.
 - [ ] add feature where visitors can see what my last commit is in this portfolio, and it takes you to that commit page on github
 - [ ] blog on how ai made programming less fun
-- [ ] hide easter egg text in footer for mobile view
-- [ ] make the favicon easter egg hover text more clear (normal person doesn't know what a favicon is, say chrome tab icon maybe)

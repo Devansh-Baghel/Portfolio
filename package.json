@@ -31,7 +31,7 @@
     "lucide-react": "^0.539.0",
     "motion": "^12.26.2",
     "next": "15.2.8",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "posthog-js": "^1.257.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

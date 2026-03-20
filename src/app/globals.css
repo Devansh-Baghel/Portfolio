@@ -93,7 +93,8 @@ body {
 .tech-stack-title,
 .projects-title,
 .contact-title,
-.gitroll-title {
+.gitroll-title,
+.books-title {
   position: relative;
   z-index: 10;
 }
@@ -102,7 +103,8 @@ body {
 .tech-stack-title::before,
 .projects-title::before,
 .contact-title::before,
-.gitroll-title::before {
+.gitroll-title::before,
+.books-title::before {
   content: "";
   opacity: 0.3;
   border-top-left-radius: 40px;
@@ -150,6 +152,11 @@ body {
 .contact-title::before {
   background: linear-gradient(90deg, #f956a6 0%, rgba(255, 165, 0, 0) 100%);
   width: 45%;
+}
+
+.books-title::before {
+  background: linear-gradient(90deg, rgb(241, 176, 14) 0%, rgba(255, 165, 0, 0) 100%);
+  width: 50%;
 }
 
 .disable-scrollbar * {

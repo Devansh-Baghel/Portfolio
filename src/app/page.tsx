@@ -11,6 +11,7 @@ import Glow from '@/components/Glow';
 import GitRoll from '@/components/GitRoll';
 import Github from '@/components/Github';
 import Blog from '@/components/Blog';
+import Books from '@/components/Books';
 import EasterEggLogs from '@/components/EasterEgg';
 import FloatingShape from '@/components/FloatingShape';
 import HeroImage from '@/components/HeroImage';
@@ -175,6 +176,13 @@ export default async function Home({
           shapeUrl="/shapes/shape-85.svg"
           directionClass="right-0"
           amplitude={[100, 100, 30]}
+          speed={0.2}
+        />
+        <Books />
+        <FloatingShape
+          shapeUrl="/shapes/shape-79.svg"
+          directionClass="left-[-20px] bottom-[-20px]"
+          amplitude={[40, 100, 30]}
           speed={0.2}
         />
         <GitRoll />

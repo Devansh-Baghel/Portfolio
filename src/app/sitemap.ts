@@ -26,6 +26,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...blogSitemaps,
     {
+      url: 'https://baghel.dev/books',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: 'https://baghel.dev/terms',
       lastModified: new Date(),
       changeFrequency: 'yearly',

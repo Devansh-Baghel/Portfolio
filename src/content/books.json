@@ -1,0 +1,42 @@
+[
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas, Andrew Hunt",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg",
+    "status": "reading"
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781449373320-L.jpg",
+    "status": "reading"
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg",
+    "status": "read",
+    "dateFinished": "2024-11-15"
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "cover": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+    "status": "read",
+    "dateFinished": "2024-09-20"
+  },
+  {
+    "title": "The Almanack of Naval Ravikant",
+    "author": "Eric Jorgenson",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781544514208-L.jpg",
+    "status": "read",
+    "dateFinished": "2024-07-10"
+  },
+  {
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "cover": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg",
+    "status": "read",
+    "dateFinished": "2024-05-02"
+  }
+]

@@ -21,6 +21,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'dev-to-uploads.s3.amazonaws.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'covers.openlibrary.org',
+      },
     ],
   },
 };

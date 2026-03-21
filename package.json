@@ -7,10 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:worker": "opennextjs-cloudflare",
-    "dev:worker": "wrangler dev --port 8771",
-    "preview:worker": "pnpm run build:worker && pnpm run dev:worker",
-    "deploy:worker": "pnpm run build:worker && wrangler deploy",
     "format:check": "bunx --bun biome check",
     "format:write": "bunx --bun biome format --write"
   },
@@ -51,7 +47,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.4",
-    "@opennextjs/cloudflare": "^0.3.10",
     "@types/aos": "^3.0.7",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.19.1",
@@ -65,7 +60,6 @@
     "tailwindcss": "^3.4.17",
     "tailwindcss-animated": "^1.1.2",
     "tailwindcss-motion": "0.3.0-beta",
-    "typescript": "^5.8.3",
-    "wrangler": "^3.114.9"
+    "typescript": "^5.8.3"
   }
 }

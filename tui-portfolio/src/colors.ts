@@ -1,0 +1,12 @@
+export const LIME = '#84cc16';
+export const BG_DARK = '#0a0a0a';
+export const BG_CARD = '#1a1a1a';
+export const BG_CARD_ALT = '#141414';
+export const TEXT_PRIMARY = '#fafafa';
+export const TEXT_SECONDARY = '#a1a1aa';
+export const TEXT_DIM = '#52525b';
+export const BORDER = '#27272a';
+export const ERROR = '#ef4444';
+export const SUCCESS = '#22c55e';
+export const CYAN = '#06b6d4';
+export const AMBER = '#f59e0b';

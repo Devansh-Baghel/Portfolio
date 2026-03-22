@@ -1,5 +1,5 @@
 export const LIME = '#84cc16';
-export const NAME_FONT: 'tiny' | 'block' | 'shade' | 'slick' | 'huge' | 'grid' | 'pallet' = 'slick';
+export const NAME_FONT: 'tiny' | 'block' | 'shade' | 'slick' | 'huge' | 'grid' | 'pallet' = 'tiny';
 export const BG_DARK = '#0a0a0a';
 export const BG_CARD = '#1a1a1a';
 export const BG_CARD_ALT = '#141414';

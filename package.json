@@ -9,7 +9,7 @@
     "lint": "bunx --bun biome check",
     "format:check": "bunx --bun biome check",
     "format:write": "bunx --bun biome format --write",
-    "dev:tui": "bun --hot tui-portfolio/src/index.tsx"
+    "tui": "bun tui-portfolio/src/index.tsx"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

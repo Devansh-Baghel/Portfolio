@@ -1,5 +1,6 @@
-import { LIME, NAME_FONT, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM, BG_DARK, BORDER } from '../constants';
+import { LIME, NAME_FONT, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM, BG_DARK, BORDER, SLATE_900 } from '../constants';
 import { name, tagline, bio, socials, resumeUrl } from '../data';
+import { openUrl } from '../utils/open-url';
 
 export function Sidebar() {
   return (
@@ -26,29 +27,37 @@ export function Sidebar() {
       </box>
 
       <box marginTop={2} flexDirection="row" gap={2}>
-        <box backgroundColor={LIME} paddingX={2} height={1}>
+        <box backgroundColor={LIME} paddingX={2} height={1} onMouseDown={() => openUrl(resumeUrl)}>
           <text>
-            <a href={resumeUrl}><span fg="#0a0a0a"><strong>Resume</strong></span></a>
+            <span fg="#0a0a0a"><strong>Resume</strong></span>
           </text>
         </box>
-        <box border borderColor={LIME} paddingX={2} height={1}>
+        <box backgroundColor={SLATE_900} paddingX={2} height={1} onMouseDown={() => openUrl(`mailto:${socials.email.replace('mailto:', '')}`)}>
           <text>
-            <a href={`mailto:${socials.email.replace('mailto:', '')}`}><span fg={LIME}>Contact</span></a>
+            <span fg="#ffffff"><strong>Contact</strong></span>
           </text>
         </box>
       </box>
 
       <box marginTop={2} flexDirection="column" gap={1}>
-        <text>
-          <a href={socials.github}><span fg={TEXT_DIM}>GitHub</span></a>
-          <span fg={TEXT_DIM}> · </span>
-          <a href={socials.linkedin}><span fg={TEXT_DIM}>LinkedIn</span></a>
-        </text>
-        <text>
-          <a href={socials.twitter}><span fg={TEXT_DIM}>Twitter</span></a>
-          <span fg={TEXT_DIM}> · </span>
-          <a href={socials.email}><span fg={TEXT_DIM}>Email</span></a>
-        </text>
+        <box flexDirection="row" gap={1}>
+          <box onMouseDown={() => openUrl(socials.github)}>
+            <text><span fg={TEXT_DIM}>GitHub</span></text>
+          </box>
+          <text><span fg={TEXT_DIM}>·</span></text>
+          <box onMouseDown={() => openUrl(socials.linkedin)}>
+            <text><span fg={TEXT_DIM}>LinkedIn</span></text>
+          </box>
+        </box>
+        <box flexDirection="row" gap={1}>
+          <box onMouseDown={() => openUrl(socials.twitter)}>
+            <text><span fg={TEXT_DIM}>Twitter</span></text>
+          </box>
+          <text><span fg={TEXT_DIM}>·</span></text>
+          <box onMouseDown={() => openUrl(socials.email)}>
+            <text><span fg={TEXT_DIM}>Email</span></text>
+          </box>
+        </box>
       </box>
     </box>
   );

@@ -48,9 +48,9 @@ export function App() {
             <Hero />
             <Experience />
             <Projects />
-            <Skills />
-            <Blog />
-            <Contact onFormFocus={setInForm} />
+            {/* <Skills /> */}
+            {/* <Blog /> */}
+            {/* <Contact onFormFocus={setInForm} /> */}
           </box>
         </scrollbox>
       </box>

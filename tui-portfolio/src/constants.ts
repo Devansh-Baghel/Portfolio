@@ -11,3 +11,4 @@ export const ERROR = '#ef4444';
 export const SUCCESS = '#22c55e';
 export const CYAN = '#06b6d4';
 export const AMBER = '#f59e0b';
+export const SLATE_900 = '#0f172a';

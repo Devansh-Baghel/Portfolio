@@ -1,14 +1,14 @@
-import { LIME, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM, BORDER } from '../colors';
+import { LIME, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM } from '../constants';
 
 export function HelpOverlay() {
   return (
     <box
       position="absolute"
       zIndex={100}
-      left={8}
-      top={4}
-      width={50}
-      height={16}
+      left="45%"
+      top={5}
+      width={40}
+      height={12}
       border
       borderStyle="double"
       borderColor={LIME}
@@ -28,20 +28,12 @@ export function HelpOverlay() {
         <span fg={TEXT_PRIMARY}>       Toggle this help</span>
       </text>
       <text>
-        <span fg={TEXT_DIM}>1-6</span>
-        <span fg={TEXT_PRIMARY}>        Jump to section</span>
+        <span fg={TEXT_DIM}>↑ / ↓ / j / k</span>
+        <span fg={TEXT_PRIMARY}> Scroll</span>
       </text>
       <text>
-        <span fg={TEXT_DIM}>Tab / [  ]</span>
-        <span fg={TEXT_PRIMARY}>   Navigate sections</span>
-      </text>
-      <text>
-        <span fg={TEXT_DIM}>↑ / ↓</span>
-        <span fg={TEXT_PRIMARY}>     Scroll content</span>
-      </text>
-      <text>
-        <span fg={TEXT_DIM}>Enter</span>
-        <span fg={TEXT_PRIMARY}>     Select / confirm</span>
+        <span fg={TEXT_DIM}>Tab</span>
+        <span fg={TEXT_PRIMARY}>        Cycle form fields</span>
       </text>
       <text> </text>
       <text>

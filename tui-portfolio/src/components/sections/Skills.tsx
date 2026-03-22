@@ -1,12 +1,9 @@
 import {
   LIME,
   TEXT_PRIMARY,
-  TEXT_SECONDARY,
-  TEXT_DIM,
   BG_CARD,
   BORDER,
-  CYAN,
-} from '../../colors';
+} from '../../constants';
 import { skills } from '../../data';
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -17,13 +14,12 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 export function Skills() {
   return (
-    <scrollbox focused height="100%">
+    <box flexDirection="column" gap={1} marginTop={1}>
       <text>
         <span fg={LIME}><strong>Tech Stack &amp; Tools</strong></span>
       </text>
-      <text> </text>
 
-      <box flexDirection="column" gap={2}>
+      <box flexDirection="column" gap={1}>
         {skills.map((category) => (
           <box
             key={category.name}
@@ -52,6 +48,6 @@ export function Skills() {
           </box>
         ))}
       </box>
-    </scrollbox>
+    </box>
   );
 }

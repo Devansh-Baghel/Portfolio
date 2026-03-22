@@ -5,18 +5,16 @@ import {
   TEXT_DIM,
   BG_CARD,
   BORDER,
-  CYAN,
   AMBER,
-} from '../../colors';
+} from '../../constants';
 import { experience } from '../../data';
 
 export function Experience() {
   return (
-    <scrollbox focused height="100%">
+    <box flexDirection="column" gap={1} marginTop={1}>
       <text>
         <span fg={LIME}><strong>Work Experience</strong></span>
       </text>
-      <text> </text>
 
       {experience.map((job, i) => (
         <box
@@ -28,7 +26,6 @@ export function Experience() {
           padding={2}
           flexDirection="column"
           gap={1}
-          marginBottom={1}
         >
           <box flexDirection="row" justifyContent="space-between">
             <text>
@@ -53,6 +50,6 @@ export function Experience() {
           </box>
         </box>
       ))}
-    </scrollbox>
+    </box>
   );
 }

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useKeyboard, useRenderer } from '@opentui/react';
-import { LIME, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM, BG_DARK, BG_CARD, BORDER } from './colors';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { LIME, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM, BG_DARK, BG_CARD, BORDER } from './constants';
+import { Sidebar } from './components/Sidebar';
 import { HelpOverlay } from './components/HelpOverlay';
 import { Hero } from './components/sections/Hero';
 import { Experience } from './components/sections/Experience';
@@ -11,11 +10,8 @@ import { Skills } from './components/sections/Skills';
 import { Blog } from './components/sections/Blog';
 import { Contact } from './components/sections/Contact';
 
-const TABS = ['Home', 'Experience', 'Projects', 'Skills', 'Blog', 'Contact'];
-
 export function App() {
   const renderer = useRenderer();
-  const [activeTab, setActiveTab] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
   const [inForm, setInForm] = useState(false);
 
@@ -38,60 +34,54 @@ export function App() {
       renderer.destroy();
       return;
     }
-
-    if (inForm) return;
-
-    const num = parseInt(key.name, 10);
-    if (num >= 1 && num <= 6) {
-      setActiveTab(num - 1);
-      return;
-    }
-
-    if (key.name === 'tab') {
-      if (key.shift) {
-        setActiveTab((t) => (t - 1 + TABS.length) % TABS.length);
-      } else {
-        setActiveTab((t) => (t + 1) % TABS.length);
-      }
-      return;
-    }
-
-    if (key.name === 'left' || key.name === '[') {
-      setActiveTab((t) => (t - 1 + TABS.length) % TABS.length);
-      return;
-    }
-    if (key.name === 'right' || key.name === ']') {
-      setActiveTab((t) => (t + 1) % TABS.length);
-      return;
-    }
   });
 
   return (
     <box flexDirection="column" width="100%" height="100%" backgroundColor={BG_DARK}>
-      <Header />
-      <box flexDirection="row" gap={1} paddingLeft={2} paddingRight={2} height={1}>
-        {TABS.map((tab, i) => (
-          <box
-            key={tab}
-            backgroundColor={i === activeTab ? LIME : BG_CARD}
-            paddingX={1}
-            height={1}
-          >
-            <text fg={i === activeTab ? BG_DARK : TEXT_DIM}>
-              {i === activeTab ? ` ${tab} ` : ` ${tab} `}
-            </text>
+      {/* Main content area */}
+      <box flexDirection="row" flexGrow={1}>
+        {/* Left sidebar — static */}
+        <box width="40%" border={['right']} borderColor={BORDER}>
+          <Sidebar />
+        </box>
+
+        {/* Right column — scrollable content */}
+        <scrollbox flexGrow={1} focused={!inForm && !showHelp}>
+          <box flexDirection="column" padding={2} gap={1}>
+            <Hero />
+            <Experience />
+            <Projects />
+            <Skills />
+            <Blog />
+            <Contact onFormFocus={setInForm} />
           </box>
-        ))}
+        </scrollbox>
       </box>
-      <box flexGrow={1} paddingLeft={2} paddingRight={2} paddingBottom={1}>
-        {activeTab === 0 && <Hero />}
-        {activeTab === 1 && <Experience />}
-        {activeTab === 2 && <Projects />}
-        {activeTab === 3 && <Skills />}
-        {activeTab === 4 && <Blog />}
-        {activeTab === 5 && <Contact onFormFocus={setInForm} />}
+
+      {/* Footer bar — in normal flow */}
+      <box
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+        paddingX={2}
+        height={1}
+        backgroundColor="#0d0d0d"
+      >
+        <text>
+          <span fg={TEXT_DIM}>q</span>
+          <span fg={TEXT_SECONDARY}> quit </span>
+          <span fg={TEXT_DIM}>·</span>
+          <span fg={TEXT_DIM}> h</span>
+          <span fg={TEXT_SECONDARY}> help </span>
+          <span fg={TEXT_DIM}>·</span>
+          <span fg={TEXT_DIM}> ↑↓</span>
+          <span fg={TEXT_SECONDARY}> scroll</span>
+        </text>
+        <text>
+          <span fg={TEXT_DIM}>baghel.dev</span>
+        </text>
       </box>
-      <Footer />
+
       {showHelp && <HelpOverlay />}
     </box>
   );

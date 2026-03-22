@@ -9,7 +9,7 @@ import {
   BORDER,
   ERROR,
   SUCCESS,
-} from '../../colors';
+} from '../../constants';
 import { emailWorkerUrl } from '../../data';
 
 type FocusField = 'name' | 'email' | 'message' | 'submit';
@@ -91,16 +91,15 @@ export function Contact({ onFormFocus }: ContactProps) {
   };
 
   return (
-    <box flexDirection="column" height="100%" gap={1}>
+    <box flexDirection="column" gap={1} marginTop={1}>
       <text>
         <span fg={LIME}><strong>Contact Me</strong></span>
       </text>
       <text>
         <span fg={TEXT_SECONDARY}>Got a question or want to work together? Send me a message!</span>
       </text>
-      <text> </text>
 
-      <box flexDirection="column" gap={1}>
+      <box flexDirection="column" gap={1} marginTop={1}>
         <box flexDirection="row" gap={1} alignItems="center">
           <text width={10}>
             <span fg={focusField === 'name' ? LIME : TEXT_DIM}>Name</span>

@@ -37,6 +37,7 @@
   ],
   "exclude": [
     "node_modules",
-    "email-worker"
+    "email-worker",
+    "tui-portfolio"
   ]
 }

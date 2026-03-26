@@ -122,6 +122,16 @@ import { Calendar } from 'lucide-react';
 
 **Do NOT create git commits without explicit user permission.** Always ask before committing changes. The user decides when and how changes should be committed.
 
+After completing any code change, always end with a copy-pasteable git command block so the user can commit themselves:
+
+```bash
+git commit -m "<type>: <concise commit message describing the change>"
+```
+
+Use conventional commit prefixes: `feat`, `fix`, `chore`, `refactor`, `docs`, `style`, `test`, `perf`, `ci`.
+
+The agent must **never** run this command — only output it for the user to copy.
+
 ## File Structure
 
 ```

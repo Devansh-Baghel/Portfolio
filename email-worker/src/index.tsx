@@ -10,6 +10,7 @@ app.use(
   '/api/*',
   cors({
     origin: [
+      'https://www.baghel.dev',
       'https://baghel.dev',
       'http://localhost:3000',
       'http://localhost:8771',

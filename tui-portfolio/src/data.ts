@@ -94,6 +94,15 @@ export const experience: Experience[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'tui-portfolio',
+    title: 'I made my portfolio run in a terminal',
+    date: '2026-03-27',
+    readTime: '5 min read',
+    tags: ['OpenTUI', 'React', 'Terminal', 'TUI', 'Portfolio', 'Bun'],
+    excerpt:
+      'My portfolio website is fine, but what if you could view it in a terminal? I built a TUI version using OpenTUI and React that runs right in your terminal.',
+  },
+  {
     slug: 'formbricks-user-feedback-codestash',
     title: 'Integrating Formbricks for User Feedback in CodeStash',
     date: '2025-01-15',

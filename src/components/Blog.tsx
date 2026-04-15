@@ -12,9 +12,9 @@ export default async function Blog() {
       id="blog"
       className="mt-32 flex max-w-[630px] flex-col gap-6 p-6 pb-0 text-slate-900 z-10 relative"
     >
-      <h3 className="gitroll-title mb-4 font-heading text-4xl">Latest Posts</h3>
+      <h3 className="gitroll-title motion-preset-slide-right mb-4 font-heading text-4xl">Latest Posts</h3>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 motion-preset-slide-right">
         {latestPost ? (
           <>
             <Link href={`/blog/${latestPost.slug}`}>

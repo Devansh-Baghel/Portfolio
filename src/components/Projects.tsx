@@ -8,12 +8,12 @@ import { VscGitStash as CodeStashIcon } from 'react-icons/vsc';
 export default function Projects() {
   return (
     <section id="projects" className="relative z-10 mt-32 p-6 text-slate-900">
-      <h3 className="projects-title motion-preset-blur-right mb-8 font-heading text-4xl">
+      <h3 className="projects-title motion-preset-slide-right mb-8 font-heading text-4xl">
         Selected Projects
       </h3>
 
       <div id="projects-container" className="mb-6 flex flex-col gap-6">
-        <div>
+        <div className="motion-preset-slide-right">
           <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
             <h3 className="flex gap-4 font-heading text-3xl">
               CodeStash
@@ -95,7 +95,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div>
+        <div className="motion-preset-slide-right motion-delay-120">
           <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
             <h3 className="font-heading text-3xl">SpendSync 💸✨</h3>
             {/* <Image

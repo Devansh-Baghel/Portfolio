@@ -27,6 +27,7 @@
     "gray-matter": "^4.0.3",
     "framer-motion": "^12.0.0",
     "@baghel/goey-toast": "^0.3.3",
+    "lenis": "^1.3.22",
     "lucide-react": "^0.539.0",
     "motion": "^12.26.2",
     "next": "16.2.1",

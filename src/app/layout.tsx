@@ -3,12 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/lib/hint.min.css";
 import axios from "axios";
+import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
 import { PostHogProvider } from "./providers";
 import StructuredData from "@/components/StructuredData";
 import VisitorBadge from "@/components/analytics/VisitorBadge";
 import { FaviconAnimator } from "@/components/FaviconAnimator";
 import GooeyToasterClient from "@/components/GooeyToasterClient";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const chromate = localFont({
   src: "./Chromate-Regular.ttf",
@@ -145,11 +147,14 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <FaviconAnimator />
-        <PostHogProvider>
-          <GooeyToasterClient />
-          {children}
-          <VisitorBadge />
-        </PostHogProvider>
+        <SmoothScroll>
+          <PostHogProvider>
+            <GooeyToasterClient />
+            <Toaster position="top-center" reverseOrder={false} />
+            {children}
+            <VisitorBadge />
+          </PostHogProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -3,28 +3,24 @@
 import { MdWork as WorkIcon } from 'react-icons/md';
 import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
 import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
-import { FaRegCalendarAlt as DateIcon } from "react-icons/fa";
-import AOSComponent from '@/lib/aos';
+import { FaRegCalendarAlt as DateIcon } from 'react-icons/fa';
 import Snowfall from 'react-snowfall';
 
 export default function WorkExperience() {
   return (
-    <AOSComponent>
+    <>
       <Snowfall />
       <section
         id="work"
         className="relative z-10 mt-32 2xl:mt-52 p-6 text-slate-900"
       >
-        <h3
-          data-aos="fade-left"
-          className="work-title motion-preset-blur-right mb-8 font-heading text-4xl flex items-center gap-2"
-        >
+        <h3 className="work-title motion-preset-blur-right mb-8 font-heading text-4xl flex items-center gap-2">
           <WorkIcon />
           Work Experience
         </h3>
 
         <div id="experience-container" className="mb-6 flex flex-col gap-6">
-          <div data-aos="fade-left">
+          <div>
             <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
               <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
                 <div>
@@ -83,6 +79,6 @@ export default function WorkExperience() {
           </div>
         </div>
       </section>
-    </AOSComponent>
+    </>
   );
 }

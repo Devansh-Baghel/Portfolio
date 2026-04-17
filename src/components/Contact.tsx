@@ -3,7 +3,7 @@
 import AOSComponent from '@/lib/aos';
 import axios from 'axios';
 import { useState } from 'react';
-import toast from 'react-hot-toast';
+import { gooeyToast } from '@baghel/goey-toast';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -25,7 +25,7 @@ export default function Contact() {
         setMessage('');
       });
 
-    toast.promise(emailPromise, {
+    gooeyToast.promise(emailPromise, {
       loading: 'Sending email...',
       success: 'Thank you for contacting me!',
       error: 'Something went wrong while sending email :(',

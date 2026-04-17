@@ -10,8 +10,6 @@ I made my portfolio run in a terminal.
 
 It looks like this — an ASCII art header in lime green, six navigable sections, keyboard shortcuts, a typewriter animation, and a contact form that actually sends emails. All inside your terminal.
 
-<attach image here: full screenshot of the TUI portfolio running in a terminal, showing the ASCII art "DEVANSH BAGHEL" header on the left sidebar and the Home/About section on the right>
-
 You can try it right now:
 
 ```bash
@@ -37,19 +35,13 @@ The TUI has six sections:
 - **Home** — ASCII art of my name, a short bio, buttons for resume and contact
 - **Experience** — Work history in bordered cards
 - **Projects** — A list of projects with tech stack badges and links
-
-<attach image here: screenshot of the Projects section in the TUI, showing project cards with tech stack badges in cyan and Live Demo/Source Code links>
 - **Skills** — Frontend, backend, and misc skill categories
 - **Blog** — Lists my blog posts, opens them in the browser on Enter
 - **Contact** — A form with name, email, and message fields that actually sends me an email via a Cloudflare Worker
 
 Navigation is fully keyboard-driven. Tab cycles through sections, number keys jump directly, `h` opens a help overlay, `c` opens a command palette. The sidebar stays fixed on the left while content scrolls on the right.
 
-<attach image here: screenshot of the command palette overlay showing GitHub, LinkedIn, Twitter, Email, Resume options with keyboard navigation hints at the bottom>
-
 The ASCII art is built-in to OpenTUI via the `ascii-font` component. I just pass it my name and a font style and it handles the rest. That was a pleasant surprise — I expected to have to pipe `figlet` output or something.
-
-<attach image here: close-up screenshot of just the ASCII art "DEVANSH BAGHEL" header in lime green on the dark background>
 
 ## The honest part
 
@@ -70,8 +62,6 @@ Some sections are commented out in the source. The Skills and Contact sections e
 The blog section links to the web version of my posts instead of rendering them inline. Rendering MDX in a terminal is doable but annoying, and linking out felt like the right trade-off.
 
 The contact form works but only when you have a terminal that supports the input components. Some terminals are weird about this. It's not great!
-
-<attach image here: screenshot of the contact form section in the TUI, showing Name, Email, Message fields with a Send Message button and lime green focus highlights>
 
 ## Try it
 

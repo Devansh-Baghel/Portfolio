@@ -1,25 +1,25 @@
-import { FaGithub as GithubIcon } from 'react-icons/fa';
-import { FaLinkedin as LinkedinIcon } from 'react-icons/fa';
-import { MdOutgoingMail as MailIcon } from 'react-icons/md';
-import { FaXTwitter as TwitterIcon } from 'react-icons/fa6';
-import Projects from '@/components/Projects';
-import TechStack from '@/components/Stack';
-import Contact from '@/components/Contact';
-import ScrollButton from '@/components/ScrollButton';
-import Image from 'next/image';
-import Glow from '@/components/Glow';
-import GitRoll from '@/components/GitRoll';
-import Github from '@/components/Github';
-import Blog from '@/components/Blog';
-import EasterEggLogs from '@/components/EasterEgg';
-import FloatingShape from '@/components/FloatingShape';
-import HeroImage from '@/components/HeroImage';
-import { Suspense } from 'react';
-import SpinningShape from '@/components/SpinningShape';
-import WorkExperience from '@/components/WorkExperience';
-import VisitorCounter from '@/components/analytics/VisitorCounter';
-import Footer from '@/components/Footer';
-import { cn } from '@/lib/utils';
+import { FaGithub as GithubIcon } from "react-icons/fa";
+import { FaLinkedin as LinkedinIcon } from "react-icons/fa";
+import { MdOutgoingMail as MailIcon } from "react-icons/md";
+import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
+import Projects from "@/components/Projects";
+import TechStack from "@/components/Stack";
+import Contact from "@/components/Contact";
+import ScrollButton from "@/components/ScrollButton";
+import Image from "next/image";
+import Glow from "@/components/Glow";
+import GitRoll from "@/components/GitRoll";
+import Github from "@/components/Github";
+import Blog from "@/components/Blog";
+import EasterEggLogs from "@/components/EasterEgg";
+import FloatingShape from "@/components/FloatingShape";
+import HeroImage from "@/components/HeroImage";
+import { Suspense } from "react";
+import SpinningShape from "@/components/SpinningShape";
+import WorkExperience from "@/components/WorkExperience";
+import VisitorCounter from "@/components/analytics/VisitorCounter";
+import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 export default async function Home({
   searchParams,
@@ -31,15 +31,15 @@ export default async function Home({
 
   const filterClass = cn(
     "transition-[filter] duration-[5000ms] ease-in-out",
-    isBlackAndWhite && "grayscale"
+    isBlackAndWhite && "grayscale",
   );
 
   return (
     <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
       <aside
         className={cn(
-          "pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20",
-          filterClass
+          "text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20",
+          filterClass,
         )}
       >
         <Suspense
@@ -76,7 +76,7 @@ export default async function Home({
           id="more-info"
         >
           Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
-          apps with{' '}
+          apps with{" "}
           <a
             href="#tech-stack"
             className="cursor-pointer underline underline-offset-2 hover:text-lime-500"
@@ -137,9 +137,9 @@ export default async function Home({
 
       <ScrollButton />
 
-      <div className={cn(
-        "lg:absolute lg:right-0 lg:max-w-[700px]", filterClass
-      )}>
+      <div
+        className={cn("lg:absolute lg:right-0 lg:max-w-[700px]", filterClass)}
+      >
         <HeroImage />
         <EasterEggLogs />
         <WorkExperience />
@@ -186,9 +186,7 @@ export default async function Home({
         />
         <Contact />
         <Footer />
-
       </div>
     </main>
-
   );
 }

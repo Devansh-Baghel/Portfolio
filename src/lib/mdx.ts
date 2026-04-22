@@ -12,6 +12,7 @@ export interface BlogPost {
   readTime: string;
   tags: string[];
   content: string;
+  published?: boolean;
 }
 
 // Make these functions async and add proper error handling
@@ -43,8 +44,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
           readTime: data.readTime || '5 min read',
           tags: data.tags || [],
           content,
+          published: data.published ?? true,
         } as BlogPost;
-      });
+      })
+      .filter((post) => post.published !== false);
 
     return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
   } catch (error) {

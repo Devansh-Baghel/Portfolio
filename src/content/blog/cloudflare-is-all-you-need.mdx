@@ -1,0 +1,225 @@
+---
+title: "Cloudflare Is (Almost) All You Need"
+date: "2026-04-26"
+excerpt: "I used to think Cloudflare was just CDN and DNS. Then I realized each Cloudflare service stacks on the previous one, and suddenly you can ship a full product without stitching five vendors together."
+readTime: "14 min read"
+tags:
+  [
+    "Cloudflare",
+    "Workers",
+    "D1",
+    "R2",
+    "Durable Objects",
+    "AI Gateway",
+    "Vectorize",
+    "Queues",
+    "Architecture",
+  ]
+published: true
+---
+
+I thought Cloudflare was the thing you put in front of your app. DNS. CDN. DDoS shield. Done.
+
+Then I started looking at what happens after you click "Create Worker," and it changed how I think about building products.
+
+The surprising part is not that Cloudflare has a lot of products. Every cloud vendor has a lot of products. The surprising part is that on Cloudflare, the products feel like a ladder. You climb one rung at a time, and each new service solves the exact pain you hit on the previous rung.
+
+That ladder is why people keep saying "you can build a full stack app only on Cloudflare" and, for once, it does not sound like pure marketing.
+
+## The first rung: deploy code without infrastructure drama
+
+Most projects start the same way: you want to ship something this weekend, not become a part-time DevOps person.
+
+Cloudflare's first rung is simple:
+
+- `Pages` (or Workers assets) gives you static hosting + preview deploys
+- `Workers` gives you server-side code at the edge
+- custom domain + TLS + CI/CD are basically on by default
+
+At this point, you have a real app online. No VPC diagram. No load balancer wizard. No "pick a region and pray" moment.
+
+If you're building with Next.js, React, Astro, or plain JS, this is enough to get from zero to URL.
+
+The key thing I missed for a long time: Workers is not just "serverless functions" in the abstract. It is a runtime where the next services can be bound directly into your code.
+
+## Bindings are the second rung (and the real unlock)
+
+Most cloud setups feel like this:
+
+1. Provision service
+2. Generate secret/key/connection string
+3. Copy it into env vars
+4. Hope you didn't misconfigure networking
+
+Cloudflare's model is different. You bind managed services to a Worker, and they show up in your `env` object.
+
+```ts
+interface Env {
+  DB: D1Database;
+  CACHE: KVNamespace;
+}
+
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const user = await env.DB
+      .prepare('SELECT * FROM users WHERE id = ?')
+      .bind('123')
+      .first();
+
+    await env.CACHE.put(`user:${user.id}`, JSON.stringify(user), {
+      expirationTtl: 300,
+    });
+
+    return new Response(JSON.stringify(user));
+  },
+} satisfies ExportedHandler<Env>;
+```
+
+No extra SDK dance for the happy path. No hand-rolled credential plumbing between every layer. Just bindings.
+
+This sounds small until you do it repeatedly. Then it becomes speed.
+
+## The storage ladder: D1 -> R2 -> KV
+
+Once your app exists, you immediately hit data problems. Not one problem, three different ones.
+
+### D1 for relational app data
+
+Need users, projects, subscriptions, metadata? Start with `D1`.
+
+It is SQLite-based and works well when you need relational queries, schema migrations, and predictable SQL semantics. D1 is designed for scaling out across multiple databases, and each database has storage limits, so it is best for many app patterns but not an infinite single-database bucket.
+
+### R2 for files and blobs
+
+Then users upload things: recordings, PDFs, images, exports.
+
+That is `R2` territory. The zero-egress pricing model is the headline feature because it changes architecture decisions. You stop over-optimizing file reads just to avoid billing surprises.
+
+### KV for cheap TTL cache and lightweight state
+
+Now your app is doing repeated lookups: OAuth tokens, temporary auth artifacts, anti-abuse counters, config flags.
+
+`KV` is perfect for this layer. Not your source of truth, but a practical cache/state shelf with TTL.
+
+Individually, none of these services is new as a category. What's interesting is how quickly they snap into one runtime and one deployment flow.
+
+## Stateful compute without a separate cluster: Durable Objects
+
+This was the first thing that felt "new" to me.
+
+`Durable Objects` let you run single-threaded, strongly consistent state machines with locality. In plain terms: you can model one chat room, one game lobby, one workflow instance, or one conversation as its own tiny unit of compute + state.
+
+For AI products, this is particularly good for conversation/session orchestration:
+
+- each chat/session can map to one durable object
+- in-progress streaming state survives page refreshes
+- coordination logic stays in one place instead of being spread across Redis + queues + app server glue
+
+If you're wondering "isn't this too specific," that's exactly the point. Durable Objects are specific, and that specificity removes a lot of accidental complexity.
+
+## The AI rung: Workers AI + AI Gateway + Vectorize
+
+The AI part of Cloudflare's ecosystem is where the stacking pattern becomes obvious.
+
+### Workers AI gives you model inference in the same runtime
+
+Instead of wiring each model provider manually, Workers AI gives a unified way to call supported models.
+
+### AI Gateway gives you operational control
+
+Then you add `AI Gateway` in front and get the stuff teams usually add later under pressure:
+
+- request logging and observability
+- caching (big win for repeated prompts/use cases)
+- rate limiting controls
+- provider/model failover patterns
+
+This is the difference between "we called an LLM" and "we run an AI feature in production."
+
+### Vectorize completes the RAG loop
+
+When product asks for "chat over documents," you need embeddings + vector search. `Vectorize` fills that gap without leaving the platform.
+
+Now the full flow stays cohesive:
+
+1. user uploads docs to `R2`
+2. metadata in `D1`
+3. embeddings in `Vectorize`
+4. generation through `AI Gateway`/Workers AI
+5. session state in `Durable Objects`
+
+That is a full AI app architecture, using one edge runtime and one provider boundary.
+
+## The scale rung: Queues, analytics, and external DB acceleration
+
+Eventually synchronous request/response APIs become the bottleneck.
+
+You need background jobs for long pipelines: transcription, enrichment, batch processing, retries, dead-letter handling. This is where `Queues` fits naturally.
+
+Then once usage grows, you want near-real-time product and cost visibility. Cloudflare's analytics stack gives fast event/time-series querying so you can build usage dashboards without shipping all telemetry elsewhere first.
+
+And if/when you outgrow D1 for certain workloads, `Hyperdrive` can help reduce database connection overhead patterns with external databases, which is usually one of the uglier serverless pain points.
+
+So the ladder does not end at MVP. It continues into "this has real users now" territory.
+
+## Security and access as built-ins, not bolt-ons
+
+A detail I appreciate more over time: Cloudflare Access and edge controls are close to the app runtime.
+
+Need to protect an internal tool? Gate it by identity before the request ever reaches your app code. Need abuse controls? Add rate limiting in the same ecosystem.
+
+You can absolutely do this elsewhere. The difference is how many seams you need to cross.
+
+## The part people skip: trade-offs are real
+
+I like this stack, but "Cloudflare is all you need" is only true with a few asterisks.
+
+### 1) Vendor lock-in is not hypothetical
+
+Bindings and platform-native patterns are delightful, and they absolutely influence architecture. You can keep clean abstraction boundaries, but most teams move faster by leaning into the platform.
+
+That speed is the benefit and the lock-in.
+
+### 2) JavaScript/TypeScript is still the happy path
+
+Workers' runtime model is best when your team is comfortable in the JS/TS ecosystem. If your org is deeply invested in other runtimes, friction increases quickly.
+
+### 3) Service maturity differs by use case
+
+Some products are extremely mature, others are still evolving fast. That's not bad, but it means you should validate critical requirements early instead of assuming parity with every incumbent cloud service.
+
+None of these are deal-breakers for me. They're design constraints you should be explicit about before you commit.
+
+## Why this ecosystem feels different
+
+Here's the thing that surprised me: Cloudflare doesn't just give you services. It gives you sequence.
+
+You start with hosting.
+Then you add data.
+Then cache.
+Then stateful orchestration.
+Then AI control planes.
+Then async pipelines.
+Then analytics and scale knobs.
+
+Each step is a response to the pain introduced by the previous step.
+
+That sequence is exactly how real products evolve. Not by drawing a perfect "final architecture" on day one, but by solving today's bottleneck without wrecking tomorrow.
+
+What I take from this is simple: for a certain class of products, especially TypeScript-heavy apps with edge-friendly patterns, Cloudflare is no longer just the front door. It can be the whole house.
+
+Not because you must use everything. Because when you need the next thing, it is already one rung above you.
+
+## References
+
+1. [Cloudflare Workers docs](https://developers.cloudflare.com/workers/)
+2. [Cloudflare Pages docs](https://developers.cloudflare.com/pages/)
+3. [Cloudflare D1 docs](https://developers.cloudflare.com/d1/)
+4. [Cloudflare R2 docs](https://developers.cloudflare.com/r2/)
+5. [Cloudflare KV docs](https://developers.cloudflare.com/kv/)
+6. [Cloudflare Durable Objects docs](https://developers.cloudflare.com/durable-objects/)
+7. [Cloudflare Workers AI docs](https://developers.cloudflare.com/workers-ai/)
+8. [Cloudflare AI Gateway docs](https://developers.cloudflare.com/ai-gateway/)
+9. [Cloudflare Vectorize docs](https://developers.cloudflare.com/vectorize/)
+10. [Cloudflare Queues docs](https://developers.cloudflare.com/queues/)
+11. [Cloudflare Hyperdrive docs](https://developers.cloudflare.com/hyperdrive/)

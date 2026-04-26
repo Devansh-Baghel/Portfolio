@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { FaEye, FaUsers } from 'react-icons/fa';
 
 interface AnalyticsData {
@@ -9,12 +10,17 @@ interface AnalyticsData {
 }
 
 export default function VisitorBadge() {
+    const pathname = usePathname();
     const [data, setData] = useState<AnalyticsData | null>(null);
     const [loading, setLoading] = useState(true);
     const [isExpanded, setIsExpanded] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
+    const isBlogPostRoute = /^\/blog\/[^/]+\/?$/.test(pathname);
+
     useEffect(() => {
+        if (isBlogPostRoute) return;
+
         async function fetchAnalytics() {
             try {
                 const response = await fetch('/api/analytics');
@@ -28,7 +34,7 @@ export default function VisitorBadge() {
         }
 
         fetchAnalytics();
-    }, []);
+    }, [isBlogPostRoute]);
 
     useEffect(() => {
         function handleScroll() {
@@ -41,6 +47,8 @@ export default function VisitorBadge() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    if (isBlogPostRoute) return null;
 
     if (loading) {
         return (

@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/lib/hint.min.css";
 import axios from "axios";
-import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
 import { PostHogProvider } from "./providers";
 import StructuredData from "@/components/StructuredData";
@@ -150,7 +149,6 @@ export default function RootLayout({
         <SmoothScroll>
           <PostHogProvider>
             <GooeyToasterClient />
-            <Toaster position="top-center" reverseOrder={false} />
             {children}
             <VisitorBadge />
           </PostHogProvider>

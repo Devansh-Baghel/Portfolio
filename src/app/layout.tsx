@@ -9,7 +9,7 @@ import StructuredData from "@/components/StructuredData";
 import VisitorBadge from "@/components/analytics/VisitorBadge";
 import { FaviconAnimator } from "@/components/FaviconAnimator";
 import GooeyToasterClient from "@/components/GooeyToasterClient";
-import SmoothScroll from "@/components/SmoothScroll";
+// import SmoothScroll from "@/components/SmoothScroll";
 
 const chromate = localFont({
   src: "./Chromate-Regular.ttf",
@@ -146,13 +146,13 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <FaviconAnimator />
-        <SmoothScroll>
+        {/* <SmoothScroll> */}
           <PostHogProvider>
             <GooeyToasterClient />
             {children}
             <VisitorBadge />
           </PostHogProvider>
-        </SmoothScroll>
+        {/* </SmoothScroll> */}
       </body>
     </html>
   );

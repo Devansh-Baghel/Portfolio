@@ -100,7 +100,7 @@ export default function TechStack() {
         </div>
 
         <div className="col-start-2 col-end-3 row-start-1 row-end-3 md:h-full">
-          <ScrollReveal delay={0.3}>
+          <ScrollReveal delay={0.3} className="h-full">
             <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:h-full">
               <h3 className="vertical mb-4 font-heading text-3xl">Misc.</h3>
 

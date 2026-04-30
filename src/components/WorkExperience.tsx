@@ -5,6 +5,7 @@ import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
 import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
 import { FaRegCalendarAlt as DateIcon } from 'react-icons/fa';
 import Snowfall from 'react-snowfall';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function WorkExperience() {
   return (
@@ -14,14 +15,16 @@ export default function WorkExperience() {
         id="work"
         className="relative z-10 mt-32 2xl:mt-52 p-6 text-slate-900"
       >
-        <h3 className="work-title motion-preset-slide-right mb-8 font-heading text-4xl flex items-center gap-2">
-          <WorkIcon />
-          Work Experience
-        </h3>
+        <ScrollReveal>
+          <h3 className="work-title mb-8 font-heading text-4xl flex items-center gap-2">
+            <WorkIcon />
+            Work Experience
+          </h3>
+        </ScrollReveal>
 
         <div id="experience-container" className="mb-6 flex flex-col gap-6">
-          <div>
-            <div className="wrapper motion-preset-slide-right flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+          <ScrollReveal>
+            <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
               <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
                 <div>
                   <h3 className="font-heading text-3xl">
@@ -76,7 +79,7 @@ export default function WorkExperience() {
                 </li>
               </ul>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

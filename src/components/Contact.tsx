@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { gooeyToast } from '@baghel/goey-toast';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -36,48 +37,60 @@ export default function Contact() {
       id="contact"
       className="mt-32 flex flex-col gap-6 px-6 pt-6 text-slate-900"
     >
-      <h3 className="contact-title motion-preset-slide-right mb-4 font-heading text-4xl">Contact me</h3>
+      <ScrollReveal>
+        <h3 className="contact-title mb-4 font-heading text-4xl">
+          Contact me
+        </h3>
+      </ScrollReveal>
       <form
         action={sendEmail}
         className="flex flex-col gap-6 text-xl placeholder:text-xl"
       >
-        <div className="w-full motion-preset-slide-right">
-          <input
-            className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-20"
-            required
-            placeholder="Your name"
-            id="name"
-            onChange={(e) => setName(e.target.value)}
-            autoComplete="name"
-            value={name}
-          />
-        </div>
-        <div className="w-full motion-preset-slide-right motion-delay-150">
-          <input
-            className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-20"
-            required
-            placeholder="Your email"
-            id="email"
-            type="email"
-            autoComplete="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
-        <div className="w-full motion-preset-slide-right motion-delay-300">
-          <textarea
-            className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-32"
-            required
-            placeholder="Your message"
-            id="message"
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-          />
-        </div>
+        <ScrollReveal>
+          <div className="w-full">
+            <input
+              className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-20"
+              required
+              placeholder="Your name"
+              id="name"
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="name"
+              value={name}
+            />
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <div className="w-full">
+            <input
+              className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-20"
+              required
+              placeholder="Your email"
+              id="email"
+              type="email"
+              autoComplete="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <div className="w-full">
+            <textarea
+              className="wrapper w-full rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 placeholder:text-xl placeholder:text-slate-800 hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none md:h-32"
+              required
+              placeholder="Your message"
+              id="message"
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+            />
+          </div>
+        </ScrollReveal>
 
-        <button className="max-w-[600px] rounded-[30px] border-[2px] border-slate-900 bg-slate-900 px-6 py-4 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl motion-preset-slide-right motion-delay-450">
-          Send
-        </button>
+        <ScrollReveal delay={0.3}>
+          <button className="max-w-[600px] rounded-[30px] border-[2px] border-slate-900 bg-slate-900 px-6 py-4 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl">
+            Send
+          </button>
+        </ScrollReveal>
       </form>
     </section>
   );

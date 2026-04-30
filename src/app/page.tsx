@@ -19,6 +19,7 @@ import SpinningShape from "@/components/SpinningShape";
 import WorkExperience from "@/components/WorkExperience";
 import VisitorCounter from "@/components/analytics/VisitorCounter";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { cn } from "@/lib/utils";
 
 export default async function Home({
@@ -170,7 +171,9 @@ export default async function Home({
           amplitude={[40, 100, 30]}
           speed={0.2}
         />
-        <Blog />
+        <ScrollReveal>
+          <Blog />
+        </ScrollReveal>
         <FloatingShape
           shapeUrl="/shapes/shape-85.svg"
           directionClass="right-0"

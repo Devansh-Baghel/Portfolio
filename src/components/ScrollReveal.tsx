@@ -16,10 +16,14 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 60 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: 20, scale: 0.98 }}
+      whileInView={{ opacity: 1, x: 0, scale: 1 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, ease: 'easeOut', delay }}
+      transition={{
+        duration: 0.35,
+        ease: [0.4, 0, 0.2, 1],
+        delay,
+      }}
       className={className}
     >
       {children}

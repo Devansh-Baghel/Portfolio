@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { AnimatePresence, motion } from 'motion/react';
 import { FaEye, FaUsers } from 'react-icons/fa';
 
 interface AnalyticsData {
@@ -71,49 +72,64 @@ export default function VisitorBadge() {
             onMouseEnter={() => setIsExpanded(true)}
             onMouseLeave={() => setIsExpanded(false)}
         >
-            <div className="group rounded-3xl bg-white shadow-sm transition-all duration-200 hover:translate-x-1 hover:translate-y-1">
-                {/* Collapsed view - Icon only in middle section */}
-                <div className={`flex items-center gap-3 p-3 ${isExpanded ? 'hidden' : 'flex'}`}>
-                    {isScrolled ? (
-                        <FaEye className="h-4 w-4 text-lime-500" />
-                    ) : (
+            <motion.div
+                layout
+                className="group rounded-3xl bg-white shadow-sm"
+                transition={{ duration: 0.2, ease: [0.2, 0, 0, 1] }}
+            >
+                <AnimatePresence mode="wait" initial={false}>
+                    {isExpanded ? (
+                        <motion.div
+                            key="expanded"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.15, ease: [0.2, 0, 0, 1] }}
+                            className="flex flex-col gap-3 p-4"
+                        >
                             <div className="flex items-center gap-2">
                                 <FaEye className="h-4 w-4 text-lime-500" />
-                                <span className="text-sm font-bold text-slate-900">
-                                    {data.totalPageviews.toLocaleString()}
-                                </span>
+                                <div className="flex flex-col">
+                                    <span className="text-xs text-slate-600">Total Views</span>
+                                    <span className="text-lg font-bold text-slate-900">
+                                        {data.totalPageviews.toLocaleString()}
+                                    </span>
+                                </div>
                             </div>
+                            <div className="h-[1px] w-full bg-slate-900/10" />
+                            <div className="flex items-center gap-2">
+                                <FaUsers className="h-4 w-4 text-lime-500" />
+                                <div className="flex flex-col">
+                                    <span className="text-xs text-slate-600">Unique Visitors</span>
+                                    <span className="text-lg font-bold text-slate-900">
+                                        {data.uniqueVisitors.toLocaleString()}
+                                    </span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="collapsed"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.15, ease: [0.2, 0, 0, 1] }}
+                            className="flex items-center gap-3 p-3"
+                        >
+                            {isScrolled ? (
+                                <FaEye className="h-4 w-4 text-lime-500 animate-eye-blink" />
+                            ) : (
+                                <div className="flex items-center gap-2">
+                                    <FaEye className="h-4 w-4 text-lime-500 animate-eye-blink" />
+                                    <span className="text-sm font-bold text-slate-900">
+                                        {data.totalPageviews.toLocaleString()}
+                                    </span>
+                                </div>
+                            )}
+                        </motion.div>
                     )}
-                </div>
-
-                {/* Expanded view */}
-                <div className={`flex-col gap-3 p-4 ${isExpanded ? 'flex' : 'hidden'}`}>
-                    {/* Total Pageviews */}
-                    <div className="flex items-center gap-2">
-                        <FaEye className="h-4 w-4 text-lime-500" />
-                        <div className="flex flex-col">
-                            <span className="text-xs text-slate-600">Total Views</span>
-                            <span className="text-lg font-bold text-slate-900">
-                                {data.totalPageviews.toLocaleString()}
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="h-[1px] w-full bg-slate-900/10" />
-
-                    {/* Unique Visitors */}
-                    <div className="flex items-center gap-2">
-                        <FaUsers className="h-4 w-4 text-lime-500" />
-                        <div className="flex flex-col">
-                            <span className="text-xs text-slate-600">Unique Visitors</span>
-                            <span className="text-lg font-bold text-slate-900">
-                                {data.uniqueVisitors.toLocaleString()}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </AnimatePresence>
+            </motion.div>
         </div>
     );
 }

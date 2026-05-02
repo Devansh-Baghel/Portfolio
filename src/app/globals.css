@@ -168,6 +168,19 @@ body {
   background-repeat: repeat-y;
 }
 
+@keyframes eye-blink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.15);
+  }
+}
+
+.animate-eye-blink {
+  animation: eye-blink 3s ease-in-out infinite;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

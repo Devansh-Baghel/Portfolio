@@ -143,7 +143,9 @@ export default async function Home({
       >
         <HeroImage />
         <EasterEggLogs />
-        <WorkExperience />
+        <Suspense>
+          <WorkExperience />
+        </Suspense>
         <FloatingShape
           shapeUrl="/shapes/shape-81.svg"
           directionClass="left-[-20px] bottom-[-20px]"

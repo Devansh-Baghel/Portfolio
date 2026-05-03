@@ -1,5 +1,6 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
 import { MdWork as WorkIcon } from 'react-icons/md';
 import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
 import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
@@ -8,9 +9,12 @@ import Snowfall from 'react-snowfall';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export default function WorkExperience() {
+  const searchParams = useSearchParams();
+  const snowEnabled = searchParams.get('snow') !== 'off';
+
   return (
     <>
-      <Snowfall />
+      {snowEnabled && <Snowfall />}
       <section
         id="work"
         className="relative z-10 mt-32 2xl:mt-52 p-6 text-slate-900"

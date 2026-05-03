@@ -93,6 +93,7 @@ export default function FunBox() {
 
   const isBW = searchParams.get('bw') === 'true';
   const isFastSpin = searchParams.get('spin') === 'faster';
+  const isSnowOn = searchParams.get('snow') !== 'off';
 
   function toggleParam(key: string, value: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -100,6 +101,17 @@ export default function FunBox() {
       params.delete(key);
     } else {
       params.set(key, value);
+    }
+    const query = params.toString();
+    router.push(query ? `?${query}` : '/', { scroll: false });
+  }
+
+  function toggleSnow() {
+    const params = new URLSearchParams(searchParams.toString());
+    if (params.get('snow') === 'off') {
+      params.delete('snow');
+    } else {
+      params.set('snow', 'off');
     }
     const query = params.toString();
     router.push(query ? `?${query}` : '/', { scroll: false });
@@ -176,6 +188,11 @@ export default function FunBox() {
                   label="Fast Spin"
                   isOn={isFastSpin}
                   onToggle={() => toggleParam('spin', 'faster')}
+                />
+                <Toggle
+                  label="Snowfall"
+                  isOn={isSnowOn}
+                  onToggle={toggleSnow}
                 />
               </div>
             </div>

@@ -128,11 +128,6 @@ export default async function Home({
             <MailIcon className="h-10 w-10" />
           </a>
         </div>
-        {/*
-        <div className="mt-4 motion-preset-slide-right animate-blur-in-1000 motion-delay-600">
-          <LatestCommit />
-        </div> */}
-
         <VisitorCounter />
       </aside>
 

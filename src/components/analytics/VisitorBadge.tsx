@@ -1,45 +1,22 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { FaEye, FaUsers } from "react-icons/fa";
-import { WanderingEyes } from "../loading-ui/wandering-eyes";
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { FaEye, FaUsers } from 'react-icons/fa';
+import { WanderingEyes } from '../loading-ui/wandering-eyes';
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card";
-
-interface AnalyticsData {
-  totalPageviews: number;
-  uniqueVisitors: number;
-}
+} from '@/components/ui/hover-card';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function VisitorBadge() {
   const pathname = usePathname();
-  const [data, setData] = useState<AnalyticsData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const { data, loading } = useAnalytics();
   const [isScrolled, setIsScrolled] = useState(false);
 
   const isBlogPostRoute = /^\/blog\/[^/]+\/?$/.test(pathname);
-
-  useEffect(() => {
-    if (isBlogPostRoute) return;
-
-    async function fetchAnalytics() {
-      try {
-        const response = await fetch("/api/analytics");
-        const analyticsData = await response.json();
-        setData(analyticsData);
-      } catch (error) {
-        console.error("Failed to fetch analytics:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchAnalytics();
-  }, [isBlogPostRoute]);
 
   useEffect(() => {
     function handleScroll() {
@@ -49,8 +26,8 @@ export default function VisitorBadge() {
     }
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   if (isBlogPostRoute) return null;

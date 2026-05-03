@@ -15,41 +15,38 @@ export interface BlogPost {
   published?: boolean;
 }
 
-// Make these functions async and add proper error handling
-export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  // Only run on server-side
-  if (typeof window !== 'undefined') {
-    return [];
-  }
+function parseBlogPost(slug: string, fileContents: string): BlogPost {
+  const { data, content } = matter(fileContents);
 
+  return {
+    slug,
+    title: data.title || 'Untitled',
+    date: data.date || new Date().toISOString(),
+    excerpt: data.excerpt || '',
+    readTime: data.readTime || '5 min read',
+    tags: data.tags || [],
+    content,
+    published: data.published ?? true,
+  };
+}
+
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
     if (!fs.existsSync(contentDirectory)) {
       return [];
     }
 
     const fileNames = fs.readdirSync(contentDirectory);
-    const allPostsData = fileNames
+    return fileNames
       .filter((fileName) => fileName.endsWith('.mdx'))
       .map((fileName) => {
         const slug = fileName.replace(/\.mdx$/, '');
         const fullPath = path.join(contentDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const { data, content } = matter(fileContents);
-
-        return {
-          slug,
-          title: data.title || 'Untitled',
-          date: data.date || new Date().toISOString(),
-          excerpt: data.excerpt || '',
-          readTime: data.readTime || '5 min read',
-          tags: data.tags || [],
-          content,
-          published: data.published ?? true,
-        } as BlogPost;
+        return parseBlogPost(slug, fileContents);
       })
-      .filter((post) => post.published !== false);
-
-    return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+      .filter((post) => post.published !== false)
+      .sort((a, b) => (a.date < b.date ? 1 : -1));
   } catch (error) {
     console.error('Error reading blog posts:', error);
     return [];
@@ -57,25 +54,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
-  // Only run on server-side
-  if (typeof window !== 'undefined') {
-    return null;
-  }
-
   try {
     const fullPath = path.join(contentDirectory, `${slug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    return {
-      slug,
-      title: data.title || 'Untitled',
-      date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || '',
-      readTime: data.readTime || '5 min read',
-      tags: data.tags || [],
-      content,
-    };
+    return parseBlogPost(slug, fileContents);
   } catch (error) {
     console.error(`Error reading blog post ${slug}:`, error);
     return null;
@@ -83,11 +65,6 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
 }
 
 export async function getAllBlogSlugs(): Promise<string[]> {
-  // Only run on server-side
-  if (typeof window !== 'undefined') {
-    return [];
-  }
-
   try {
     if (!fs.existsSync(contentDirectory)) {
       return [];

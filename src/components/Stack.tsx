@@ -2,6 +2,12 @@
 
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { skillCategories } from '@/data/portfolio';
 
 export default function TechStack() {
@@ -36,22 +42,25 @@ export default function TechStack() {
                     {category.name}
                   </h3>
 
-                  <div className="flex max-w-80 flex-wrap gap-4">
-                    {category.skills.map((elm) => (
-                      <span
-                        className="hint--top hint--rounded"
-                        key={elm.path}
-                        aria-label={elm.name}
-                      >
-                        <Image
-                          height={45}
-                          width={45}
-                          alt={elm.name}
-                          src={`/skillicons/${elm.path}`}
-                        />
-                      </span>
-                    ))}
-                  </div>
+                  <TooltipProvider delayDuration={0}>
+                    <div className="flex max-w-80 flex-wrap gap-4">
+                      {category.skills.map((elm) => (
+                        <Tooltip key={elm.path}>
+                          <TooltipTrigger>
+                            <Image
+                              height={45}
+                              width={45}
+                              alt={elm.name}
+                              src={`/skillicons/${elm.path}`}
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent side="top">
+                            {elm.name}
+                          </TooltipContent>
+                        </Tooltip>
+                      ))}
+                    </div>
+                  </TooltipProvider>
                 </div>
               </ScrollReveal>
             </div>

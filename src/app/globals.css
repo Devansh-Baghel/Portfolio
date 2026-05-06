@@ -47,40 +47,6 @@ body {
   border-radius: 15px;
 }
 
-#experience-container {
-  background-image: url("/backgrounds/Grad_03.png");
-  background-size: contain;
-  background-position: top;
-  background-repeat: repeat-y;
-}
-
-#projects-container {
-  background-image: url("/Grad_02.webp");
-  background-size: contain;
-  background-position: top;
-  background-repeat: repeat-y;
-}
-
-#tech-stack {
-  background-image: url("/image224.webp");
-  background-size: contain;
-  background-position: top;
-  background-repeat: repeat-y;
-}
-
-#contact {
-  background-image: url("/Grad_05.webp");
-  background-size: contain;
-  background-position: top;
-  background-repeat: repeat-y;
-}
-
-#down-arrow {
-  top: calc(100vh - 80px);
-  left: calc(50% - 14px);
-  z-index: 2;
-}
-
 .glow {
   filter: url(#glow);
 }
@@ -159,26 +125,6 @@ body {
 
 .disable-scrollbar *::-webkit-scrollbar {
   display: none;
-}
-
-#blog-container {
-  background-image: url("/backgrounds/Grad_17.png");
-  background-size: contain;
-  background-position: top;
-  background-repeat: repeat-y;
-}
-
-@keyframes eye-blink {
-  0%, 90%, 100% {
-    transform: scaleY(1);
-  }
-  95% {
-    transform: scaleY(0.15);
-  }
-}
-
-.animate-eye-blink {
-  animation: eye-blink 3s ease-in-out infinite;
 }
 
 @layer base {

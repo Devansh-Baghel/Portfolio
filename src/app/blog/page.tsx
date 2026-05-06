@@ -58,12 +58,22 @@ export default async function BlogPage() {
           speed={0.2}
         />
 
-        <div className="flex flex-col gap-8" id="blog-container">
+        <div
+          className="flex flex-col gap-8"
+          id="blog-container"
+          style={{
+            backgroundImage: 'url("/backgrounds/Grad_17.png")',
+            backgroundSize: 'contain',
+            backgroundPosition: 'top',
+            backgroundRepeat: 'repeat-y',
+          }}
+        >
           {blogPosts.length > 0 ? (
             blogPosts.map((post, index) => (
               <article
                 key={post.slug}
-                className={`blog-wrapper motion-preset-slide-right animate-blur-in-800 motion-delay-${400 + index * 100}`}
+                className="blog-wrapper motion-preset-slide-right animate-blur-in-800"
+                style={{ animationDelay: `${400 + index * 100}ms` }}
               >
                 <div className="rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
                   <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">

@@ -1,9 +1,9 @@
 'use client';
 
-import axios from 'axios';
 import { useState } from 'react';
 import { gooeyToast } from '@baghel/goey-toast';
 import ScrollReveal from '@/components/ScrollReveal';
+import { sendContactForm } from '@/lib/email';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -13,17 +13,11 @@ export default function Contact() {
   async function sendEmail(formdata: FormData) {
     if (!name || !message || !email) return;
 
-    const emailPromise = axios
-      .post('https://email-worker.dbaghel.workers.dev/api/email', {
-        name,
-        email,
-        message,
-      })
-      .then(() => {
-        setName('');
-        setEmail('');
-        setMessage('');
-      });
+    const emailPromise = sendContactForm(name, email, message).then(() => {
+      setName('');
+      setEmail('');
+      setMessage('');
+    });
 
     gooeyToast.promise(emailPromise, {
       loading: 'Sending email...',
@@ -36,6 +30,12 @@ export default function Contact() {
     <section
       id="contact"
       className="mt-32 flex flex-col gap-6 px-6 pt-6 text-slate-900"
+      style={{
+        backgroundImage: 'url("/Grad_05.webp")',
+        backgroundSize: 'contain',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'repeat-y',
+      }}
     >
       <ScrollReveal>
         <h3 className="contact-title mb-4 font-heading text-4xl">

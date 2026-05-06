@@ -15,7 +15,16 @@ export default function Projects() {
         </h3>
       </ScrollReveal>
 
-      <div id="projects-container" className="mb-6 flex flex-col gap-6">
+      <div
+        id="projects-container"
+        className="mb-6 flex flex-col gap-6"
+        style={{
+          backgroundImage: 'url("/Grad_02.webp")',
+          backgroundSize: 'contain',
+          backgroundPosition: 'top',
+          backgroundRepeat: 'repeat-y',
+        }}
+      >
         {projects.map((project, index) => (
           <ProjectCard
             key={project.title}

@@ -21,6 +21,7 @@ import VisitorCounter from "@/components/analytics/VisitorCounter";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { cn } from "@/lib/utils";
+import { buttonFilled, cardBase } from "@/utils/constants";
 
 export default async function Home({
   searchParams,
@@ -91,13 +92,13 @@ export default async function Home({
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="motion-preset-slide-right mt-6 inline-block !animate-blur-in-800 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 text-sm font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl xl:border-[3px]"
+          className={cn("motion-preset-slide-right mt-6 inline-block !animate-blur-in-800 motion-delay-500 md:text-xl xl:border-[3px]", buttonFilled, "px-6 py-2 text-sm shadow-[4px_4px_0px_0px_#84cc16]")}
         >
           Résumé
         </a>
         <a
           href="#contact"
-          className="motion-preset-slide-right ml-[20px] inline-block !animate-blur-in-800 rounded-[30px] border-[3px] border-slate-900 px-6 py-2 text-sm font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none md:text-xl"
+          className={cn("motion-preset-slide-right ml-[20px] inline-block !animate-blur-in-800 motion-delay-500 font-medium md:text-xl", cardBase, "px-6 py-2 text-sm")}
         >
           Contact me
         </a>

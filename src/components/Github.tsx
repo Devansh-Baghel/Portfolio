@@ -3,6 +3,8 @@
 import { GitHubCalendar } from 'react-github-calendar';
 import ScrollReveal from '@/components/ScrollReveal';
 import { githubYears } from '@/data/portfolio';
+import { cn } from '@/lib/utils';
+import { cardBase } from '@/utils/constants';
 
 export default function Github() {
   return (
@@ -19,7 +21,7 @@ export default function Github() {
       <div className="flex flex-col gap-6">
         {githubYears.map((year, index) => (
           <ScrollReveal key={year} delay={index * 0.15}>
-            <div className="disable-scrollbar flex wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+            <div className={cn('disable-scrollbar flex wrapper', cardBase, 'p-6')}>
               <GitHubCalendar
                 username="Devansh-Baghel"
                 colorScheme="light"

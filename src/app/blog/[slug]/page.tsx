@@ -9,6 +9,8 @@ import { format } from 'date-fns';
 import Float from '@/components/fancy/blocks/float';
 import FloatingShape from '@/components/FloatingShape';
 import BlogFloatingShapes from '@/components/BlogFloatingShapes';
+import { cn } from '@/lib/utils';
+import { cardStatic, buttonFilled } from '@/utils/constants';
 
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
@@ -122,7 +124,7 @@ export default async function BlogPostPage({
 
         {/* Article Content */}
           <article className="motion-preset-slide-right animate-blur-in-900 motion-delay-500 backdrop-blur-sm rounded-[30px]">
-          <div className="blog-wrapper rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] lg:p-12">
+          <div className={cn('blog-wrapper', cardStatic, 'p-8 lg:p-12')}>
             <MDXContent content={post.content} />
           </div>
         </article>
@@ -131,7 +133,7 @@ export default async function BlogPostPage({
         <div className="mt-12 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-3 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+            className={cn(buttonFilled, 'inline-flex items-center gap-2 px-6 py-3')}
           >
             <ArrowLeft className="h-4 w-4" />
             More Posts

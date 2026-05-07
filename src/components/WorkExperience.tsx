@@ -8,6 +8,8 @@ import { FaRegCalendarAlt as DateIcon } from 'react-icons/fa';
 import Snowfall from 'react-snowfall';
 import ScrollReveal from '@/components/ScrollReveal';
 import { workExperience } from '@/data/portfolio';
+import { cn } from '@/lib/utils';
+import { cardBase } from '@/utils/constants';
 
 export default function WorkExperience() {
   const searchParams = useSearchParams();
@@ -39,7 +41,7 @@ export default function WorkExperience() {
         >
           {workExperience.map((entry) => (
             <ScrollReveal key={entry.company}>
-              <div className="wrapper flex flex-col gap-4 rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+              <div className={cn('wrapper', cardBase, 'flex flex-col gap-4 p-6')}>
                 <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
                   <div>
                     <h3 className="font-heading text-3xl">{entry.role}</h3>

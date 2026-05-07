@@ -9,6 +9,8 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { skillCategories } from '@/data/portfolio';
+import { cn } from '@/lib/utils';
+import { cardBase } from '@/utils/constants';
 
 export default function TechStack() {
   return (
@@ -43,7 +45,7 @@ export default function TechStack() {
               }
             >
               <ScrollReveal delay={index * 0.15} className={isMisc ? 'h-full' : undefined}>
-                <div className={`wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none${isMisc ? ' md:h-full' : ''}`}>
+                <div className={cn('wrapper', cardBase, 'p-6', isMisc && 'md:h-full')}>
                   <h3 className="vertical mb-4 font-heading text-3xl">
                     {category.name}
                   </h3>

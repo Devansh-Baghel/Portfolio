@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { LuExternalLink as LinkIcon } from 'react-icons/lu';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
+import { cardBase, cardStatic } from '@/utils/constants';
 
 export default async function Blog() {
   const blogPosts = await getAllBlogPosts();
@@ -18,7 +20,7 @@ export default async function Blog() {
         {latestPost ? (
           <>
             <Link href={`/blog/${latestPost.slug}`}>
-              <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+              <div className={cn('wrapper', cardBase, 'p-6')}>
                 <h4 className="mb-2 text-xl font-bold">{latestPost.title}</h4>
                 <p className="mb-4 text-slate-600">{latestPost.excerpt}</p>
                 <div className="flex items-center gap-4 text-sm text-slate-500">
@@ -33,14 +35,14 @@ export default async function Blog() {
 
             <Link
               href="/blog"
-              className="wrapper flex h-16 items-center justify-center gap-2 rounded-[30px] border-[3px] border-slate-900 text-center text-[20px] font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+              className={cn('wrapper', cardBase, 'flex h-16 items-center justify-center gap-2 text-center text-[20px] font-medium')}
             >
               View All Posts
               <LinkIcon />
             </Link>
           </>
         ) : (
-          <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-6 text-center shadow-[4px_4px_0px_0px_#1e293b]">
+          <div className={cn('wrapper', cardStatic, 'p-6 text-center')}>
             <p className="text-slate-600">No blog posts yet. Coming soon!</p>
           </div>
         )}

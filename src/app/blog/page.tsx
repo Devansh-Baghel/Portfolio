@@ -6,6 +6,8 @@ import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
 import FloatingShape from '@/components/FloatingShape';
+import { cn } from '@/lib/utils';
+import { cardBase, buttonFilled } from '@/utils/constants';
 
 export const metadata: Metadata = {
   title: 'Blog | Devansh Baghel',
@@ -75,7 +77,7 @@ export default async function BlogPage() {
                 className="blog-wrapper motion-preset-slide-right animate-blur-in-800"
                 style={{ animationDelay: `${400 + index * 100}ms` }}
               >
-                <div className="rounded-[30px] border-[3px] border-slate-900 p-8 shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                <div className={cn(cardBase, 'p-8')}>
                   <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
@@ -110,7 +112,7 @@ export default async function BlogPage() {
 
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-2 font-medium text-white shadow-[2px_2px_0px_0px_#84cc16] transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+                    className={cn(buttonFilled, 'inline-flex items-center gap-2 px-6 py-2')}
                   >
                     Read More
                     <ExternalLink className="h-4 w-4" />

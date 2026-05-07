@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Glow from '@/components/Glow';
+import { cn } from '@/lib/utils';
+import { cardStatic, cardBase, buttonFilled } from '@/utils/constants';
 
 export default function NotFound() {
   return (
@@ -21,7 +23,7 @@ export default function NotFound() {
           <Glow />
 
           {/* Main 404 content */}
-          <div className="wrapper rounded-[30px] border-[3px] border-slate-900 p-8 text-slate-900 shadow-[4px_4px_0px_0px_#1e293b] md:p-12">
+          <div className={cn('wrapper', cardStatic, 'p-8 text-slate-900 md:p-12')}>
             <div className="text-center">
               {/* 404 number */}
               <h1 className="motion-preset-slide-right animate-blur-in-500 font-heading text-[80px] leading-none md:text-[120px]">
@@ -43,14 +45,14 @@ export default function NotFound() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
                 <Link
                   href="/"
-                  className="motion-preset-slide-right inline-block animate-blur-in-800 rounded-[30px] border-2 border-slate-900 bg-slate-900 px-6 py-3 text-lg font-medium text-white shadow-[4px_4px_0px_0px_#84cc16] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+                  className={cn('motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500', buttonFilled, 'px-6 py-3 text-lg shadow-[4px_4px_0px_0px_#84cc16]')}
                 >
                   Go Home
                 </Link>
 
                 <button
                   onClick={() => window.history.back()}
-                  className="motion-preset-slide-right inline-block animate-blur-in-800 rounded-[30px] border-[3px] border-slate-900 px-6 py-3 text-lg font-medium shadow-[4px_4px_0px_0px_#1e293b] transition-all duration-200 motion-delay-500 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+                  className={cn('motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500 font-medium', cardBase, 'px-6 py-3 text-lg')}
                 >
                   Go Back
                 </button>

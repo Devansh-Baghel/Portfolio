@@ -30,6 +30,7 @@
 - [x] reverse github contributions months, so go from jan-dec to dec-jan for each year, that way it looks much better.
 - [x] hide easter egg text in footer for mobile view
 - [x] make the favicon easter egg hover text more clear (normal person doesn't know what a favicon is, say chrome tab icon maybe)
+- [x] cloudflare is almost all you need blog
 
 
 ## Not done yet
@@ -61,3 +62,6 @@
 - [ ] remove react-snowfall later on in the future or maybe make it like react snowfall shows up in the winter and doesn't during the summer.
 - [ ] add feature where visitors can see what my last commit is in this portfolio, and it takes you to that commit page on github
 - [ ] blog on how ai made programming less fun
+- [ ] clicking a blog after scrolling a little bit starts that blog from the scroll position and not from the top, this is not good, fix this
+- [ ] add a table of contents component on the left/right side of the blog page
+- [ ] blog on how nextjs killed client side reactivity

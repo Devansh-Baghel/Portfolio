@@ -67,5 +67,3 @@
 - [ ] blog on how nextjs killed client side reactivity
 - [ ] let user change their cursor using this lib: https://cursorify.github.io/?ref=dailydev
 - [ ] add infinite mode in the fun box, which will keep scrolling the portfolio in a loop
-- [ ] add keyboard shortcuts and interactions on the page (like pressing g opens my github, pressing e opens a mailto link)
-- [ ] add vim keybinds in the fun box menu

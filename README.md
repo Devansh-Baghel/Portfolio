@@ -1,6 +1,8 @@
 # 💼 Portfolio - [baghel.dev](https://baghel.dev/)
 
-Welcome to the repository for my personal portfolio website, [baghel.dev](https://baghel.dev/), showcasing my projects, skills, and professional experience as a full-stack developer.
+Welcome to the repository for my personal portfolio website, [baghel.dev](https://baghel.dev/).
+
+A Product Engineer's working log — products shipped, problems owned, and systems maintained. I help startups ship and scale web products end-to-end: from frontend and backend to payments, infrastructure, SEO, and observability.
 
 ## ✨ Features
 

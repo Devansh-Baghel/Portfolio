@@ -70,37 +70,56 @@ export default async function Home({
           className="motion-preset-slide-right mt-20 animate-blur-in-600 font-heading text-[27px] motion-delay-200 lg:text-[32px]"
           id="profession"
         >
-          Fullstack Developer
+          Full Stack Developer
+          <br />& Product Engineer
         </h2>
+
+        <p
+          className="motion-preset-slide-right mt-2 animate-blur-in-700 text-base font-medium text-slate-500 motion-delay-300"
+          id="role"
+        >
+          Building products end-to-end.
+        </p>
 
         <p
           className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300"
           id="more-info"
         >
-          Hello there 👋, I&apos;m Devansh Baghel, and I build full-stack web
-          apps with{" "}
-          <a
-            href="#tech-stack"
+          Hello there 👋, I&apos;m Devansh Baghel, and I help startups ship and
+          scale web products — from frontend and backend to payments,
+          infrastructure, and SEO.{" "}
+          {/*<a
+            href="#work"
             className="cursor-pointer underline underline-offset-2 hover:text-lime-500"
           >
-            modern tools
+            See how I work
           </a>
-          .
+          .*/}
         </p>
 
+        <a
+          href="https://cal.com/baghel/15min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "motion-preset-slide-right mt-6 inline-block !animate-blur-in-800 motion-delay-500 md:text-xl xl:border-[3px]",
+            buttonFilled,
+            "px-6 py-2 text-sm shadow-[4px_4px_0px_0px_#84cc16]",
+          )}
+        >
+          Book a call
+        </a>
         <a
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className={cn("motion-preset-slide-right mt-6 inline-block !animate-blur-in-800 motion-delay-500 md:text-xl xl:border-[3px]", buttonFilled, "px-6 py-2 text-sm shadow-[4px_4px_0px_0px_#84cc16]")}
+          className={cn(
+            "motion-preset-slide-right ml-[20px] inline-block !animate-blur-in-800 motion-delay-500 font-medium md:text-xl",
+            cardBase,
+            "px-6 py-2 text-sm",
+          )}
         >
           Résumé
-        </a>
-        <a
-          href="#contact"
-          className={cn("motion-preset-slide-right ml-[20px] inline-block !animate-blur-in-800 motion-delay-500 font-medium md:text-xl", cardBase, "px-6 py-2 text-sm")}
-        >
-          Contact me
         </a>
 
         <div className="motion-preset-slide-right mt-6 flex animate-blur-in-900 items-center gap-4 motion-delay-500">

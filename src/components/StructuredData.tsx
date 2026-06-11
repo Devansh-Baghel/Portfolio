@@ -8,7 +8,9 @@ export default function StructuredData() {
         name: 'Devansh Baghel',
         url: 'https://baghel.dev',
         image: 'https://baghel.dev/profile-image.jpg', // Add your profile image
-        jobTitle: 'Full Stack Developer',
+        jobTitle: 'Product Engineer',
+        description:
+          'Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.',
         worksFor: {
           '@type': 'Organization',
           name: 'Freelance',
@@ -20,7 +22,11 @@ export default function StructuredData() {
           'Next.js',
           'Node.js',
           'MongoDB',
-          'Full Stack Development',
+          'Product Engineering',
+          'Infrastructure',
+          'SEO',
+          'Payments',
+          'Observability',
         ],
         sameAs: [
           'https://github.com/devansh-baghel',
@@ -32,9 +38,9 @@ export default function StructuredData() {
         '@type': 'WebSite',
         '@id': 'https://baghel.dev/#website',
         url: 'https://baghel.dev',
-        name: 'Devansh Baghel Portfolio',
+        name: 'Devansh Baghel',
         description:
-          'Full Stack Developer Portfolio showcasing modern web applications',
+          'Devansh Baghel — Product Engineer. A working log of products shipped, problems owned, and systems maintained.',
         publisher: {
           '@id': 'https://baghel.dev/#person',
         },
@@ -44,7 +50,7 @@ export default function StructuredData() {
         '@type': 'WebPage',
         '@id': 'https://baghel.dev/#webpage',
         url: 'https://baghel.dev',
-        name: 'Devansh Baghel - Full Stack Developer Portfolio',
+        name: 'Devansh Baghel - Product Engineer | Building Products End-to-End',
         isPartOf: {
           '@id': 'https://baghel.dev/#website',
         },
@@ -52,7 +58,7 @@ export default function StructuredData() {
           '@id': 'https://baghel.dev/#person',
         },
         description:
-          'Portfolio showcasing full-stack web development projects using React, Next.js, TypeScript, and modern technologies',
+          'Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.',
       },
     ],
   };

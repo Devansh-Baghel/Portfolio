@@ -6,18 +6,18 @@ All text content from the current portfolio site, organized by section. Excludes
 
 ## SEO / Metadata
 
-- **Site Title**: Devansh Baghel - Full Stack Developer & Software Engineer
+- **Site Title**: Devansh Baghel - Product Engineer | Building Products End-to-End
 - **Title Template**: %s | Devansh Baghel
-- **Description**: Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies. View my portfolio of projects including CodeStash and SpendSync.
-- **Keywords**: Devansh Baghel, Full Stack Developer, React Developer, Next.js Developer, TypeScript Developer, JavaScript Developer, Software Engineer, Web Developer, Portfolio, CodeStash, SpendSync
+- **Description**: Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.
+- **Keywords**: Devansh Baghel, Product Engineer, Founding Engineer, Contract Engineer, Next.js Developer, TypeScript Developer, React Developer, Node.js Developer, Web Developer, Software Engineer, Portfolio, CodeStash, SpendSync
 - **Author**: Devansh Baghel (https://baghel.dev)
-- **OpenGraph Title**: Devansh Baghel - Full Stack Developer & Software Engineer
-- **OpenGraph Description**: Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies. View my portfolio of projects including CodeStash and SpendSync.
-- **OpenGraph Site Name**: Devansh Baghel Portfolio
-- **OpenGraph Image Alt**: Devansh Baghel - Full Stack Developer
+- **OpenGraph Title**: Devansh Baghel - Product Engineer | Building Products End-to-End
+- **OpenGraph Description**: Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.
+- **OpenGraph Site Name**: Devansh Baghel
+- **OpenGraph Image Alt**: Devansh Baghel - Product Engineer
 - **Twitter Card**: summary_large_image
-- **Twitter Title**: Devansh Baghel - Full Stack Developer & Software Engineer
-- **Twitter Description**: Devansh Baghel is a full-stack developer specializing in Next.js, React, TypeScript, and modern web technologies.
+- **Twitter Title**: Devansh Baghel - Product Engineer | Building Products End-to-End
+- **Twitter Description**: Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.
 - **Twitter Creator**: @bagheldotdev
 - **Canonical URL**: https://baghel.dev
 
@@ -28,27 +28,28 @@ All text content from the current portfolio site, organized by section. Excludes
 ### Person
 - **Name**: Devansh Baghel
 - **URL**: https://baghel.dev
-- **Job Title**: Full Stack Developer
+- **Job Title**: Product Engineer
+- **Description**: Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.
 - **Works For**: Freelance
-- **Knows About**: JavaScript, TypeScript, React, Next.js, Node.js, MongoDB, Full Stack Development
+- **Knows About**: JavaScript, TypeScript, React, Next.js, Node.js, MongoDB, Product Engineering, Infrastructure, SEO, Payments, Observability
 - **Social Links**: https://github.com/devansh-baghel, https://linkedin.com/in/devanshbaghel, https://twitter.com/bagheldotdev
 
 ### WebSite
-- **Name**: Devansh Baghel Portfolio
+- **Name**: Devansh Baghel
 - **URL**: https://baghel.dev
-- **Description**: Full Stack Developer Portfolio showcasing modern web applications
+- **Description**: Devansh Baghel — Product Engineer. A working log of products shipped, problems owned, and systems maintained.
 
 ### WebPage
-- **Name**: Devansh Baghel - Full Stack Developer Portfolio
-- **Description**: Portfolio showcasing full-stack web development projects using React, Next.js, TypeScript, and modern technologies
+- **Name**: Devansh Baghel - Product Engineer | Building Products End-to-End
+- **Description**: Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.
 
 ---
 
 ## Hero / Sidebar
-
 - **Name**: Devansh Baghel
-- **Title/Tagline**: Fullstack Developer
-- **Intro**: Hello there 👋, I'm Devansh Baghel, and I build full-stack web apps with modern tools.
+- **Title/Tagline**: Building products end-to-end.
+- **Sub-line**: Product Engineer
+- **Intro**: Hello there 👋, I'm Devansh Baghel, and I help startups ship and scale web products — from frontend and backend to payments, infrastructure, and SEO. See how I work.
 - **CTA Buttons**: "Résumé" (links to /resume.pdf), "Contact me" (links to #contact)
 - **Social Links**:
   - GitHub: https://github.com/devansh-baghel
@@ -65,10 +66,10 @@ All text content from the current portfolio site, organized by section. Excludes
 - **Dates**: Nov 2025 - Present
 - **Location**: Remote
 - **Responsibilities**:
-  - Maintained and developed features for a full-stack YouTube views marketplace using Next.js frontend and Node.js/TypeScript backend
-  - Implemented AI-powered features using OpenRouter and Vercel AI SDK for automated tag generation and content optimization
-  - Built automated MongoDB backup system with cron jobs (6-hour intervals) and Cloudflare R2 integration for cloud storage with automated cleanup policies
-  - Handled API rate-limiting on all tools of the platform
+  - Shipped and maintained HypedX end-to-end as the sole product engineer — payments, infra, growth, SEO, observability, and UX across 7 months and 220+ production tasks.
+  - Owned 6 payment integrations (Stripe, Airwallex, Cryptomus, Whop, wallets, Payzink) including checkout flows, webhooks, and reconciliation.
+  - Set up self-hosted MongoDB with automated Cloudflare R2 backups, zero-downtime deploys, staging environments, and a full observability stack (Grafana, Loki, Promtail, Pino, Uptime Kuma).
+  - Built 20+ SEO tools, multilingual routing (i18n), structured data, and conversion-focused funnel pages — moved Lighthouse scores and organic traffic as a one-person growth team.
 
 ---
 

@@ -3,6 +3,7 @@ export interface Project {
   description: string;
   deployedUrl: string;
   sourceUrl: string;
+  previewImage: string;
   badges: { src: string; alt: string }[];
 }
 
@@ -25,6 +26,7 @@ export const projects: Project[] = [
     description: 'The best way to save, store and share your code snippets.',
     deployedUrl: 'https://codestash.baghel.dev',
     sourceUrl: 'https://github.com/devansh-baghel/codestash',
+    previewImage: '/projects/codestash/logo.png',
     badges: [
       { src: '/badges/typescript.svg', alt: 'TypeScript' },
       { src: '/badges/react.svg', alt: 'React' },
@@ -42,6 +44,7 @@ export const projects: Project[] = [
       'An all in one financial planning and money tracking tool with a sleek and intuitive user interface.',
     deployedUrl: 'https://spendsync.baghel.dev',
     sourceUrl: 'https://github.com/devansh-baghel/spendsync',
+    previewImage: '/projects/spendsync/logo.png',
     badges: [
       { src: '/badges/typescript.svg', alt: 'TypeScript' },
       { src: '/badges/react.svg', alt: 'React' },

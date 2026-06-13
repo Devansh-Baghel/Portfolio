@@ -26,6 +26,12 @@ export default function ProjectCard({
           {project.title}
           {icon}
         </h3>
+        <p className="text-xl">{project.description}</p>
+        <img
+          src={project.previewImage}
+          alt={`${project.title} preview`}
+          className="w-full rounded-[20px] border-[3px] border-slate-900 object-cover"
+        />
         <div className="flex flex-col gap-2 text-lg md:flex-row md:gap-4">
           <a
             target="_blank"
@@ -43,14 +49,6 @@ export default function ProjectCard({
             Source code
             <CodeIcon className="inline h-[17px] w-[17px]" />
           </a>
-        </div>
-        <div>
-          <p className="mb-2 text-xl">{project.description}</p>
-          <div className="badge-container">
-            {project.badges.map((badge) => (
-              <img key={badge.alt} src={badge.src} alt={badge.alt} />
-            ))}
-          </div>
         </div>
       </div>
     </ScrollReveal>

@@ -7,6 +7,12 @@ html {
     background-color: white;
 }
 
+@media (max-width: 1535px) {
+    html {
+        zoom: 0.9;
+    }
+}
+
 .font-chromate {
     font-family: var(--font-chromate), sans-serif;
 }

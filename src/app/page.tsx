@@ -75,13 +75,6 @@ export default async function Home({
         </h2>
 
         <p
-          className="motion-preset-slide-right mt-2 animate-blur-in-700 text-base font-medium text-slate-500 motion-delay-300"
-          id="role"
-        >
-          Building products end-to-end.
-        </p>
-
-        <p
           className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300"
           id="more-info"
         >

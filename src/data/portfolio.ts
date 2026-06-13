@@ -1,9 +1,11 @@
 export interface Project {
   title: string;
   description: string;
+  longDescription: string;
   deployedUrl: string;
   sourceUrl: string;
   previewImage: string;
+  images: string[];
   badges: { src: string; alt: string }[];
 }
 
@@ -24,9 +26,15 @@ export const projects: Project[] = [
   {
     title: 'CodeStash',
     description: 'The best way to save, store and share your code snippets.',
+    longDescription:
+      'CodeStash is a full-stack snippet manager built for developers who want a single, reliable home for the code they reach for every day. Snippets are organized with tags and a fast keyboard-driven search, sync across devices in real time, and can be shared with a single link when you need to drop a useful trick into a thread or DM. It started as a personal tool and grew into something my friends actually use to keep their own snippet libraries in one place.',
     deployedUrl: 'https://codestash.baghel.dev',
     sourceUrl: 'https://github.com/devansh-baghel/codestash',
-    previewImage: '/projects/codestash/logo.png',
+    previewImage: '/projects/codestash/c1.png',
+    images: Array.from(
+      { length: 9 },
+      (_, i) => `/projects/codestash/c${i + 1}.png`,
+    ),
     badges: [
       { src: '/badges/typescript.svg', alt: 'TypeScript' },
       { src: '/badges/react.svg', alt: 'React' },
@@ -42,9 +50,15 @@ export const projects: Project[] = [
     title: 'SpendSync',
     description:
       'An all in one financial planning and money tracking tool with a sleek and intuitive user interface.',
+    longDescription:
+      'SpendSync is a personal finance workspace that pulls budgeting, expense tracking, and goal planning into one calm, focused interface. The goal was to skip the spreadsheet tax — every screen is built to answer a specific question (where is my money going, am I on track this month, can I afford this) in under a few seconds. Charts are interactive and the underlying data is always a click away, so the app is useful for both at-a-glance reviews and end-of-month deep dives.',
     deployedUrl: 'https://spendsync.baghel.dev',
     sourceUrl: 'https://github.com/devansh-baghel/spendsync',
-    previewImage: '/projects/spendsync/logo.png',
+    previewImage: '/projects/spendsync/s1.png',
+    images: Array.from(
+      { length: 11 },
+      (_, i) => `/projects/spendsync/s${i + 1}.png`,
+    ),
     badges: [
       { src: '/badges/typescript.svg', alt: 'TypeScript' },
       { src: '/badges/react.svg', alt: 'React' },

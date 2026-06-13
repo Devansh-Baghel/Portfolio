@@ -1,8 +1,9 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { LuExternalLink as LinkIcon } from 'react-icons/lu';
+import { useState, type ReactNode } from 'react';
+import { LuExternalLink as LinkIcon, LuInfo as InfoIcon } from 'react-icons/lu';
 import { FaCodeBranch as CodeIcon } from 'react-icons/fa6';
+import ProjectModal from '@/components/ProjectModal';
 import ScrollReveal from '@/components/ScrollReveal';
 import type { Project } from '@/data/portfolio';
 import { cn } from '@/lib/utils';
@@ -19,6 +20,8 @@ export default function ProjectCard({
   icon,
   delay = 0,
 }: ProjectCardProps) {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <ScrollReveal delay={delay}>
       <div className={cn('wrapper', cardBase, 'flex flex-col gap-4 p-6')}>
@@ -27,11 +30,6 @@ export default function ProjectCard({
           {icon}
         </h3>
         <p className="text-xl">{project.description}</p>
-        <img
-          src={project.previewImage}
-          alt={`${project.title} preview`}
-          className="w-full rounded-[20px] border-[3px] border-slate-900 object-cover"
-        />
         <div className="flex flex-col gap-2 text-lg md:flex-row md:gap-4">
           <a
             target="_blank"
@@ -50,7 +48,28 @@ export default function ProjectCard({
             <CodeIcon className="inline h-[17px] w-[17px]" />
           </a>
         </div>
+        <img
+          src={project.previewImage}
+          alt={`${project.title} preview`}
+          className="w-full rounded-[20px] border-[3px] border-slate-900 object-cover"
+        />
+        <button
+          type="button"
+          onClick={() => setModalOpen(true)}
+          className={cn(
+            buttonFilled,
+            'flex w-full cursor-pointer items-center justify-center gap-2 px-6 py-2',
+          )}
+        >
+          Learn more
+          <InfoIcon className="inline h-[18px] w-[18px] text-white" />
+        </button>
       </div>
+      <ProjectModal
+        project={project}
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+      />
     </ScrollReveal>
   );
 }

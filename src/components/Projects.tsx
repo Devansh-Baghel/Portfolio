@@ -1,6 +1,5 @@
 'use client';
 
-import { VscGitStash as CodeStashIcon } from 'react-icons/vsc';
 import { LuExternalLink as LinkIcon } from 'react-icons/lu';
 import ScrollReveal from '@/components/ScrollReveal';
 import ProjectCard from '@/components/ProjectCard';
@@ -32,11 +31,6 @@ export default function Projects() {
             key={project.title}
             project={project}
             delay={index * 0.15}
-            icon={
-              project.title === 'CodeStash' ? (
-                <CodeStashIcon className="text-green" />
-              ) : undefined
-            }
           />
         ))}
       </div>

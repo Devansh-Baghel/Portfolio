@@ -61,7 +61,7 @@ export default function ProjectModal({
           'max-h-[90vh] w-full max-w-3xl gap-0 overflow-y-auto rounded-[30px] border-[3px] border-slate-900 bg-white p-6 text-slate-900 shadow-[4px_4px_0px_0px_#1e293b] sm:rounded-[30px]',
         )}
       >
-        <DialogTitle className="font-heading text-3xl">
+        <DialogTitle className="font-normal font-heading text-3xl">
           {project.title}
         </DialogTitle>
         <DialogDescription className="sr-only">
@@ -115,6 +115,20 @@ export default function ProjectModal({
         <p className="mt-6 text-lg leading-relaxed text-slate-700">
           {project.longDescription}
         </p>
+
+        <div className="mt-6">
+          <h4 className="font-sans text-xl font-semibold">Tech stack</h4>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {project.badges.map((badge) => (
+              <li
+                key={badge.alt}
+                className="rounded-full border-[2px] border-slate-900 bg-white px-3 py-1 text-sm font-medium text-slate-900"
+              >
+                {badge.alt}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="mt-6 flex flex-col gap-2 text-lg md:flex-row md:gap-4">
           <a

@@ -2,7 +2,6 @@
 
 import { useState, type ReactNode } from 'react';
 import { LuExternalLink as LinkIcon, LuInfo as InfoIcon } from 'react-icons/lu';
-import { FaCodeBranch as CodeIcon } from 'react-icons/fa6';
 import ProjectModal from '@/components/ProjectModal';
 import ScrollReveal from '@/components/ScrollReveal';
 import type { Project } from '@/data/portfolio';
@@ -25,29 +24,26 @@ export default function ProjectCard({
   return (
     <ScrollReveal delay={delay}>
       <div className={cn('wrapper', cardBase, 'flex flex-col gap-4 p-6')}>
-        <h3 className="flex gap-4 font-heading text-3xl">
-          {project.title}
-          {icon}
-        </h3>
-        <p className="text-xl">{project.description}</p>
-        <div className="flex flex-col gap-2 text-lg md:flex-row md:gap-4">
-          <a
-            target="_blank"
-            href={project.deployedUrl}
-            className={cn(buttonFilled, 'flex items-center gap-2 px-6 py-1')}
-          >
-            Deployed site
-            <LinkIcon className="inline h-[20px] w-[20px] text-white" />
-          </a>
-          <a
-            target="_blank"
-            href={project.sourceUrl}
-            className={cn(buttonOutline, 'flex items-center gap-2 px-6 py-1')}
-          >
-            Source code
-            <CodeIcon className="inline h-[17px] w-[17px]" />
-          </a>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h3 className="flex items-center gap-2 font-heading text-3xl">
+            {project.title}
+            {icon}
+          </h3>
+          <div className="flex shrink-0 items-center gap-2 text-lg">
+            <a
+              target="_blank"
+              href={project.deployedUrl}
+              className={cn(
+                buttonOutline,
+                'flex items-center gap-2 px-6 py-1 text-lg',
+              )}
+            >
+              Deployed site
+              <LinkIcon className="inline h-[20px] w-[20px]" />
+            </a>
+          </div>
         </div>
+        <p className="text-xl">{project.description}</p>
         <img
           src={project.previewImage}
           alt={`${project.title} preview`}
@@ -61,7 +57,7 @@ export default function ProjectCard({
             'flex w-full cursor-pointer items-center justify-center gap-2 px-6 py-2',
           )}
         >
-          Learn more
+          Details
           <InfoIcon className="inline h-[18px] w-[18px] text-white" />
         </button>
       </div>

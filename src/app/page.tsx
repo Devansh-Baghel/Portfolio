@@ -1,26 +1,28 @@
-import { FaGithub as GithubIcon } from 'react-icons/fa';
-import { FaLinkedin as LinkedinIcon } from 'react-icons/fa';
-import { MdOutgoingMail as MailIcon } from 'react-icons/md';
-import { FaXTwitter as TwitterIcon } from 'react-icons/fa6';
-import Projects from '@/components/Projects';
-import TechStack from '@/components/Stack';
-import Contact from '@/components/Contact';
-import ScrollButton from '@/components/ScrollButton';
 import Image from 'next/image';
-import Glow from '@/components/Glow';
-import GitRoll from '@/components/GitRoll';
-import Github from '@/components/Github';
+import { Suspense } from 'react';
+import {
+  FaGithub as GithubIcon,
+  FaLinkedin as LinkedinIcon,
+} from 'react-icons/fa';
+import { FaXTwitter as TwitterIcon } from 'react-icons/fa6';
+import { MdOutgoingMail as MailIcon } from 'react-icons/md';
+import VisitorCounter from '@/components/analytics/VisitorCounter';
 import Blog from '@/components/Blog';
+import Contact from '@/components/Contact';
 import EasterEggLogs from '@/components/EasterEgg';
 import FloatingShape from '@/components/FloatingShape';
-import HeroImage from '@/components/HeroImage';
-import { Suspense } from 'react';
-import SpinningShape from '@/components/SpinningShape';
-import WorkExperience from '@/components/WorkExperience';
-import VisitorCounter from '@/components/analytics/VisitorCounter';
 import Footer from '@/components/Footer';
-import ScrollReveal from '@/components/ScrollReveal';
+import Github from '@/components/Github';
+import GitRoll from '@/components/GitRoll';
+import Glow from '@/components/Glow';
+import HeroImage from '@/components/HeroImage';
+import Projects from '@/components/Projects';
+import ScrollButton from '@/components/ScrollButton';
+import SpinningShape from '@/components/SpinningShape';
+import TechStack from '@/components/Stack';
 import StructuredData from '@/components/StructuredData';
+import WorkExperience from '@/components/WorkExperience';
+import { getAllBlogPosts } from '@/lib/mdx';
 import { cn } from '@/lib/utils';
 import { buttonFilled, cardBase } from '@/utils/constants';
 
@@ -31,6 +33,7 @@ export default async function Home({
 }) {
   const params = await searchParams;
   const isBlackAndWhite = params.bw === 'true';
+  const blogPosts = await getAllBlogPosts();
 
   const filterClass = cn(
     'transition-[filter] duration-[5000ms] ease-in-out',
@@ -176,9 +179,7 @@ export default async function Home({
           amplitude={[40, 100, 30]}
           speed={0.2}
         />
-        <ScrollReveal>
-          <Blog />
-        </ScrollReveal>
+        <Blog posts={blogPosts} />
         <FloatingShape
           shapeUrl="/shapes/shape-85.svg"
           directionClass="right-0"

@@ -497,9 +497,15 @@ export default function GhostCursor({
       ensureLoop();
     };
 
-    trackEl.addEventListener('pointermove', onPointerMove as EventListener, { passive: true });
-    trackEl.addEventListener('pointerenter', onPointerEnter as EventListener, { passive: true });
-    trackEl.addEventListener('pointerleave', onPointerLeave as EventListener, { passive: true });
+    trackEl.addEventListener('pointermove', onPointerMove as EventListener, {
+      passive: true,
+    });
+    trackEl.addEventListener('pointerenter', onPointerEnter as EventListener, {
+      passive: true,
+    });
+    trackEl.addEventListener('pointerleave', onPointerLeave as EventListener, {
+      passive: true,
+    });
 
     ensureLoop();
 
@@ -511,9 +517,18 @@ export default function GhostCursor({
       runningRef.current = false;
       rafRef.current = null;
 
-      trackEl.removeEventListener('pointermove', onPointerMove as EventListener);
-      trackEl.removeEventListener('pointerenter', onPointerEnter as EventListener);
-      trackEl.removeEventListener('pointerleave', onPointerLeave as EventListener);
+      trackEl.removeEventListener(
+        'pointermove',
+        onPointerMove as EventListener,
+      );
+      trackEl.removeEventListener(
+        'pointerenter',
+        onPointerEnter as EventListener,
+      );
+      trackEl.removeEventListener(
+        'pointerleave',
+        onPointerLeave as EventListener,
+      );
       resizeObsRef.current?.disconnect();
 
       scene.clear();

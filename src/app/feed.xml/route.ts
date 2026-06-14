@@ -29,14 +29,14 @@ export async function GET(): Promise<Response> {
       return `
   <entry>
     <title>${escapeXml(post.title)}</title>
-    <id>${url}</id>
-    <link href="${url}" />
+    <id>${escapeXml(url)}</id>
+    <link href="${escapeXml(url)}" />
     <updated>${published}</updated>
     <published>${published}</published>
     <summary>${escapeXml(post.excerpt)}</summary>
     <author>
       <name>Devansh Baghel</name>
-      <uri>${SITE_URL}</uri>
+      <uri>${escapeXml(SITE_URL)}</uri>
     </author>
   </entry>`;
     })

@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { PostHogProvider } from "./providers";
 import VisitorBadge from "@/components/analytics/VisitorBadge";
 import { FaviconAnimator } from "@/components/FaviconAnimator";
+import Footer from "@/components/Footer";
 import GooeyToasterClient from "@/components/GooeyToasterClient";
 import { Suspense } from "react";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -85,6 +86,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://baghel.dev",
+    types: {
+      'application/atom+xml': [
+        {
+          url: 'https://baghel.dev/feed.xml',
+          title: 'Devansh Baghel — Blog',
+        },
+      ],
+    },
   },
   icons: {
     icon: [
@@ -116,7 +125,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-US">
       <head />
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <FaviconAnimator />
@@ -124,6 +133,7 @@ export default function RootLayout({
           <PostHogProvider>
             <GooeyToasterClient />
             {children}
+            <Footer />
             <Suspense>
               <FunBox />
             </Suspense>

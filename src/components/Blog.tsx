@@ -5,9 +5,11 @@ import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { cardBase, cardStatic } from '@/utils/constants';
 
+const MAX_HOMEPAGE_POSTS = 3;
+
 export default async function Blog() {
   const blogPosts = await getAllBlogPosts();
-  const latestPost = blogPosts[0];
+  const recentPosts = blogPosts.slice(0, MAX_HOMEPAGE_POSTS);
 
   return (
     <section
@@ -17,21 +19,21 @@ export default async function Blog() {
       <h3 className="gitroll-title motion-preset-slide-right mb-4 font-heading text-4xl">Latest Posts</h3>
 
       <div className="flex flex-col gap-4 motion-preset-slide-right">
-        {latestPost ? (
+        {recentPosts.length > 0 ? (
           <>
-            <Link href={`/blog/${latestPost.slug}`}>
-              <div className={cn('wrapper', cardBase, 'p-6')}>
-                <h4 className="mb-2 text-xl font-bold">{latestPost.title}</h4>
-                <p className="mb-4 text-slate-600">{latestPost.excerpt}</p>
-                <div className="flex items-center gap-4 text-sm text-slate-500">
-                  <span>
-                    {format(new Date(latestPost.date), 'MMM d, yyyy')}
-                  </span>
-                  <span>•</span>
-                  <span>{latestPost.readTime}</span>
+            {recentPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`}>
+                <div className={cn('wrapper', cardBase, 'p-6')}>
+                  <h4 className="mb-2 text-xl font-bold">{post.title}</h4>
+                  <p className="mb-4 text-slate-600">{post.excerpt}</p>
+                  <div className="flex items-center gap-4 text-sm text-slate-500">
+                    <span>{format(new Date(post.date), 'MMM d, yyyy')}</span>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
 
             <Link
               href="/blog"

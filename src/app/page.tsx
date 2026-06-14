@@ -18,7 +18,6 @@ import { Suspense } from "react";
 import SpinningShape from "@/components/SpinningShape";
 import WorkExperience from "@/components/WorkExperience";
 import VisitorCounter from "@/components/analytics/VisitorCounter";
-import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import StructuredData from "@/components/StructuredData";
 import { cn } from "@/lib/utils";
@@ -52,7 +51,7 @@ export default async function Home({
               src="/shape-76.svg"
               height={400}
               width={400}
-              alt="spinning blob"
+              alt=""
               priority
               className="images glow absolute left-[-80px] top-[-120px] z-[-10] h-[400px] w-[400px] animate-spin animate-duration-[40000ms] animate-infinite animate-ease-in-out"
             />
@@ -200,7 +199,6 @@ export default async function Home({
           speed={0.2}
         />
         <Contact />
-        <Footer />
       </div>
     </main>
   );

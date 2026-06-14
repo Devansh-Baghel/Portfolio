@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export function FaviconAnimator() {
   const rotationRef = useRef(0);
@@ -8,24 +8,24 @@ export function FaviconAnimator() {
 
   useEffect(() => {
     let faviconLink = document.querySelector(
-      'link[rel="icon"][sizes="32x32"]'
+      'link[rel="icon"][sizes="32x32"]',
     ) as HTMLLinkElement;
 
     if (!faviconLink) {
       faviconLink = document.querySelector(
-        'link[rel="icon"]'
+        'link[rel="icon"]',
       ) as HTMLLinkElement;
     }
 
     if (!faviconLink) {
-      console.error("No favicon link found");
+      console.error('No favicon link found');
       return;
     }
 
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     if (!ctx) {
-      console.error("Could not get canvas context");
+      console.error('Could not get canvas context');
       return;
     }
 
@@ -52,7 +52,7 @@ export function FaviconAnimator() {
         ctx.drawImage(img, -img.width / 2, -img.height / 2);
         ctx.restore();
 
-        const rotatedDataUrl = canvas.toDataURL("image/png");
+        const rotatedDataUrl = canvas.toDataURL('image/png');
 
         const allFavicons = document.querySelectorAll('link[rel*="icon"]');
         allFavicons.forEach((link) => {
@@ -68,7 +68,7 @@ export function FaviconAnimator() {
     };
 
     img.onerror = (error) => {
-      console.error("Failed to load favicon image:", error);
+      console.error('Failed to load favicon image:', error);
     };
 
     img.src = faviconUrl;

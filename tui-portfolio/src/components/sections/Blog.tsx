@@ -14,7 +14,9 @@ export function Blog() {
   return (
     <box flexDirection="column" gap={1} marginTop={1}>
       <text>
-        <span fg={LIME}><strong>Blog Posts</strong></span>
+        <span fg={LIME}>
+          <strong>Blog Posts</strong>
+        </span>
       </text>
 
       {blogPosts.map((post) => (
@@ -29,10 +31,14 @@ export function Blog() {
           gap={1}
         >
           <text>
-            <span fg={TEXT_PRIMARY}><strong>{post.title}</strong></span>
+            <span fg={TEXT_PRIMARY}>
+              <strong>{post.title}</strong>
+            </span>
           </text>
           <text>
-            <span fg={TEXT_DIM}>{post.date} · {post.readTime}</span>
+            <span fg={TEXT_DIM}>
+              {post.date} · {post.readTime}
+            </span>
           </text>
           <text>
             <span fg={TEXT_SECONDARY}>{post.excerpt}</span>

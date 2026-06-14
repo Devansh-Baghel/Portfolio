@@ -107,7 +107,14 @@ export const blogPosts: BlogPost[] = [
     title: 'Integrating Formbricks for User Feedback in CodeStash',
     date: '2025-01-15',
     readTime: '7 min read',
-    tags: ['Formbricks', 'Next.js', 'User Feedback', 'CodeStash', 'AI', 'Surveys'],
+    tags: [
+      'Formbricks',
+      'Next.js',
+      'User Feedback',
+      'CodeStash',
+      'AI',
+      'Surveys',
+    ],
     excerpt:
       'Learn how to add in-app user feedback surveys using Formbricks to gather insights about AI-generated content and improve user experience in your Next.js applications.',
   },
@@ -152,15 +159,9 @@ export const skills: SkillCategory[] = [
   },
   {
     name: 'Misc',
-    skills: [
-      'Cloudflare',
-      'Linux',
-      'Git',
-      'GitHub',
-      'Bash',
-      'Figma',
-    ],
+    skills: ['Cloudflare', 'Linux', 'Git', 'GitHub', 'Bash', 'Figma'],
   },
 ];
 
-export const emailWorkerUrl = 'https://email-worker.dbaghel.workers.dev/api/email';
+export const emailWorkerUrl =
+  'https://email-worker.dbaghel.workers.dev/api/email';

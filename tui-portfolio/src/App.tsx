@@ -1,6 +1,13 @@
 import { useState, useCallback, useRef } from 'react';
 import { useKeyboard, useRenderer } from '@opentui/react';
-import { LIME, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_DIM, BG_DARK, BORDER } from './constants';
+import {
+  LIME,
+  TEXT_PRIMARY,
+  TEXT_SECONDARY,
+  TEXT_DIM,
+  BG_DARK,
+  BORDER,
+} from './constants';
 import { Sidebar } from './components/Sidebar';
 import { HelpOverlay } from './components/HelpOverlay';
 import { CommandPalette, commands } from './components/CommandPalette';
@@ -86,13 +93,26 @@ export function App() {
   });
 
   return (
-    <box flexDirection="column" width="100%" height="100%" backgroundColor={BG_DARK}>
+    <box
+      flexDirection="column"
+      width="100%"
+      height="100%"
+      backgroundColor={BG_DARK}
+    >
       <box flexDirection="row" flexGrow={1}>
-        <box width="40%" border={['right']} borderColor={BORDER} overflow="hidden">
+        <box
+          width="40%"
+          border={['right']}
+          borderColor={BORDER}
+          overflow="hidden"
+        >
           <Sidebar />
         </box>
 
-        <scrollbox flexGrow={1} focused={!inForm && !showHelp && !showCommandPalette}>
+        <scrollbox
+          flexGrow={1}
+          focused={!inForm && !showHelp && !showCommandPalette}
+        >
           <box flexDirection="column" padding={2} gap={1}>
             <Hero />
             <Experience />
@@ -104,7 +124,13 @@ export function App() {
         </scrollbox>
       </box>
 
-      <box flexDirection="row" justifyContent="space-between" paddingX={2} height={1} backgroundColor="#0d0d0d">
+      <box
+        flexDirection="row"
+        justifyContent="space-between"
+        paddingX={2}
+        height={1}
+        backgroundColor="#0d0d0d"
+      >
         <text>
           <span fg={TEXT_DIM}>q</span>
           <span fg={TEXT_SECONDARY}> quit </span>
@@ -122,7 +148,12 @@ export function App() {
       </box>
 
       {showHelp && <HelpOverlay />}
-      {showCommandPalette && <CommandPalette selectedIndex={commandIndex} onSelect={handleCommandSelect} />}
+      {showCommandPalette && (
+        <CommandPalette
+          selectedIndex={commandIndex}
+          onSelect={handleCommandSelect}
+        />
+      )}
     </box>
   );
 }

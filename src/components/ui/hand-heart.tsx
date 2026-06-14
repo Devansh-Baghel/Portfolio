@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import type { Variants } from "motion/react";
-import { motion, useAnimation } from "motion/react";
-import type { HTMLAttributes } from "react";
-import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 export interface HandHeartIconHandle {
   startAnimation: () => void;
@@ -22,7 +22,7 @@ const HEART_VARIANTS: Variants = {
     transition: {
       delay: 0.1,
       scale: { duration: 0.2 },
-      type: "spring",
+      type: 'spring',
       stiffness: 200,
       damping: 25,
     },
@@ -33,7 +33,7 @@ const HEART_VARIANTS: Variants = {
     transition: {
       delay: 0.1,
       scale: { duration: 0.2 },
-      type: "spring",
+      type: 'spring',
       stiffness: 200,
       damping: 25,
     },
@@ -49,8 +49,8 @@ const HandHeartIcon = forwardRef<HandHeartIconHandle, HandHeartIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start("animate"),
-        stopAnimation: () => controls.start("normal"),
+        startAnimation: () => controls.start('animate'),
+        stopAnimation: () => controls.start('normal'),
       };
     });
 
@@ -59,10 +59,10 @@ const HandHeartIcon = forwardRef<HandHeartIconHandle, HandHeartIconProps>(
         if (isControlledRef.current) {
           onMouseEnter?.(e);
         } else {
-          controls.start("animate");
+          controls.start('animate');
         }
       },
-      [controls, onMouseEnter]
+      [controls, onMouseEnter],
     );
 
     const handleMouseLeave = useCallback(
@@ -70,10 +70,10 @@ const HandHeartIcon = forwardRef<HandHeartIconHandle, HandHeartIconProps>(
         if (isControlledRef.current) {
           onMouseLeave?.(e);
         } else {
-          controls.start("normal");
+          controls.start('normal');
         }
       },
-      [controls, onMouseLeave]
+      [controls, onMouseLeave],
     );
 
     return (
@@ -90,7 +90,7 @@ const HandHeartIcon = forwardRef<HandHeartIconHandle, HandHeartIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
-          style={{ overflow: "visible" }}
+          style={{ overflow: 'visible' }}
           viewBox="0 0 24 24"
           width={size}
           xmlns="http://www.w3.org/2000/svg"
@@ -106,9 +106,9 @@ const HandHeartIcon = forwardRef<HandHeartIconHandle, HandHeartIconProps>(
         </svg>
       </div>
     );
-  }
+  },
 );
 
-HandHeartIcon.displayName = "HandHeartIcon";
+HandHeartIcon.displayName = 'HandHeartIcon';
 
 export { HandHeartIcon };

@@ -12,7 +12,8 @@ import { cardBase, buttonFilled } from '@/utils/constants';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Thoughts on web development, programming, and building things on the internet.',
+  description:
+    'Thoughts on web development, programming, and building things on the internet.',
   alternates: {
     canonical: 'https://baghel.dev/blog',
   },
@@ -114,7 +115,10 @@ export default async function BlogPage() {
 
                   <Link
                     href={`/blog/${post.slug}`}
-                    className={cn(buttonFilled, 'inline-flex items-center gap-2 px-6 py-2')}
+                    className={cn(
+                      buttonFilled,
+                      'inline-flex items-center gap-2 px-6 py-2',
+                    )}
                   >
                     Read More
                     <ExternalLink className="h-4 w-4" />

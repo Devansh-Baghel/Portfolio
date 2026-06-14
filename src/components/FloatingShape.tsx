@@ -1,9 +1,9 @@
 // src/components/FloatingShape.tsx
 'use client';
 
-import type { CSSProperties } from "react";
-import Image from "next/image";
-import Float from "@/components/fancy/blocks/float";
+import type { CSSProperties } from 'react';
+import Image from 'next/image';
+import Float from '@/components/fancy/blocks/float';
 
 type FloatingShapeProps = {
   shapeUrl: string;
@@ -24,8 +24,17 @@ export default function FloatingShape({
     <Float speed={speed} amplitude={amplitude} className="images">
       <svg width="0" height="0" id="glowsvg-lite">
         <filter id="glow-lite">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="glowsvgblur" />
-          <feColorMatrix type="saturate" in="glowsvgblur" values="2" result="glowsvgsat" />
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="3"
+            result="glowsvgblur"
+          />
+          <feColorMatrix
+            type="saturate"
+            in="glowsvgblur"
+            values="2"
+            result="glowsvgsat"
+          />
           <feBlend in="SourceGraphic" in2="glowsvgsat" />
         </filter>
       </svg>

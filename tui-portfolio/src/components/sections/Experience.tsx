@@ -13,7 +13,9 @@ export function Experience() {
   return (
     <box flexDirection="column" gap={1} marginTop={1}>
       <text>
-        <span fg={LIME}><strong>Work Experience</strong></span>
+        <span fg={LIME}>
+          <strong>Work Experience</strong>
+        </span>
       </text>
 
       {experience.map((job, i) => (
@@ -29,7 +31,9 @@ export function Experience() {
         >
           <box flexDirection="row" justifyContent="space-between">
             <text>
-              <span fg={LIME}><strong>{job.role}</strong></span>
+              <span fg={LIME}>
+                <strong>{job.role}</strong>
+              </span>
             </text>
             <text>
               <span fg={AMBER}>{job.duration}</span>
@@ -43,7 +47,7 @@ export function Experience() {
           <box flexDirection="column" gap={0} marginTop={1}>
             {job.responsibilities.map((resp, j) => (
               <text key={j}>
-                <span fg={LIME}>  ◆ </span>
+                <span fg={LIME}> ◆ </span>
                 <span fg={TEXT_SECONDARY}>{resp}</span>
               </text>
             ))}

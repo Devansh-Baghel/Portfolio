@@ -40,9 +40,7 @@ export default function Contact() {
       }}
     >
       <ScrollReveal>
-        <h3 className="contact-title mb-4 font-heading text-4xl">
-          Contact me
-        </h3>
+        <h3 className="contact-title mb-4 font-heading text-4xl">Contact me</h3>
       </ScrollReveal>
       <form
         action={sendEmail}
@@ -89,7 +87,12 @@ export default function Contact() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <button className={cn(buttonFilled, 'w-full max-w-[600px] px-6 py-4 text-sm shadow-[4px_4px_0px_0px_#84cc16] md:text-xl')}>
+          <button
+            className={cn(
+              buttonFilled,
+              'w-full max-w-[600px] px-6 py-4 text-sm shadow-[4px_4px_0px_0px_#84cc16] md:text-xl',
+            )}
+          >
             Send
           </button>
         </ScrollReveal>

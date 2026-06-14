@@ -22,8 +22,7 @@ export function applyDisplacement(
 
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-      const distSq =
-        Math.pow(gridMouseX - i, 2) + Math.pow(gridMouseY - j, 2);
+      const distSq = Math.pow(gridMouseX - i, 2) + Math.pow(gridMouseY - j, 2);
       if (distSq < maxDist * maxDist) {
         const index = 4 * (i + size * j);
         const power = Math.min(maxDist / Math.sqrt(distSq), 10);

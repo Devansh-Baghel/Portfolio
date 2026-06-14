@@ -21,7 +21,9 @@ export default function Github() {
       <div className="flex flex-col gap-6">
         {githubYears.map((year, index) => (
           <ScrollReveal key={year} delay={index * 0.15}>
-            <div className={cn('disable-scrollbar flex wrapper', cardBase, 'p-6')}>
+            <div
+              className={cn('disable-scrollbar flex wrapper', cardBase, 'p-6')}
+            >
               <GitHubCalendar
                 username="Devansh-Baghel"
                 colorScheme="light"

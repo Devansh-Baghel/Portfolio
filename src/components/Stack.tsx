@@ -44,8 +44,18 @@ export default function TechStack() {
                     : 'col-start-1 col-end-2 row-start-2 row-end-3'
               }
             >
-              <ScrollReveal delay={index * 0.15} className={isMisc ? 'h-full' : undefined}>
-                <div className={cn('wrapper', cardBase, 'p-6', isMisc && 'md:h-full')}>
+              <ScrollReveal
+                delay={index * 0.15}
+                className={isMisc ? 'h-full' : undefined}
+              >
+                <div
+                  className={cn(
+                    'wrapper',
+                    cardBase,
+                    'p-6',
+                    isMisc && 'md:h-full',
+                  )}
+                >
                   <h3 className="vertical mb-4 font-heading text-3xl">
                     {category.name}
                   </h3>
@@ -62,9 +72,7 @@ export default function TechStack() {
                               src={`/skillicons/${elm.path}`}
                             />
                           </TooltipTrigger>
-                          <TooltipContent side="top">
-                            {elm.name}
-                          </TooltipContent>
+                          <TooltipContent side="top">{elm.name}</TooltipContent>
                         </Tooltip>
                       ))}
                     </div>

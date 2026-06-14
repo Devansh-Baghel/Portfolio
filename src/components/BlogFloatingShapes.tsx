@@ -1,23 +1,47 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
-import FloatingShape from "./FloatingShape";
-import { randInt, hashSeed, mulberry32, shuffleWithRng } from "@/lib/random";
+import { useEffect, useRef, useState } from 'react';
+import FloatingShape from './FloatingShape';
+import { randInt, hashSeed, mulberry32, shuffleWithRng } from '@/lib/random';
 
 const SHAPES = [
-  { shapeUrl: "/shapes/shape-81.svg", amplitude: [40, 100, 30] as const, speed: 0.2 },
-  { shapeUrl: "/shapes/shape-77.svg", amplitude: [40, 100, 30] as const, speed: 0.2 },
-  { shapeUrl: "/shapes/custom/shape-86-green.svg", amplitude: [100, 100, 30] as const, speed: 0.2 },
-  { shapeUrl: "/shapes/shape-79.svg", amplitude: [40, 100, 30] as const, speed: 0.2 },
-  { shapeUrl: "/shapes/shape-85.svg", amplitude: [100, 100, 30] as const, speed: 0.2 },
-  { shapeUrl: "/shapes/shape-80.svg", amplitude: [40, 100, 30] as const, speed: 0.2 },
+  {
+    shapeUrl: '/shapes/shape-81.svg',
+    amplitude: [40, 100, 30] as const,
+    speed: 0.2,
+  },
+  {
+    shapeUrl: '/shapes/shape-77.svg',
+    amplitude: [40, 100, 30] as const,
+    speed: 0.2,
+  },
+  {
+    shapeUrl: '/shapes/custom/shape-86-green.svg',
+    amplitude: [100, 100, 30] as const,
+    speed: 0.2,
+  },
+  {
+    shapeUrl: '/shapes/shape-79.svg',
+    amplitude: [40, 100, 30] as const,
+    speed: 0.2,
+  },
+  {
+    shapeUrl: '/shapes/shape-85.svg',
+    amplitude: [100, 100, 30] as const,
+    speed: 0.2,
+  },
+  {
+    shapeUrl: '/shapes/shape-80.svg',
+    amplitude: [40, 100, 30] as const,
+    speed: 0.2,
+  },
 ];
 
 type ShapeSpec = {
   shapeUrl: string;
   amplitude: [number, number, number];
   speed: number;
-  side: "left" | "right";
+  side: 'left' | 'right';
   yFrac: number; // 0..1 (stable)
 };
 
@@ -49,7 +73,9 @@ export default function BlogFloatingShapes({
 
     // Create stable RNG (either seeded by slug, or “random once per mount”)
     const rng =
-      seed != null ? mulberry32(hashSeed(seed)) : mulberry32(Math.floor(Math.random() * 2 ** 32));
+      seed != null
+        ? mulberry32(hashSeed(seed))
+        : mulberry32(Math.floor(Math.random() * 2 ** 32));
 
     // Generate spec ONCE
     if (!specRef.current) {
@@ -60,7 +86,7 @@ export default function BlogFloatingShapes({
         shapeUrl: s.shapeUrl,
         amplitude: [...s.amplitude] as [number, number, number],
         speed: s.speed,
-        side: rng() < 0.5 ? "left" : "right",
+        side: rng() < 0.5 ? 'left' : 'right',
         yFrac: rng(), // stable 0..1
       }));
     }
@@ -77,7 +103,7 @@ export default function BlogFloatingShapes({
         return {
           ...spec,
           top,
-          key: `${seed ?? "no-seed"}-${spec.shapeUrl}-${i}`, // stable key
+          key: `${seed ?? 'no-seed'}-${spec.shapeUrl}-${i}`, // stable key
         };
       });
 
@@ -104,7 +130,7 @@ export default function BlogFloatingShapes({
           shapeUrl={p.shapeUrl}
           amplitude={p.amplitude}
           speed={p.speed}
-          directionClass={p.side === "left" ? "left-[-20px]" : "right-0"}
+          directionClass={p.side === 'left' ? 'left-[-20px]' : 'right-0'}
           style={{ top: `${p.top}px` }}
         />
       ))}

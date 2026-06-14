@@ -1,28 +1,28 @@
-import { FaGithub as GithubIcon } from "react-icons/fa";
-import { FaLinkedin as LinkedinIcon } from "react-icons/fa";
-import { MdOutgoingMail as MailIcon } from "react-icons/md";
-import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
-import Projects from "@/components/Projects";
-import TechStack from "@/components/Stack";
-import Contact from "@/components/Contact";
-import ScrollButton from "@/components/ScrollButton";
-import Image from "next/image";
-import Glow from "@/components/Glow";
-import GitRoll from "@/components/GitRoll";
-import Github from "@/components/Github";
-import Blog from "@/components/Blog";
-import EasterEggLogs from "@/components/EasterEgg";
-import FloatingShape from "@/components/FloatingShape";
-import HeroImage from "@/components/HeroImage";
-import { Suspense } from "react";
-import SpinningShape from "@/components/SpinningShape";
-import WorkExperience from "@/components/WorkExperience";
-import VisitorCounter from "@/components/analytics/VisitorCounter";
-import Footer from "@/components/Footer";
-import ScrollReveal from "@/components/ScrollReveal";
-import StructuredData from "@/components/StructuredData";
-import { cn } from "@/lib/utils";
-import { buttonFilled, cardBase } from "@/utils/constants";
+import { FaGithub as GithubIcon } from 'react-icons/fa';
+import { FaLinkedin as LinkedinIcon } from 'react-icons/fa';
+import { MdOutgoingMail as MailIcon } from 'react-icons/md';
+import { FaXTwitter as TwitterIcon } from 'react-icons/fa6';
+import Projects from '@/components/Projects';
+import TechStack from '@/components/Stack';
+import Contact from '@/components/Contact';
+import ScrollButton from '@/components/ScrollButton';
+import Image from 'next/image';
+import Glow from '@/components/Glow';
+import GitRoll from '@/components/GitRoll';
+import Github from '@/components/Github';
+import Blog from '@/components/Blog';
+import EasterEggLogs from '@/components/EasterEgg';
+import FloatingShape from '@/components/FloatingShape';
+import HeroImage from '@/components/HeroImage';
+import { Suspense } from 'react';
+import SpinningShape from '@/components/SpinningShape';
+import WorkExperience from '@/components/WorkExperience';
+import VisitorCounter from '@/components/analytics/VisitorCounter';
+import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/ScrollReveal';
+import StructuredData from '@/components/StructuredData';
+import { cn } from '@/lib/utils';
+import { buttonFilled, cardBase } from '@/utils/constants';
 
 export default async function Home({
   searchParams,
@@ -30,11 +30,11 @@ export default async function Home({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const params = await searchParams;
-  const isBlackAndWhite = params.bw === "true";
+  const isBlackAndWhite = params.bw === 'true';
 
   const filterClass = cn(
-    "transition-[filter] duration-[5000ms] ease-in-out",
-    isBlackAndWhite && "grayscale",
+    'transition-[filter] duration-[5000ms] ease-in-out',
+    isBlackAndWhite && 'grayscale',
   );
 
   return (
@@ -42,7 +42,7 @@ export default async function Home({
       <StructuredData />
       <aside
         className={cn(
-          "text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20",
+          'text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20',
           filterClass,
         )}
       >
@@ -90,9 +90,9 @@ export default async function Home({
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "motion-preset-slide-right mt-6 inline-block !animate-blur-in-800 motion-delay-500 md:text-xl xl:border-[3px]",
+            'motion-preset-slide-right mt-6 inline-block !animate-blur-in-800 motion-delay-500 md:text-xl xl:border-[3px]',
             buttonFilled,
-            "px-6 py-2 text-sm shadow-[4px_4px_0px_0px_#84cc16]",
+            'px-6 py-2 text-sm shadow-[4px_4px_0px_0px_#84cc16]',
           )}
         >
           Book a call
@@ -102,9 +102,9 @@ export default async function Home({
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "motion-preset-slide-right ml-[20px] inline-block !animate-blur-in-800 motion-delay-500 font-medium md:text-xl",
+            'motion-preset-slide-right ml-[20px] inline-block !animate-blur-in-800 motion-delay-500 font-medium md:text-xl',
             cardBase,
-            "px-6 py-2 text-sm",
+            'px-6 py-2 text-sm',
           )}
         >
           Résumé
@@ -142,7 +142,7 @@ export default async function Home({
       <ScrollButton />
 
       <div
-        className={cn("lg:absolute lg:right-0 lg:max-w-[700px]", filterClass)}
+        className={cn('lg:absolute lg:right-0 lg:max-w-[700px]', filterClass)}
       >
         <HeroImage />
         <EasterEggLogs />

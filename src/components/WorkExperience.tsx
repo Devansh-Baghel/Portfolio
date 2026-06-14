@@ -41,7 +41,9 @@ export default function WorkExperience() {
         >
           {workExperience.map((entry) => (
             <ScrollReveal key={entry.company}>
-              <div className={cn('wrapper', cardBase, 'flex flex-col gap-4 p-6')}>
+              <div
+                className={cn('wrapper', cardBase, 'flex flex-col gap-4 p-6')}
+              >
                 <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
                   <div>
                     <h3 className="font-heading text-3xl">{entry.role}</h3>

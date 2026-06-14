@@ -50,7 +50,10 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: ['remark-gfm'],
-    rehypePlugins: ['rehype-slug', ['rehype-autolink-headings', { behavior: 'wrap' }]],
+    rehypePlugins: [
+      'rehype-slug',
+      ['rehype-autolink-headings', { behavior: 'wrap' }],
+    ],
   },
 });
 

@@ -12,16 +12,20 @@ export async function GET() {
 
   if (!projectId || !apiKey) {
     console.error('Missing PostHog credentials');
-    return NextResponse.json({
-      totalPageviews: 0,
-      uniqueVisitors: 0
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        totalPageviews: 0,
+        uniqueVisitors: 0,
+      },
+      { status: 500 },
+    );
   }
 
   try {
     // Correct structure: query object contains both kind and query
     const requestBody = {
-      query: {  // <-- This is the key fix!
+      query: {
+        // <-- This is the key fix!
         kind: 'HogQLQuery',
         query: `
           SELECT 
@@ -29,15 +33,15 @@ export async function GET() {
             count(DISTINCT person_id) as unique_visitors
           FROM events
           WHERE event = '$pageview'
-        `
-      }
+        `,
+      },
     };
 
     const response = await fetch(`${host}/api/projects/${projectId}/query/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify(requestBody),
     });
@@ -45,10 +49,13 @@ export async function GET() {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('PostHog API error:', response.status, errorText);
-      return NextResponse.json({
-        totalPageviews: 0,
-        uniqueVisitors: 0
-      }, { status: 500 });
+      return NextResponse.json(
+        {
+          totalPageviews: 0,
+          uniqueVisitors: 0,
+        },
+        { status: 500 },
+      );
     }
 
     const data = await response.json();
@@ -61,12 +68,14 @@ export async function GET() {
       totalPageviews,
       uniqueVisitors,
     });
-
   } catch (error) {
     console.error('Error fetching PostHog analytics:', error);
-    return NextResponse.json({
-      totalPageviews: 0,
-      uniqueVisitors: 0
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        totalPageviews: 0,
+        uniqueVisitors: 0,
+      },
+      { status: 500 },
+    );
   }
 }

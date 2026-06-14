@@ -93,10 +93,14 @@ export function Contact({ onFormFocus }: ContactProps) {
   return (
     <box flexDirection="column" gap={1} marginTop={1}>
       <text>
-        <span fg={LIME}><strong>Contact Me</strong></span>
+        <span fg={LIME}>
+          <strong>Contact Me</strong>
+        </span>
       </text>
       <text>
-        <span fg={TEXT_SECONDARY}>Got a question or want to work together? Send me a message!</span>
+        <span fg={TEXT_SECONDARY}>
+          Got a question or want to work together? Send me a message!
+        </span>
       </text>
 
       <box flexDirection="column" gap={1} marginTop={1}>
@@ -164,14 +168,18 @@ export function Contact({ onFormFocus }: ContactProps) {
 
           {status !== 'idle' && (
             <text>
-              <span fg={status === 'success' ? SUCCESS : ERROR}>{statusMsg}</span>
+              <span fg={status === 'success' ? SUCCESS : ERROR}>
+                {statusMsg}
+              </span>
             </text>
           )}
         </box>
       </box>
 
       <text marginTop={1}>
-        <span fg={TEXT_DIM}>Tab to switch fields · Enter on Submit to send · Esc to exit form</span>
+        <span fg={TEXT_DIM}>
+          Tab to switch fields · Enter on Submit to send · Esc to exit form
+        </span>
       </text>
     </box>
   );

@@ -13,7 +13,9 @@ export function Projects() {
   return (
     <box flexDirection="column" gap={1} marginTop={1}>
       <text>
-        <span fg={LIME}><strong>Selected Projects</strong></span>
+        <span fg={LIME}>
+          <strong>Selected Projects</strong>
+        </span>
       </text>
 
       {projects.map((project) => (
@@ -28,7 +30,9 @@ export function Projects() {
           gap={1}
         >
           <text>
-            <span fg={LIME}><strong>{project.name}</strong></span>
+            <span fg={LIME}>
+              <strong>{project.name}</strong>
+            </span>
           </text>
           <text>
             <span fg={TEXT_PRIMARY}>{project.desc}</span>
@@ -48,11 +52,15 @@ export function Projects() {
           <box flexDirection="row" gap={3}>
             <text>
               <span fg={LIME}>→ </span>
-              <a href={project.deployed}><span fg={TEXT_PRIMARY}>Live Demo</span></a>
+              <a href={project.deployed}>
+                <span fg={TEXT_PRIMARY}>Live Demo</span>
+              </a>
             </text>
             <text>
               <span fg={LIME}>→ </span>
-              <a href={project.source}><span fg={TEXT_PRIMARY}>Source Code</span></a>
+              <a href={project.source}>
+                <span fg={TEXT_PRIMARY}>Source Code</span>
+              </a>
             </text>
           </box>
         </box>

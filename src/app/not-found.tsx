@@ -32,11 +32,7 @@ export default function NotFound() {
           <Glow />
 
           <div
-            className={cn(
-              'wrapper',
-              cardStatic,
-              'p-8 text-slate-900 md:p-12',
-            )}
+            className={cn('wrapper', cardStatic, 'p-8 text-slate-900 md:p-12')}
           >
             <div className="text-center">
               <h1 className="motion-preset-slide-right animate-blur-in-500 font-heading text-[80px] leading-none md:text-[120px]">

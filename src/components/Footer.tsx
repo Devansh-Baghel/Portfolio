@@ -1,10 +1,10 @@
-import { HandHeartIcon } from "./ui/hand-heart"
+import { HandHeartIcon } from './ui/hand-heart';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from '@/components/ui/tooltip';
 
 export default function Footer() {
   // const currentYear = new Date().getFullYear()
@@ -30,12 +30,15 @@ export default function Footer() {
                 notice anything?
               </p>
             </TooltipTrigger>
-            <TooltipContent side="right" className="mt-2 text-white bg-slate-900 rounded-xl">
+            <TooltipContent
+              side="right"
+              className="mt-2 text-white bg-slate-900 rounded-xl"
+            >
               <p>Look at the browser tab icon 👀</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,9 +1,4 @@
-import {
-  LIME,
-  TEXT_PRIMARY,
-  BG_CARD,
-  BORDER,
-} from '../../constants';
+import { LIME, TEXT_PRIMARY, BG_CARD, BORDER } from '../../constants';
 import { skills } from '../../data';
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -16,7 +11,9 @@ export function Skills() {
   return (
     <box flexDirection="column" gap={1} marginTop={1}>
       <text>
-        <span fg={LIME}><strong>Tech Stack &amp; Tools</strong></span>
+        <span fg={LIME}>
+          <strong>Tech Stack &amp; Tools</strong>
+        </span>
       </text>
 
       <box flexDirection="column" gap={1}>

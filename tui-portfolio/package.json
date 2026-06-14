@@ -7,17 +7,8 @@
   "bin": {
     "portfolio": "./src/index.tsx"
   },
-  "files": [
-    "src"
-  ],
-  "keywords": [
-    "portfolio",
-    "terminal",
-    "tui",
-    "opentui",
-    "cli",
-    "interactive"
-  ],
+  "files": ["src"],
+  "keywords": ["portfolio", "terminal", "tui", "opentui", "cli", "interactive"],
   "license": "MIT",
   "dependencies": {
     "@opentui/core": "^0.1.90",

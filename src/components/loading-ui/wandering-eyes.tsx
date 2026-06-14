@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-type WanderingEyesProps = React.ComponentProps<"span"> & {
+type WanderingEyesProps = React.ComponentProps<'span'> & {
   eyeScale?: number;
   gapScale?: number;
   pupilScale?: number;
@@ -29,11 +29,11 @@ function WanderingEyes({
   const safeTravelScale = clamp(travelScale, 0.08, 0.5);
   const eyesStyle = {
     ...style,
-    "--loading-ui-wandering-eyes-eye": `${(safeEyeScale * 100).toFixed(2)}cqmin`,
-    "--loading-ui-wandering-eyes-gap": `${(safeGapScale * 100).toFixed(2)}cqmin`,
-    "--loading-ui-wandering-eyes-pupil-scale": `${safePupilScale}`,
-    "--loading-ui-wandering-eyes-blink": `${safeBlinkScale}`,
-    "--loading-ui-wandering-eyes-travel-scale": `${safeTravelScale}`,
+    '--loading-ui-wandering-eyes-eye': `${(safeEyeScale * 100).toFixed(2)}cqmin`,
+    '--loading-ui-wandering-eyes-gap': `${(safeGapScale * 100).toFixed(2)}cqmin`,
+    '--loading-ui-wandering-eyes-pupil-scale': `${safePupilScale}`,
+    '--loading-ui-wandering-eyes-blink': `${safeBlinkScale}`,
+    '--loading-ui-wandering-eyes-travel-scale': `${safeTravelScale}`,
   } as React.CSSProperties;
 
   return (
@@ -99,10 +99,10 @@ function WanderingEyes({
       <span
         role="status"
         className={cn(
-          "relative inline-flex aspect-9/4 items-center justify-center overflow-hidden align-middle [--eye-color:color-mix(in_srgb,currentColor_16%,transparent)] [--pupil-color:currentColor]",
+          'relative inline-flex aspect-9/4 items-center justify-center overflow-hidden align-middle [--eye-color:color-mix(in_srgb,currentColor_16%,transparent)] [--pupil-color:currentColor]',
           className,
         )}
-        style={{ ...eyesStyle, containerType: "size" }}
+        style={{ ...eyesStyle, containerType: 'size' }}
         {...props}
       >
         <span
@@ -114,14 +114,14 @@ function WanderingEyes({
               key={index}
               className="inline-block rounded-full"
               style={{
-                width: "var(--loading-ui-wandering-eyes-eye)",
-                height: "var(--loading-ui-wandering-eyes-eye)",
-                backgroundColor: "var(--eye-color)",
+                width: 'var(--loading-ui-wandering-eyes-eye)',
+                height: 'var(--loading-ui-wandering-eyes-eye)',
+                backgroundColor: 'var(--eye-color)',
                 backgroundImage:
-                  "radial-gradient(circle calc(var(--loading-ui-wandering-eyes-eye) * var(--loading-ui-wandering-eyes-pupil-scale)), var(--pupil-color) 100%, transparent 0)",
-                backgroundRepeat: "no-repeat",
+                  'radial-gradient(circle calc(var(--loading-ui-wandering-eyes-eye) * var(--loading-ui-wandering-eyes-pupil-scale)), var(--pupil-color) 100%, transparent 0)',
+                backgroundRepeat: 'no-repeat',
                 animation:
-                  "loading-ui-wandering-eyes-move var(--duration, 10s) infinite, loading-ui-wandering-eyes-blink var(--duration, 10s) infinite",
+                  'loading-ui-wandering-eyes-move var(--duration, 10s) infinite, loading-ui-wandering-eyes-blink var(--duration, 10s) infinite',
               }}
             />
           ))}

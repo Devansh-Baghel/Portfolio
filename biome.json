@@ -3,7 +3,7 @@
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["!email-worker/wrangler.json"]
+    "includes": ["**/*", "!email-worker/wrangler.json"]
   },
   "formatter": {
     "enabled": true,

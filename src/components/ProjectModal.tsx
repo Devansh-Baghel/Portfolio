@@ -49,10 +49,7 @@ export default function ProjectModal({
     };
   }, [api]);
 
-  const scrollTo = useCallback(
-    (index: number) => api?.scrollTo(index),
-    [api],
-  );
+  const scrollTo = useCallback((index: number) => api?.scrollTo(index), [api]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

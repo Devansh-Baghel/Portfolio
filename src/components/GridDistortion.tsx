@@ -84,7 +84,12 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
     const handleMouseLeave = () => {
       dataTexture.needsUpdate = true;
       Object.assign(mouseState, {
-        x: 0, y: 0, prevX: 0, prevY: 0, vX: 0, vY: 0,
+        x: 0,
+        y: 0,
+        prevX: 0,
+        prevY: 0,
+        vX: 0,
+        vY: 0,
       });
     };
 
@@ -103,12 +108,11 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
         return;
       }
 
-      applyDisplacement(
-        dataTexture.image.data,
-        grid,
-        mouseState,
-        { strength, relaxation, mouseRadius: mouse },
-      );
+      applyDisplacement(dataTexture.image.data, grid, mouseState, {
+        strength,
+        relaxation,
+        mouseRadius: mouse,
+      });
 
       dataTexture.needsUpdate = true;
       renderer.render(scene, camera);

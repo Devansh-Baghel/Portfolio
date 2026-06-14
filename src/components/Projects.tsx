@@ -39,7 +39,11 @@ export default function Projects() {
         <a
           href="https://github.com/devansh-baghel"
           target="_blank"
-          className={cn('wrapper', cardBase, 'flex h-16 items-center justify-center gap-2 text-center text-[20px] font-medium')}
+          className={cn(
+            'wrapper',
+            cardBase,
+            'flex h-16 items-center justify-center gap-2 text-center text-[20px] font-medium',
+          )}
         >
           More on github
           <LinkIcon />

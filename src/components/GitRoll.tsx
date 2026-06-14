@@ -24,7 +24,11 @@ export default function GitRoll() {
         >
           <img
             src="/gitroll_18.avif"
-            className={cn('wrapper w-full', cardBase, 'group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none')}
+            className={cn(
+              'wrapper w-full',
+              cardBase,
+              'group-hover:translate-x-1 group-hover:translate-y-1 group-hover:shadow-none',
+            )}
             alt="GitRoll Profile Badge"
           />
         </a>

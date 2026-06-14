@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { TbAdjustmentsCog } from "react-icons/tb";
-import { ChevronDown } from "lucide-react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { ChevronDown } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { TbAdjustmentsCog } from 'react-icons/tb';
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+} from '@/components/ui/collapsible';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 
 interface EasterEgg {
   emoji: string;
@@ -23,35 +23,35 @@ interface EasterEgg {
 
 const easterEggs: EasterEgg[] = [
   {
-    emoji: "🌀",
-    name: "Fast Spin",
-    description: "The background blob goes brrrrr",
-    link: "/?spin=faster",
+    emoji: '🌀',
+    name: 'Fast Spin',
+    description: 'The background blob goes brrrrr',
+    link: '/?spin=faster',
   },
   {
-    emoji: "🖤",
-    name: "B&W Mode",
-    description: "Everything turns grayscale",
-    link: "/?bw=true",
+    emoji: '🖤',
+    name: 'B&W Mode',
+    description: 'Everything turns grayscale',
+    link: '/?bw=true',
   },
   {
-    emoji: "💻",
-    name: "Console Secrets",
-    description: "Open DevTools & type showSecrets()",
+    emoji: '💻',
+    name: 'Console Secrets',
+    description: 'Open DevTools & type showSecrets()',
   },
   {
-    emoji: "👀",
-    name: "Spinning Favicon",
-    description: "Look at your browser tab icon!",
+    emoji: '👀',
+    name: 'Spinning Favicon',
+    description: 'Look at your browser tab icon!',
   },
   {
-    emoji: "✨",
-    name: "Grid Distortion",
-    description: "Hover over the hero image",
+    emoji: '✨',
+    name: 'Grid Distortion',
+    description: 'Hover over the hero image',
   },
   {
-    emoji: "❄️",
-    name: "Snowfall",
+    emoji: '❄️',
+    name: 'Snowfall',
     description: "It's snowing in work experience",
   },
 ];
@@ -74,12 +74,12 @@ function Toggle({
       <span className="text-sm font-semibold text-slate-900">{label}</span>
       <div
         className={`relative h-6 w-11 rounded-full border-2 border-slate-900 transition-colors duration-200 ${
-          isOn ? "bg-lime-400" : "bg-slate-200"
+          isOn ? 'bg-lime-400' : 'bg-slate-200'
         }`}
       >
         <div
           className={`absolute top-0.5 h-4 w-4 rounded-full border-2 border-slate-900 bg-white transition-transform duration-200 ${
-            isOn ? "translate-x-5" : "translate-x-0.5"
+            isOn ? 'translate-x-5' : 'translate-x-0.5'
           }`}
         />
       </div>
@@ -91,9 +91,10 @@ export default function FunBox() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const isBW = searchParams.get("bw") === "true";
-  const isFastSpin = searchParams.get("spin") === "faster";
-  const isSnowOn = searchParams.get("snow") !== "off";
+  const isBW = searchParams.get('bw') === 'true';
+  const isFastSpin = searchParams.get('spin') === 'faster';
+  const isSnowOn = searchParams.get('snow') !== 'off';
+  const isDarkMode = searchParams.get('darkmode') === 'true';
 
   function toggleParam(key: string, value: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -103,18 +104,18 @@ export default function FunBox() {
       params.set(key, value);
     }
     const query = params.toString();
-    router.push(query ? `?${query}` : "/", { scroll: false });
+    router.push(query ? `?${query}` : '/', { scroll: false });
   }
 
   function toggleSnow() {
     const params = new URLSearchParams(searchParams.toString());
-    if (params.get("snow") === "off") {
-      params.delete("snow");
+    if (params.get('snow') === 'off') {
+      params.delete('snow');
     } else {
-      params.set("snow", "off");
+      params.set('snow', 'off');
     }
     const query = params.toString();
-    router.push(query ? `?${query}` : "/", { scroll: false });
+    router.push(query ? `?${query}` : '/', { scroll: false });
   }
 
   return (
@@ -183,17 +184,22 @@ export default function FunBox() {
                 <Toggle
                   label="B&W Mode"
                   isOn={isBW}
-                  onToggle={() => toggleParam("bw", "true")}
+                  onToggle={() => toggleParam('bw', 'true')}
                 />
                 <Toggle
                   label="Fast Spin"
                   isOn={isFastSpin}
-                  onToggle={() => toggleParam("spin", "faster")}
+                  onToggle={() => toggleParam('spin', 'faster')}
                 />
                 <Toggle
                   label="Snowfall"
                   isOn={isSnowOn}
                   onToggle={toggleSnow}
+                />
+                <Toggle
+                  label="Dark Mode"
+                  isOn={isDarkMode}
+                  onToggle={() => toggleParam('darkmode', 'true')}
                 />
               </div>
             </div>

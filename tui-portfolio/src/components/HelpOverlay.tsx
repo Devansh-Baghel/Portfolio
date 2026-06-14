@@ -22,24 +22,26 @@ export function HelpOverlay() {
         padding={2}
       >
         <text>
-          <span fg={LIME}><strong>Keyboard Shortcuts</strong></span>
+          <span fg={LIME}>
+            <strong>Keyboard Shortcuts</strong>
+          </span>
         </text>
         <text> </text>
         <text>
           <span fg={TEXT_DIM}>q / Ctrl+C</span>
-          <span fg={TEXT_PRIMARY}>      Quit</span>
+          <span fg={TEXT_PRIMARY}> Quit</span>
         </text>
         <text>
           <span fg={TEXT_DIM}>h / ?</span>
-          <span fg={TEXT_PRIMARY}>          Toggle this help</span>
+          <span fg={TEXT_PRIMARY}> Toggle this help</span>
         </text>
         <text>
           <span fg={TEXT_DIM}>↑ / ↓ / j / k</span>
-          <span fg={TEXT_PRIMARY}>  Scroll</span>
+          <span fg={TEXT_PRIMARY}> Scroll</span>
         </text>
         <text>
           <span fg={TEXT_DIM}>Tab</span>
-          <span fg={TEXT_PRIMARY}>           Cycle form fields</span>
+          <span fg={TEXT_PRIMARY}> Cycle form fields</span>
         </text>
         <text> </text>
         <text>

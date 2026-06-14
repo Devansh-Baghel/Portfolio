@@ -6,6 +6,7 @@ import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
 import FloatingShape from '@/components/FloatingShape';
+import BlogIndexSchema from '@/components/BlogIndexSchema';
 import { cn } from '@/lib/utils';
 import { cardBase, buttonFilled } from '@/utils/constants';
 
@@ -22,6 +23,7 @@ export default async function BlogPage() {
 
   return (
     <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
+      <BlogIndexSchema />
       {/* Rest of your component remains the same */}
       <div className="p-6 pt-14 text-slate-900 lg:px-20">
         <Image

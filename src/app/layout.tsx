@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import { PostHogProvider } from "./providers";
-import StructuredData from "@/components/StructuredData";
 import VisitorBadge from "@/components/analytics/VisitorBadge";
 import { FaviconAnimator } from "@/components/FaviconAnimator";
 import GooeyToasterClient from "@/components/GooeyToasterClient";
@@ -118,9 +117,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <StructuredData />
-      </head>
+      <head />
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <FaviconAnimator />
         <SmoothScroll>

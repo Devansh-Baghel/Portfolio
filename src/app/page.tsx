@@ -20,6 +20,7 @@ import WorkExperience from "@/components/WorkExperience";
 import VisitorCounter from "@/components/analytics/VisitorCounter";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import StructuredData from "@/components/StructuredData";
 import { cn } from "@/lib/utils";
 import { buttonFilled, cardBase } from "@/utils/constants";
 
@@ -38,6 +39,7 @@ export default async function Home({
 
   return (
     <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
+      <StructuredData />
       <aside
         className={cn(
           "text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20",

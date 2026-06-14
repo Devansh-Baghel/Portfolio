@@ -9,6 +9,7 @@ import { format } from 'date-fns';
 import Float from '@/components/fancy/blocks/float';
 import FloatingShape from '@/components/FloatingShape';
 import BlogFloatingShapes from '@/components/BlogFloatingShapes';
+import BlogPostSchema from '@/components/BlogPostSchema';
 import { cn } from '@/lib/utils';
 import { cardStatic, buttonFilled } from '@/utils/constants';
 
@@ -78,6 +79,7 @@ export default async function BlogPostPage({
 
   return (
     <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
+      <BlogPostSchema post={post} slug={slug} />
       <div className="p-6 pt-14 text-slate-900 lg:px-20">
         {/* Background decorative element */}
         <Image
@@ -136,8 +138,15 @@ export default async function BlogPostPage({
         </div>
 
         {/* Article Content */}
-          <article className="motion-preset-slide-right animate-blur-in-900 motion-delay-500 backdrop-blur-sm rounded-[30px]">
-          <div className={cn('blog-wrapper', cardStatic, 'p-8 lg:p-12')}>
+          <article
+            itemScope
+            itemType="https://schema.org/BlogPosting"
+            className="motion-preset-slide-right animate-blur-in-900 motion-delay-500 backdrop-blur-sm rounded-[30px]"
+          >
+            <meta itemProp="headline" content={post.title} />
+            <meta itemProp="datePublished" content={post.date} />
+            <meta itemProp="author" content="Devansh Baghel" />
+          <div itemProp="articleBody" className={cn('blog-wrapper', cardStatic, 'p-8 lg:p-12')}>
             <MDXContent content={post.content} />
           </div>
         </article>

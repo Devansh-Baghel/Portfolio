@@ -7,7 +7,7 @@ export default function StructuredData() {
         '@id': 'https://baghel.dev/#person',
         name: 'Devansh Baghel',
         url: 'https://baghel.dev',
-        image: 'https://baghel.dev/profile-image.jpg', // Add your profile image
+        image: 'https://baghel.dev/og-image.png',
         jobTitle: 'Product Engineer',
         description:
           'Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.',
@@ -32,6 +32,8 @@ export default function StructuredData() {
           'https://github.com/devansh-baghel',
           'https://linkedin.com/in/devanshbaghel',
           'https://twitter.com/bagheldotdev',
+          'https://cal.com/baghel/15min',
+          'https://gitroll.io/profile/uEYBeQmpK8LQdxyyFmiTOicIEPrG2',
         ],
       },
       {

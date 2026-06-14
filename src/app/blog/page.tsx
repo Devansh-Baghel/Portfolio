@@ -6,11 +6,12 @@ import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
 import FloatingShape from '@/components/FloatingShape';
+import BlogIndexSchema from '@/components/BlogIndexSchema';
 import { cn } from '@/lib/utils';
 import { cardBase, buttonFilled } from '@/utils/constants';
 
 export const metadata: Metadata = {
-  title: 'Blog | Devansh Baghel',
+  title: 'Blog',
   description: 'Thoughts on web development, programming, and building things on the internet.',
   alternates: {
     canonical: './',
@@ -22,13 +23,14 @@ export default async function BlogPage() {
 
   return (
     <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
+      <BlogIndexSchema />
       {/* Rest of your component remains the same */}
       <div className="p-6 pt-14 text-slate-900 lg:px-20">
         <Image
           src="/shape-76.svg"
           height={300}
           width={300}
-          alt="spinning blob"
+          alt=""
           priority
           className="images glow absolute left-[-80px] top-[-120px] h-[400px] w-[400px] animate-spin opacity-50 animate-duration-[40000ms] animate-infinite animate-ease-in-out"
         />

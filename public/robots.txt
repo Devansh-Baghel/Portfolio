@@ -3,6 +3,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://baghel.dev/sitemap.xml
-
-# Crawl-delay (optional)
-Crawl-delay: 1

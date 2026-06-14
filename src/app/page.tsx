@@ -20,6 +20,7 @@ import WorkExperience from "@/components/WorkExperience";
 import VisitorCounter from "@/components/analytics/VisitorCounter";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import StructuredData from "@/components/StructuredData";
 import { cn } from "@/lib/utils";
 import { buttonFilled, cardBase } from "@/utils/constants";
 
@@ -38,6 +39,7 @@ export default async function Home({
 
   return (
     <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
+      <StructuredData />
       <aside
         className={cn(
           "text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20",
@@ -50,7 +52,7 @@ export default async function Home({
               src="/shape-76.svg"
               height={400}
               width={400}
-              alt="spinning blob"
+              alt=""
               priority
               className="images glow absolute left-[-80px] top-[-120px] z-[-10] h-[400px] w-[400px] animate-spin animate-duration-[40000ms] animate-infinite animate-ease-in-out"
             />
@@ -78,16 +80,9 @@ export default async function Home({
           className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300"
           id="more-info"
         >
-          Hello there 👋, I&apos;m Devansh Baghel, and I help startups ship and
-          scale web products — from frontend and backend to payments,
-          infrastructure, and SEO.{" "}
-          {/*<a
-            href="#work"
-            className="cursor-pointer underline underline-offset-2 hover:text-lime-500"
-          >
-            See how I work
-          </a>
-          .*/}
+          Hello there 👋, I'm Devansh Baghel, and I help startups ship and scale
+          web products across frontend, backend, payments, infrastructure, and
+          SEO.
         </p>
 
         <a

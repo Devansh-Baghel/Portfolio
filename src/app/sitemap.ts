@@ -14,20 +14,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: 'https://baghel.dev',
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: 'https://baghel.dev/blog',
-      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     ...blogSitemaps,
     {
       url: 'https://baghel.dev/terms',
-      lastModified: new Date(),
+      lastModified: new Date('2024-11-19T23:26:36.000Z'),
       changeFrequency: 'yearly',
       priority: 0.3,
     },

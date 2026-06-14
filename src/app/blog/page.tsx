@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 import { cardBase, buttonFilled } from '@/utils/constants';
 
 export const metadata: Metadata = {
-  title: 'Blog | Devansh Baghel',
+  title: 'Blog',
   description: 'Thoughts on web development, programming, and building things on the internet.',
   alternates: {
     canonical: './',

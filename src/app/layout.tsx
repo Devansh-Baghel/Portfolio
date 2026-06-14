@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://baghel.dev"),
   title: {
     default: "Devansh Baghel - Product Engineer | Building Products End-to-End",
-    template: "%s | Devansh Baghel",
+    template: "%s",
   },
   description:
     "Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.",
@@ -120,29 +120,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#84cc16" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://baghel.dev" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} ${chromate.variable} font-sans`}>
         <FaviconAnimator />

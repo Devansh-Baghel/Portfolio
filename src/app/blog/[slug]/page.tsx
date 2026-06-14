@@ -34,19 +34,32 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${post.title} | Devansh Baghel`,
+    title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      url: `https://baghel.dev/blog/${slug}`,
       publishedTime: post.date,
       authors: ['Devansh Baghel'],
+      images: [
+        {
+          url: 'https://baghel.dev/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
+      images: ['https://baghel.dev/og-image.png'],
     },
   };
 }

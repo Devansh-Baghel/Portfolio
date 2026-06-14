@@ -18,6 +18,7 @@ import { Suspense } from "react";
 import SpinningShape from "@/components/SpinningShape";
 import WorkExperience from "@/components/WorkExperience";
 import VisitorCounter from "@/components/analytics/VisitorCounter";
+import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import StructuredData from "@/components/StructuredData";
 import { cn } from "@/lib/utils";
@@ -79,16 +80,9 @@ export default async function Home({
           className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300"
           id="more-info"
         >
-          Hello there 👋, I&apos;m Devansh Baghel, and I help startups ship and
-          scale web products — from frontend and backend to payments,
-          infrastructure, and SEO.{" "}
-          {/*<a
-            href="#work"
-            className="cursor-pointer underline underline-offset-2 hover:text-lime-500"
-          >
-            See how I work
-          </a>
-          .*/}
+          Hello there 👋, I'm Devansh Baghel, and I help startups ship and scale
+          web products across frontend, backend, payments, infrastructure, and
+          SEO.
         </p>
 
         <a
@@ -199,6 +193,7 @@ export default async function Home({
           speed={0.2}
         />
         <Contact />
+        <Footer />
       </div>
     </main>
   );

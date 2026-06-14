@@ -21,11 +21,17 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#84cc16',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://baghel.dev"),
   title: {
     default: "Devansh Baghel - Product Engineer | Building Products End-to-End",
-    template: "%s",
+    template: "%s | Devansh Baghel",
   },
   description:
     "Devansh Baghel is a Product Engineer who helps startups ship and scale web products end-to-end — from frontend and backend to payments, infrastructure, SEO, and observability.",

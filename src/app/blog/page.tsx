@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Blog',
   description: 'Thoughts on web development, programming, and building things on the internet.',
   alternates: {
-    canonical: './',
+    canonical: 'https://baghel.dev/blog',
   },
 };
 
@@ -91,9 +91,9 @@ export default async function BlogPage() {
                     <span>{post.readTime}</span>
                   </div>
 
-                  <h4 className="mb-4 text-3xl font-semibold hover:text-lime-500">
+                  <h2 className="mb-4 text-3xl font-semibold hover:text-lime-500">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                  </h4>
+                  </h2>
 
                   <p className="mb-6 text-lg leading-relaxed text-slate-700">
                     {post.excerpt}

@@ -1,17 +1,26 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Glow from '@/components/Glow';
+import GoBackButton from '@/components/GoBackButton';
 import { cn } from '@/lib/utils';
-import { cardStatic, cardBase, buttonFilled } from '@/utils/constants';
+import { cardStatic, buttonFilled } from '@/utils/constants';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found',
+  description:
+    'The page you are looking for does not exist. Return to the homepage or explore other sections.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function NotFound() {
   return (
     <main className="relative mx-auto min-h-screen sm:max-w-[600px] lg:max-w-[1400px]">
       <div className="flex min-h-screen items-center justify-center p-6">
         <div className="relative max-w-[600px]">
-          {/* Background decorative element */}
           <Image
             src="/shape-76.svg"
             height={300}
@@ -22,43 +31,42 @@ export default function NotFound() {
           />
           <Glow />
 
-          {/* Main 404 content */}
-          <div className={cn('wrapper', cardStatic, 'p-8 text-slate-900 md:p-12')}>
+          <div
+            className={cn(
+              'wrapper',
+              cardStatic,
+              'p-8 text-slate-900 md:p-12',
+            )}
+          >
             <div className="text-center">
-              {/* 404 number */}
               <h1 className="motion-preset-slide-right animate-blur-in-500 font-heading text-[80px] leading-none md:text-[120px]">
                 404
               </h1>
 
-              {/* Error message */}
               <h2 className="motion-preset-slide-right mt-4 animate-blur-in-600 font-heading text-2xl motion-delay-200 md:text-3xl">
                 Page Not Found
               </h2>
 
-              {/* Description */}
               <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-lg motion-delay-300 md:text-xl">
                 Oops! The page you&apos;re looking for doesn&apos;t exist. It
                 might have been moved, deleted, or you entered the wrong URL.
               </p>
 
-              {/* Action buttons */}
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
                 <Link
                   href="/"
-                  className={cn('motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500', buttonFilled, 'px-6 py-3 text-lg shadow-[4px_4px_0px_0px_#84cc16]')}
+                  className={cn(
+                    'motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500',
+                    buttonFilled,
+                    'px-6 py-3 text-lg shadow-[4px_4px_0px_0px_#84cc16]',
+                  )}
                 >
                   Go Home
                 </Link>
 
-                <button
-                  onClick={() => window.history.back()}
-                  className={cn('motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500 font-medium', cardBase, 'px-6 py-3 text-lg')}
-                >
-                  Go Back
-                </button>
+                <GoBackButton />
               </div>
 
-              {/* Additional links */}
               <div className="motion-delay-600 motion-preset-slide-right mt-8 animate-blur-in-900">
                 <p className="mb-4 text-slate-600">
                   Or check out these sections:

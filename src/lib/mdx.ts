@@ -8,10 +8,12 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  dateModified?: string;
   excerpt: string;
   readTime: string;
   tags: string[];
   content: string;
+  image?: string;
   published?: boolean;
 }
 
@@ -22,10 +24,12 @@ function parseBlogPost(slug: string, fileContents: string): BlogPost {
     slug,
     title: data.title || 'Untitled',
     date: data.date || new Date().toISOString(),
+    dateModified: data.dateModified || undefined,
     excerpt: data.excerpt || '',
     readTime: data.readTime || '5 min read',
     tags: data.tags || [],
     content,
+    image: data.image || undefined,
     published: data.published ?? true,
   };
 }

@@ -14,7 +14,7 @@ export default function BlogPostSchema({ post, slug }: BlogPostSchemaProps) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.dateModified || post.date,
     author: {
       '@type': 'Person',
       '@id': 'https://baghel.dev/#person',
@@ -27,7 +27,9 @@ export default function BlogPostSchema({ post, slug }: BlogPostSchemaProps) {
       name: 'Devansh Baghel',
       url: 'https://baghel.dev',
     },
-    image: 'https://baghel.dev/og-image.png',
+    image: post.image
+      ? `https://baghel.dev${post.image}`
+      : 'https://baghel.dev/og-image.png',
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': postUrl,

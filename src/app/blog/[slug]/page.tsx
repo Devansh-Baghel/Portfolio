@@ -67,7 +67,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: `https://baghel.dev/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
@@ -78,7 +78,9 @@ export async function generateMetadata({
       authors: ['Devansh Baghel'],
       images: [
         {
-          url: 'https://baghel.dev/og-image.png',
+          url: post.image
+            ? `https://baghel.dev${post.image}`
+            : 'https://baghel.dev/og-image.png',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -89,7 +91,11 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: ['https://baghel.dev/og-image.png'],
+      images: [
+        post.image
+          ? `https://baghel.dev${post.image}`
+          : 'https://baghel.dev/og-image.png',
+      ],
     },
   };
 }

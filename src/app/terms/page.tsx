@@ -1,3 +1,18 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions',
+  description:
+    'Terms and conditions for baghel.dev — usage, liability, and governing law.',
+  alternates: {
+    canonical: 'https://baghel.dev/terms',
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export default function Terms() {
   return (
     <section className="flex flex-col gap-4 px-20 py-10">

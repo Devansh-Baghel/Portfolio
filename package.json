@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@baghel/goey-toast": "^0.3.3",
+    "@dualmark/converters": "^0.8.0",
+    "@dualmark/core": "^0.7.0",
+    "@dualmark/nextjs": "^0.8.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^16.2.9",

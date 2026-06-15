@@ -1,3 +1,4 @@
+import { withDualmark } from '@dualmark/nextjs';
 import createMDX from '@next/mdx';
 
 /** @type {import('next').NextConfig} */
@@ -57,4 +58,6 @@ const withMDX = createMDX({
   },
 });
 
-export default withMDX(nextConfig);
+export default withDualmark(withMDX(nextConfig), {
+  siteUrl: 'https://baghel.dev',
+});

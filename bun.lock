@@ -5,6 +5,9 @@
       "name": "portfolio-next",
       "dependencies": {
         "@baghel/goey-toast": "^0.3.3",
+        "@dualmark/converters": "^0.8.0",
+        "@dualmark/core": "^0.7.0",
+        "@dualmark/nextjs": "^0.8.0",
         "@mdx-js/loader": "^3.1.0",
         "@mdx-js/react": "^3.1.0",
         "@next/mdx": "^16.2.9",
@@ -87,6 +90,12 @@
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.3.4", "", { "os": "win32", "cpu": "x64" }, "sha512-FGCijXecmC4IedQ0esdYNlMpx0Jxgf4zceCaMu6fkjWyjgn50ZQtMiqZZQ0Q/77yqPxvtkgZAvt5uGw0gAAjig=="],
 
     "@dimforge/rapier3d-compat": ["@dimforge/rapier3d-compat@0.12.0", "", {}, "sha512-uekIGetywIgopfD97oDL5PfeezkFpNhwlzlaEYNOA0N6ghdsOvh/HYjSMek5Q2O1PYvRSDFcqFVJl4r4ZBwOow=="],
+
+    "@dualmark/converters": ["@dualmark/converters@0.8.0", "", { "dependencies": { "@dualmark/core": "0.7.0" } }, "sha512-DQe8PDvALOcsp4BA2LT3ud10EOpSWH3vH5NxDKOWq7sXiXooYD5VZzOfWxzeh+6Kqv74n4D8kXzFty35fgVV1Q=="],
+
+    "@dualmark/core": ["@dualmark/core@0.7.0", "", {}, "sha512-1mm6fXlfB8aUPhNqT55NyMH7IDeQhkW/nD2cCfP2urMpkV+hQCVl9f8vOVDBJefvaNwT05TmVJXTv5jMGSLnBw=="],
+
+    "@dualmark/nextjs": ["@dualmark/nextjs@0.8.0", "", { "dependencies": { "@dualmark/converters": "0.8.0", "@dualmark/core": "0.7.0" }, "peerDependencies": { "next": ">=14.0.0" } }, "sha512-KcUaRCKiN2ut3xmXS0mkVZ64HhFc3AE0EAP3eei3evIelEsIse4jN2T0d3UTQ4ABnuvhcw1OrskuHsCF9BoQ9Q=="],
 
     "@emnapi/runtime": ["@emnapi/runtime@1.9.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-VYi5+ZVLhpgK4hQ0TAjiQiZ6ol0oe4mBx7mVv7IflsiEp0OWoVsp/+f9Vc1hOhE0TtkORVrI1GvzyreqpgWtkA=="],
 

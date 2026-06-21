@@ -49,7 +49,21 @@ export default function WorkExperience() {
                     <h3 className="font-heading text-3xl">{entry.role}</h3>
                     <p className="mt-1 text-lg font-semibold text-slate-700 flex items-center gap-2">
                       <CompanyIcon />
-                      {entry.company}
+                      {entry.company.split(/(Digital Gimmick)/g).map((part) =>
+                        part === 'Digital Gimmick' ? (
+                          <a
+                            key={part}
+                            href="https://digitalgimmick.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-slate-400 underline-offset-4 hover:text-slate-900 hover:decoration-slate-900 transition-colors"
+                          >
+                            {part}
+                          </a>
+                        ) : (
+                          <span key={part}>{part}</span>
+                        )
+                      )}
                     </p>
                   </div>
                   <div className="flex flex-col gap-1">

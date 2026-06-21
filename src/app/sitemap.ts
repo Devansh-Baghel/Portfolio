@@ -1,12 +1,21 @@
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/mdx';
+import { getAllProjects } from '@/lib/projects';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPosts = await getAllBlogPosts();
+  const projects = await getAllProjects();
 
   const blogSitemaps = blogPosts.map((post) => ({
     url: `https://baghel.dev/blog/${post.slug}`,
     lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  const projectSitemaps = projects.map((project) => ({
+    url: `https://baghel.dev/projects/${project.slug}`,
+    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
@@ -23,6 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     ...blogSitemaps,
+    ...projectSitemaps,
     {
       url: 'https://baghel.dev/terms',
       lastModified: new Date('2024-11-19T23:26:36.000Z'),

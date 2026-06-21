@@ -49,6 +49,23 @@ const handler = createLlmsTxtHandler({
       ],
     },
     {
+      title: 'Projects',
+      links: [
+        {
+          title: 'CodeStash',
+          href: 'https://baghel.dev/projects/codestash',
+          description:
+            'A Reddit-meets-Stack-Overflow snippet manager with communities, comments, AI explanations, and VS Code integration.',
+        },
+        {
+          title: 'SpendSync',
+          href: 'https://baghel.dev/projects/spendsync',
+          description:
+            'A personal finance app for tracking income, expenses, and savings goals — with charts, CSV exports, multi-currency support, and a Stripe-powered premium tier.',
+        },
+      ],
+    },
+    {
       title: 'External',
       links: [
         {

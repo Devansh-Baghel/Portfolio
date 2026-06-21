@@ -62,7 +62,7 @@ export default function WorkExperience() {
                           </a>
                         ) : (
                           <span key={part}>{part}</span>
-                        )
+                        ),
                       )}
                     </p>
                   </div>

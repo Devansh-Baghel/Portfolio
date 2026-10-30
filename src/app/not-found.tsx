@@ -35,15 +35,15 @@ export default function NotFound() {
             className={cn('wrapper', cardStatic, 'p-8 text-slate-900 md:p-12')}
           >
             <div className="text-center">
-              <h1 className="motion-preset-slide-right animate-blur-in-500 font-heading text-[80px] leading-none md:text-[120px]">
+              <h1 className="motion-preset-slide-right animate-fade-in-500 font-heading text-[80px] leading-none md:text-[120px]">
                 404
               </h1>
 
-              <h2 className="motion-preset-slide-right mt-4 animate-blur-in-600 font-heading text-2xl motion-delay-200 md:text-3xl">
+              <h2 className="motion-preset-slide-right mt-4 animate-fade-in-600 font-heading text-2xl motion-delay-200 md:text-3xl">
                 Page Not Found
               </h2>
 
-              <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-lg motion-delay-300 md:text-xl">
+              <p className="motion-preset-slide-right mt-4 animate-fade-in-700 text-lg motion-delay-300 md:text-xl">
                 Oops! The page you&apos;re looking for doesn&apos;t exist. It
                 might have been moved, deleted, or you entered the wrong URL.
               </p>
@@ -52,7 +52,7 @@ export default function NotFound() {
                 <Link
                   href="/"
                   className={cn(
-                    'motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500',
+                    'motion-preset-slide-right inline-block animate-fade-in-800 motion-delay-500',
                     buttonFilled,
                     'px-6 py-3 text-lg shadow-[4px_4px_0px_0px_#84cc16]',
                   )}
@@ -63,7 +63,7 @@ export default function NotFound() {
                 <GoBackButton />
               </div>
 
-              <div className="motion-delay-600 motion-preset-slide-right mt-8 animate-blur-in-900">
+              <div className="motion-delay-600 motion-preset-slide-right mt-8 animate-fade-in-900">
                 <p className="mb-4 text-slate-600">
                   Or check out these sections:
                 </p>

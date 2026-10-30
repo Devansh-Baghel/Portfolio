@@ -1,6 +1,7 @@
 'use client';
 
 import { ChevronRight as ChevronRightIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { LuExternalLink as LinkIcon } from 'react-icons/lu';
@@ -44,11 +45,15 @@ export default function ProjectCard({
           </div>
         </div>
         <p className="text-xl">{project.description}</p>
-        <img
-          src={project.previewImage}
-          alt={`${project.title} preview`}
-          className="w-full rounded-[20px] border-[3px] border-slate-900 object-cover"
-        />
+        <div className="relative aspect-[2/1] w-full overflow-hidden rounded-[20px] border-[3px] border-slate-900">
+          <Image
+            src={project.previewImage}
+            alt={`${project.title} preview`}
+            fill
+            sizes="(max-width: 1023px) calc(100vw - 3rem), 600px"
+            className="object-cover"
+          />
+        </div>
         <Link
           href={`/projects/${project.slug}`}
           className={cn(

@@ -33,6 +33,16 @@ const config: Config = {
             opacity: '1',
           },
         },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(8px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         'blur-in-100': 'blur-in 100ms ease-out forwards',
@@ -50,6 +60,21 @@ const config: Config = {
         'blur-in-1300': 'blur-in 1300ms ease-out forwards',
         'blur-in-1400': 'blur-in 1400ms ease-out forwards',
         'blur-in-1500': 'blur-in 1500ms ease-out forwards',
+        'fade-in-100': 'fade-in 100ms ease-out forwards',
+        'fade-in-200': 'fade-in 200ms ease-out forwards',
+        'fade-in-300': 'fade-in 300ms ease-out forwards',
+        'fade-in-400': 'fade-in 400ms ease-out forwards',
+        'fade-in-500': 'fade-in 500ms ease-out forwards',
+        'fade-in-600': 'fade-in 600ms ease-out forwards',
+        'fade-in-700': 'fade-in 700ms ease-out forwards',
+        'fade-in-800': 'fade-in 800ms ease-out forwards',
+        'fade-in-900': 'fade-in 900ms ease-out forwards',
+        'fade-in-1000': 'fade-in 1000ms ease-out forwards',
+        'fade-in-1100': 'fade-in 1100ms ease-out forwards',
+        'fade-in-1200': 'fade-in 1200ms ease-out forwards',
+        'fade-in-1300': 'fade-in 1300ms ease-out forwards',
+        'fade-in-1400': 'fade-in 1400ms ease-out forwards',
+        'fade-in-1500': 'fade-in 1500ms ease-out forwards',
       },
       borderRadius: {
         lg: 'var(--radius)',

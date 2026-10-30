@@ -33,10 +33,10 @@ export const projects: Project[] = [
       'CodeStash is a full-stack snippet manager that blends the social mechanics of Reddit with the technical depth of Stack Overflow. Sign in with JWT auth, drop a snippet into one of the topic-based communities (c/react, c/python, etc.), and let others upvote, comment, or save it for later. Posts support 10 languages with syntax highlighting, and you can create them three ways: paste code directly, upload a local file, or pull from any public GitHub repo, gist, or raw URL.\n\nThe headline feature is an AI explainer powered by Google\'s Gemini — hit "Explain this" on any snippet and the model returns a concise markdown breakdown with a relevant GitHub alert (NOTE/TIP/WARNING/CAUTION). There is also a VS Code integration that downloads the snippet with the correct extension and opens it in your editor via the vscode:// URI scheme. Rate-limited with Unkey, files routed through Cloudinary, search backed by MongoDB text indexes, and a clean React Query + Zustand frontend on Next.js 14 with shadcn and HeroUI components.',
     deployedUrl: 'https://codestash.baghel.dev',
     sourceUrl: 'https://github.com/devansh-baghel/codestash',
-    previewImage: '/projects/codestash/c1.png',
+    previewImage: '/projects/codestash/c1.webp',
     images: Array.from(
       { length: 9 },
-      (_, i) => `/projects/codestash/c${i + 1}.png`,
+      (_, i) => `/projects/codestash/c${i + 1}.webp`,
     ),
     badges: [
       { src: '/badges/typescript.svg', alt: 'TypeScript' },
@@ -58,10 +58,10 @@ export const projects: Project[] = [
       'SpendSync is a personal finance workspace built around three primitives: a wallet, transactions, and goals. Log income and expenses with categories and wallet types (Cash, Credit, Debit, Bank), attach photo receipts via Cloudinary, and watch the account balance update in real time. Set savings goals with targets, fund them from your balance (MongoDB transactions keep the books consistent), and watch the progress bars fill up — deleting a goal refunds the saved amount back to your account.\n\nThe Statistics page renders Chart.js doughnuts and bar charts that break down your income and expenses by week, month, and year. Export everything to CSV when tax season rolls around, switch between six currencies (USD, EUR, JPY, INR, AUD, CAD), or pop the command palette with Cmd+K to jump anywhere. Premium unlocks the insights dashboard via a one-time $30 Stripe checkout. The whole thing is Vite + React 18 + TypeScript on the frontend, Express + MongoDB on the backend, and shadcn/ui throughout.',
     deployedUrl: 'https://spendsync.baghel.dev',
     sourceUrl: 'https://github.com/devansh-baghel/spendsync',
-    previewImage: '/projects/spendsync/s1.png',
+    previewImage: '/projects/spendsync/s1.webp',
     images: Array.from(
       { length: 11 },
-      (_, i) => `/projects/spendsync/s${i + 1}.png`,
+      (_, i) => `/projects/spendsync/s${i + 1}.webp`,
     ),
     badges: [
       { src: '/badges/typescript.svg', alt: 'TypeScript' },

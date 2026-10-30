@@ -1,18 +1,18 @@
-import { notFound } from 'next/navigation';
-import { getBlogPost, getAllBlogSlugs, getAllBlogPosts } from '@/lib/mdx';
-import Link from 'next/link';
-import Image from 'next/image';
-import Glow from '@/components/Glow';
-import MDXContent from '@/components/MDXContent';
-import { Calendar, ArrowLeft, Clock, Briefcase, Mail } from 'lucide-react';
 import { format } from 'date-fns';
-import Float from '@/components/fancy/blocks/float';
-import FloatingShape from '@/components/FloatingShape';
+import { ArrowLeft, Briefcase, Calendar, Clock, Mail } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import BlogFloatingShapes from '@/components/BlogFloatingShapes';
 import BlogPostSchema from '@/components/BlogPostSchema';
-import { cn } from '@/lib/utils';
-import { cardBase, cardStatic, buttonFilled } from '@/utils/constants';
+import FloatingShape from '@/components/FloatingShape';
+import Float from '@/components/fancy/blocks/float';
+import Glow from '@/components/Glow';
+import MDXContent from '@/components/MDXContent';
 import type { BlogPost } from '@/lib/mdx';
+import { getAllBlogPosts, getAllBlogSlugs, getBlogPost } from '@/lib/mdx';
+import { cn } from '@/lib/utils';
+import { buttonFilled, cardBase, cardStatic } from '@/utils/constants';
 
 function pickRelatedPosts(
   current: BlogPost,
@@ -139,17 +139,17 @@ export default async function BlogPostPage({
           <div className="mb-12">
             <Link
               href="/blog"
-              className="motion-preset-slide-right inline-flex animate-blur-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
+              className="motion-preset-slide-right inline-flex animate-fade-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
             >
               <ArrowLeft className="h-5 w-5" />
               Back to Blog
             </Link>
 
-            <h1 className="motion-preset-slide-right mt-6 animate-blur-in-600 font-heading text-[40px] leading-tight motion-delay-200 lg:text-[50px]">
+            <h1 className="motion-preset-slide-right mt-6 animate-fade-in-600 font-heading text-[40px] leading-tight motion-delay-200 lg:text-[50px]">
               {post.title}
             </h1>
 
-            <div className="motion-preset-slide-right mt-6 flex animate-blur-in-700 flex-wrap items-center gap-4 text-slate-600 motion-delay-300">
+            <div className="motion-preset-slide-right mt-6 flex animate-fade-in-700 flex-wrap items-center gap-4 text-slate-600 motion-delay-300">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 <time dateTime={post.date}>
@@ -165,7 +165,7 @@ export default async function BlogPostPage({
 
             {/* Tags */}
             {post.tags.length > 0 && (
-              <div className="motion-delay-400 motion-preset-slide-right mt-4 flex animate-blur-in-800 flex-wrap gap-2">
+              <div className="motion-delay-400 motion-preset-slide-right mt-4 flex animate-fade-in-800 flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
@@ -182,7 +182,7 @@ export default async function BlogPostPage({
           <article
             itemScope
             itemType="https://schema.org/BlogPosting"
-            className="motion-preset-slide-right animate-blur-in-900 motion-delay-500 backdrop-blur-sm rounded-[30px]"
+            className="motion-preset-slide-right animate-fade-in-900 motion-delay-500 backdrop-blur-sm rounded-[30px]"
           >
             <meta itemProp="headline" content={post.title} />
             <meta itemProp="datePublished" content={post.date} />

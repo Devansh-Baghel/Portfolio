@@ -7,6 +7,23 @@ export interface AnalyticsData {
   uniqueVisitors: number;
 }
 
+let analyticsPromise: Promise<AnalyticsData> | null = null;
+
+async function fetchAnalytics(): Promise<AnalyticsData> {
+  analyticsPromise ??= fetch('/api/analytics')
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json() as Promise<AnalyticsData>;
+    })
+    .catch((error) => {
+      console.error('Failed to fetch analytics:', error);
+      analyticsPromise = null;
+      throw error;
+    });
+
+  return analyticsPromise;
+}
+
 export function useAnalytics(): {
   data: AnalyticsData | null;
   loading: boolean;
@@ -15,19 +32,25 @@ export function useAnalytics(): {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchAnalytics() {
-      try {
-        const response = await fetch('/api/analytics');
-        const analyticsData = await response.json();
-        setData(analyticsData);
-      } catch (error) {
-        console.error('Failed to fetch analytics:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
+    let cancelled = false;
 
-    fetchAnalytics();
+    fetchAnalytics()
+      .then((analyticsData) => {
+        if (!cancelled) {
+          setData(analyticsData);
+          setLoading(false);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setData(null);
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return { data, loading };

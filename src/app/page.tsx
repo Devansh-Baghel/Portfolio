@@ -26,29 +26,13 @@ import { getAllBlogPosts } from '@/lib/mdx';
 import { cn } from '@/lib/utils';
 import { buttonFilled, cardBase } from '@/utils/constants';
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  const params = await searchParams;
-  const isBlackAndWhite = params.bw === 'true';
+export default async function Home() {
   const blogPosts = await getAllBlogPosts();
-
-  const filterClass = cn(
-    'transition-[filter] duration-[5000ms] ease-in-out',
-    isBlackAndWhite && 'grayscale',
-  );
 
   return (
     <main className="relative mx-auto sm:max-w-[600px] lg:max-w-[1400px]">
       <StructuredData />
-      <aside
-        className={cn(
-          'text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20',
-          filterClass,
-        )}
-      >
+      <aside className="text-slate-900 pl-10 pr-6 pt-14 sticky lg:fixed lg:max-w-[500px] lg:pl-20">
         <Suspense
           fallback={
             <Image
@@ -144,9 +128,7 @@ export default async function Home({
 
       <ScrollButton />
 
-      <div
-        className={cn('lg:absolute lg:right-0 lg:max-w-[700px]', filterClass)}
-      >
+      <div className="lg:absolute lg:right-0 lg:max-w-[700px]">
         <HeroImage />
         <EasterEggLogs />
         <Suspense>

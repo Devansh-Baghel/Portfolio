@@ -7,18 +7,24 @@ html {
   background-color: white;
 }
 
-@media (max-width: 1535px) {
-  html {
-    zoom: 0.9;
-  }
-}
-
 .font-chromate {
   font-family: var(--font-chromate), sans-serif;
 }
 
 body {
   overflow-x: hidden;
+}
+
+main {
+  transition: filter 5s ease-in-out;
+}
+
+html.bw main {
+  filter: grayscale(1);
+}
+
+html.bw-instant main {
+  transition: none;
 }
 
 .images {
@@ -32,14 +38,14 @@ body {
 
 .wrapper {
   background: rgba(255, 255, 255, 0.192);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   /* height: 250px; */
   max-width: 600px;
 }
 
 .blog-wrapper {
   background: rgba(255, 255, 255, 0.192);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
 }
 
 .badge-container {
@@ -58,7 +64,7 @@ body {
 }
 
 .glow-lite {
-  filter: url(#glow_lite);
+  filter: url(#glow-lite);
 }
 
 .work-title,

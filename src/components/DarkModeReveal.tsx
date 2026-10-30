@@ -1,8 +1,12 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
-import GhostCursor from '@/components/GhostCursor';
+
+const GhostCursor = dynamic(() => import('@/components/GhostCursor'), {
+  ssr: false,
+});
 
 export default function DarkModeReveal() {
   const searchParams = useSearchParams();

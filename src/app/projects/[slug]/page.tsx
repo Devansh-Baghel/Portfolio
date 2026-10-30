@@ -111,17 +111,17 @@ export default async function ProjectPage({
         <div className="mb-12">
           <Link
             href="/#projects"
-            className="motion-preset-slide-right inline-flex animate-blur-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
+            className="motion-preset-slide-right inline-flex animate-fade-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
           >
             <ArrowLeft className="h-5 w-5" />
             Back to Projects
           </Link>
 
-          <h1 className="motion-preset-slide-right mt-6 animate-blur-in-600 font-heading text-[40px] leading-tight motion-delay-200 lg:text-[50px]">
+          <h1 className="motion-preset-slide-right mt-6 animate-fade-in-600 font-heading text-[40px] leading-tight motion-delay-200 lg:text-[50px]">
             {project.title}
           </h1>
 
-          <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-lg text-slate-600 motion-delay-300 md:text-xl">
+          <p className="motion-preset-slide-right mt-4 animate-fade-in-700 text-lg text-slate-600 motion-delay-300 md:text-xl">
             {project.description}
           </p>
         </div>

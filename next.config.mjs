@@ -4,6 +4,7 @@ import createMDX from '@next/mdx';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  productionBrowserSourceMaps: true,
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [

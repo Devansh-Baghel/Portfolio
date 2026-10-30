@@ -1,10 +1,10 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { MdWork as WorkIcon } from 'react-icons/md';
 import { BsBuildingsFill as CompanyIcon } from 'react-icons/bs';
-import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
 import { FaRegCalendarAlt as DateIcon } from 'react-icons/fa';
+import { FaLocationDot as LocationIcon } from 'react-icons/fa6';
+import { MdWork as WorkIcon } from 'react-icons/md';
 import Snowfall from 'react-snowfall';
 import ScrollReveal from '@/components/ScrollReveal';
 import { workExperience } from '@/data/portfolio';
@@ -33,7 +33,7 @@ export default function WorkExperience() {
           id="experience-container"
           className="mb-6 flex flex-col gap-6"
           style={{
-            backgroundImage: 'url("/backgrounds/Grad_03.png")',
+            backgroundImage: 'url("/backgrounds/Grad_03.webp")',
             backgroundSize: 'contain',
             backgroundPosition: 'top',
             backgroundRepeat: 'repeat-y',

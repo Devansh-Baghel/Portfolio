@@ -1,10 +1,8 @@
 'use client';
 
-import { GitHubCalendar } from 'react-github-calendar';
+import DeferredCalendar from '@/components/DeferredCalendar';
 import ScrollReveal from '@/components/ScrollReveal';
 import { githubYears } from '@/data/portfolio';
-import { cn } from '@/lib/utils';
-import { cardBase } from '@/utils/constants';
 
 export default function Github() {
   return (
@@ -21,16 +19,7 @@ export default function Github() {
       <div className="flex flex-col gap-6">
         {githubYears.map((year, index) => (
           <ScrollReveal key={year} delay={index * 0.15}>
-            <div
-              className={cn('disable-scrollbar flex wrapper', cardBase, 'p-6')}
-            >
-              <GitHubCalendar
-                username="Devansh-Baghel"
-                colorScheme="light"
-                year={year}
-                transformData={(contributions) => contributions.toReversed()}
-              />
-            </div>
+            <DeferredCalendar username="Devansh-Baghel" year={year} />
           </ScrollReveal>
         ))}
       </div>

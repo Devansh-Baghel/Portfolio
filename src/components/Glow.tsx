@@ -20,6 +20,20 @@ export default function Glow() {
           in2="glow__svg__sat"
         />
       </filter>
+      <filter id="glow-lite">
+        <feGaussianBlur
+          in="SourceGraphic"
+          stdDeviation="3"
+          result="glowsvgblur"
+        />
+        <feColorMatrix
+          type="saturate"
+          in="glowsvgblur"
+          values="2"
+          result="glowsvgsat"
+        />
+        <feBlend in="SourceGraphic" in2="glowsvgsat" />
+      </filter>
     </svg>
   );
 }

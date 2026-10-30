@@ -8,7 +8,7 @@ export default function GoBackButton() {
     <button
       onClick={() => window.history.back()}
       className={cn(
-        'motion-preset-slide-right inline-block animate-blur-in-800 motion-delay-500 font-medium',
+        'motion-preset-slide-right inline-block animate-fade-in-800 motion-delay-500 font-medium',
         cardBase,
         'px-6 py-3 text-lg',
       )}

@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import Glow from '@/components/Glow';
-import { Calendar, ArrowLeft, ExternalLink } from 'lucide-react';
-import { getAllBlogPosts } from '@/lib/mdx';
 import { format } from 'date-fns';
-import FloatingShape from '@/components/FloatingShape';
+import { ArrowLeft, Calendar, ExternalLink } from 'lucide-react';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import BlogIndexSchema from '@/components/BlogIndexSchema';
+import FloatingShape from '@/components/FloatingShape';
+import Glow from '@/components/Glow';
+import { getAllBlogPosts } from '@/lib/mdx';
 import { cn } from '@/lib/utils';
-import { cardBase, buttonFilled } from '@/utils/constants';
+import { buttonFilled, cardBase } from '@/utils/constants';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -40,17 +40,17 @@ export default async function BlogPage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="motion-preset-slide-right inline-flex animate-blur-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
+            className="motion-preset-slide-right inline-flex animate-fade-in-500 items-center gap-2 text-lg font-medium motion-delay-100 hover:text-lime-500"
           >
             <ArrowLeft className="h-5 w-5" />
             Back to Portfolio
           </Link>
 
-          <h1 className="motion-preset-slide-right mt-6 animate-blur-in-600 font-heading text-[60px] leading-tight motion-delay-200 lg:text-[70px]">
+          <h1 className="motion-preset-slide-right mt-6 animate-fade-in-600 font-heading text-[60px] leading-tight motion-delay-200 lg:text-[70px]">
             Blog
           </h1>
 
-          <p className="motion-preset-slide-right mt-4 animate-blur-in-700 text-xl motion-delay-300">
+          <p className="motion-preset-slide-right mt-4 animate-fade-in-700 text-xl motion-delay-300">
             Thoughts on web development, programming, and building things on the
             internet.
           </p>
@@ -67,7 +67,7 @@ export default async function BlogPage() {
           className="flex flex-col gap-8"
           id="blog-container"
           style={{
-            backgroundImage: 'url("/backgrounds/Grad_17.png")',
+            backgroundImage: 'url("/backgrounds/Grad_17.webp")',
             backgroundSize: 'contain',
             backgroundPosition: 'top',
             backgroundRepeat: 'repeat-y',
@@ -77,7 +77,7 @@ export default async function BlogPage() {
             blogPosts.map((post, index) => (
               <article
                 key={post.slug}
-                className="blog-wrapper motion-preset-slide-right animate-blur-in-800"
+                className="blog-wrapper motion-preset-slide-right animate-fade-in-800"
                 style={{ animationDelay: `${400 + index * 100}ms` }}
               >
                 <div className={cn(cardBase, 'p-8')}>

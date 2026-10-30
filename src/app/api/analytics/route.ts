@@ -44,6 +44,7 @@ export async function GET() {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify(requestBody),
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {

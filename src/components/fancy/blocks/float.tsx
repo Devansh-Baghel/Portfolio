@@ -1,7 +1,12 @@
 'use client';
 
+import {
+  motion,
+  useAnimationFrame,
+  useInView,
+  useMotionValue,
+} from 'motion/react';
 import React, { useRef } from 'react';
-import { motion, useAnimationFrame, useMotionValue } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
@@ -22,6 +27,9 @@ const Float: React.FC<FloatProps> = ({
   timeOffset = 0,
   className,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: '300px' });
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const z = useMotionValue(0);
@@ -33,6 +41,8 @@ const Float: React.FC<FloatProps> = ({
   const time = useRef(0);
 
   useAnimationFrame(() => {
+    if (!inView) return;
+
     time.current += speed * 0.02;
 
     // Smooth floating motion on all axes
@@ -58,6 +68,7 @@ const Float: React.FC<FloatProps> = ({
 
   return (
     <motion.div
+      ref={ref}
       style={{
         x,
         y,

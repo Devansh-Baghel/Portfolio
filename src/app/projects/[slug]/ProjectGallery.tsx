@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 import {
   Carousel,
@@ -46,11 +47,15 @@ export default function ProjectGallery({ title, images }: ProjectGalleryProps) {
         <CarouselContent>
           {images.map((src, index) => (
             <CarouselItem key={src}>
-              <img
-                src={src}
-                alt={`${title} screenshot ${index + 1}`}
-                className="w-full rounded-[20px] border-[3px] border-slate-900 object-cover"
-              />
+              <div className="relative aspect-[2/1] w-full overflow-hidden rounded-[20px] border-[3px] border-slate-900">
+                <Image
+                  src={src}
+                  alt={`${title} screenshot ${index + 1}`}
+                  fill
+                  sizes="(max-width: 1023px) calc(100vw - 3rem), 760px"
+                  className="object-cover"
+                />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>

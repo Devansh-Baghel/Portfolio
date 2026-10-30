@@ -2,6 +2,7 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 import { TbAdjustmentsCog } from 'react-icons/tb';
 import {
   Collapsible,
@@ -95,6 +96,15 @@ export default function FunBox() {
   const isFastSpin = searchParams.get('spin') === 'faster';
   const isSnowOn = searchParams.get('snow') === 'on';
   const isDarkMode = searchParams.get('darkmode') === 'true';
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const isFirstApplication = root.dataset.bwInit !== 'true';
+    root.dataset.bwInit = 'true';
+
+    root.classList.toggle('bw', isBW);
+    root.classList.toggle('bw-instant', isFirstApplication);
+  }, [isBW]);
 
   function toggleParam(key: string, value: string) {
     const params = new URLSearchParams(searchParams.toString());

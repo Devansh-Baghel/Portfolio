@@ -41,27 +41,25 @@ export function FaviconAnimator() {
       canvas.height = img.height || 32;
 
       const rotateFavicon = () => {
-        if (!ctx || !img || !canvas) return;
+        if (!document.hidden && ctx && img && canvas) {
+          rotationRef.current = (rotationRef.current + 5) % 360;
 
-        rotationRef.current = (rotationRef.current + 5) % 360;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.save();
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+          ctx.rotate((rotationRef.current * Math.PI) / 180);
+          ctx.drawImage(img, -img.width / 2, -img.height / 2);
+          ctx.restore();
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.save();
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.rotate((rotationRef.current * Math.PI) / 180);
-        ctx.drawImage(img, -img.width / 2, -img.height / 2);
-        ctx.restore();
+          const rotatedDataUrl = canvas.toDataURL('image/png');
 
-        const rotatedDataUrl = canvas.toDataURL('image/png');
+          const allFavicons = document.querySelectorAll('link[rel*="icon"]');
+          allFavicons.forEach((link) => {
+            (link as HTMLLinkElement).href = rotatedDataUrl;
+          });
+        }
 
-        const allFavicons = document.querySelectorAll('link[rel*="icon"]');
-        allFavicons.forEach((link) => {
-          (link as HTMLLinkElement).href = rotatedDataUrl;
-        });
-
-        setTimeout(() => {
-          animationFrameRef.current = requestAnimationFrame(rotateFavicon);
-        }, 100);
+        animationFrameRef.current = window.setTimeout(rotateFavicon, 750);
       };
 
       rotateFavicon();
@@ -74,8 +72,8 @@ export function FaviconAnimator() {
     img.src = faviconUrl;
 
     return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
+      if (animationFrameRef.current !== null) {
+        clearTimeout(animationFrameRef.current);
       }
     };
   }, []);

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { vertexShader, fragmentShader } from './shaders';
+import { fragmentShader, vertexShader } from './shaders';
 
 export interface SceneObjects {
   scene: THREE.Scene;
@@ -56,11 +56,6 @@ export function createScene(
 
   const size = grid;
   const data = new Float32Array(4 * size * size);
-  for (let i = 0; i < size * size; i++) {
-    data[i * 4] = Math.random() * 255 - 125;
-    data[i * 4 + 1] = Math.random() * 255 - 125;
-  }
-
   const dataTexture = new THREE.DataTexture(
     data,
     size,

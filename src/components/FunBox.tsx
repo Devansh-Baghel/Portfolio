@@ -93,7 +93,7 @@ export default function FunBox() {
 
   const isBW = searchParams.get('bw') === 'true';
   const isFastSpin = searchParams.get('spin') === 'faster';
-  const isSnowOn = searchParams.get('snow') !== 'off';
+  const isSnowOn = searchParams.get('snow') === 'on';
   const isDarkMode = searchParams.get('darkmode') === 'true';
 
   function toggleParam(key: string, value: string) {
@@ -109,10 +109,10 @@ export default function FunBox() {
 
   function toggleSnow() {
     const params = new URLSearchParams(searchParams.toString());
-    if (params.get('snow') === 'off') {
+    if (params.get('snow') === 'on') {
       params.delete('snow');
     } else {
-      params.set('snow', 'off');
+      params.set('snow', 'on');
     }
     const query = params.toString();
     router.push(query ? `?${query}` : '/', { scroll: false });

@@ -13,7 +13,7 @@ import { cardBase } from '@/utils/constants';
 
 export default function WorkExperience() {
   const searchParams = useSearchParams();
-  const snowEnabled = searchParams.get('snow') !== 'off';
+  const snowEnabled = searchParams.get('snow') === 'on';
 
   return (
     <>

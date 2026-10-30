@@ -3,6 +3,8 @@
 import { useInView } from 'motion/react';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
+import { cn } from '@/lib/utils';
+import { cardBase } from '@/utils/constants';
 
 const GitHubCalendar = dynamic(
   () =>
@@ -27,7 +29,12 @@ export default function DeferredCalendar({
   return (
     <div
       ref={ref}
-      className="disable-scrollbar flex wrapper min-h-[170px] items-center justify-center"
+      className={cn(
+        'disable-scrollbar flex wrapper',
+        cardBase,
+        'p-6',
+        'min-h-[170px] items-center justify-center',
+      )}
     >
       {inView && (
         <GitHubCalendar

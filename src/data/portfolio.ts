@@ -132,4 +132,4 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
-export const githubYears = [2025, 2024, 2023];
+export const githubYears = [2026, 2025, 2024, 2023];

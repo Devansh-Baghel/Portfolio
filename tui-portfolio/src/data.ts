@@ -81,7 +81,7 @@ export const experience: Experience[] = [
   {
     role: 'Full Stack Developer',
     company: 'HypedX - by Digital Gimmick',
-    duration: 'Nov 2025 - Present',
+    duration: 'Nov 2025 - Oct 2026',
     location: 'Remote',
     responsibilities: [
       'Maintained and developed features for a full-stack YouTube views marketplace using Next.js frontend and Node.js/TypeScript backend',
